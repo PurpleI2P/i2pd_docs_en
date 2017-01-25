@@ -1,0 +1,51 @@
+site_name: i2pd documentation
+site_url: https://i2pd.readthedocs.io
+site_description: i2pd documentation
+site_author: PurpleI2P Team
+
+repo_url: https://github.com/PurpleI2P/i2pd_docs_en
+
+site_favicon: media/i2pd-logo.png
+
+pages:
+- Home: index.md
+- User Guide: 
+    - Installation: user-guide/install.md
+    - Running: user-guide/run.md
+    - Configuring: user-guide/configuration.md
+    - I2P tunnels configuration: user-guide/tunnels.md
+    - Family configuration: user-guide/family.md
+    - FAQ: user-guide/FAQ.md
+- How-To / Tutorials:
+    - Anonymous websites: tutorials/http.md
+    - Anonymous IRC chats: tutorials/irc.md
+    - Filesharing: tutorials/filesharing.md
+    - Using RetroShare with i2pd: tutorials/retroshare.md  
+- Developer Section:
+    - Building from source: 
+        - Unix: devs/building/unix.md
+        - Windows: devs/building/windows.md
+        - Android: devs/building/android.md
+        - Cross-platform: devs/building/cross.md
+        - iOS: devs/building/ios.md
+    - API: 
+        - Choosing API for your project: devs/api/index.md
+        - SAM: devs/api/SAM.md
+        - BOB: devs/api/BOB.md
+        - I2CP: devs/api/I2CP.md  
+        - I2PControl: devs/api/I2PControl.md
+        - libi2pd: devs/api/libi2pd.md
+    - Hacking the code: devs/hacking.md
+- About: 
+    - Community: about/community.md
+    - History: about/history.md
+    - License: about/license.md
+    - Contributing: about/contributing.md
+
+copyright: <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC-BY-SA 4.0</a>, Maintained by the PuprleI2P team
+theme: readthedocs
+
+
+markdown_extensions:
+    - toc:
+        permalink: 
