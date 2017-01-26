@@ -10,7 +10,7 @@ site_favicon: media/i2pd-logo.png
 pages:
 - Home: index.md
 - User Guide: 
-    - Installation: user-guide/install.md
+    - Installing: user-guide/install.md
     - Running: user-guide/run.md
     - Configuring: user-guide/configuration.md
     - I2P tunnels configuration: user-guide/tunnels.md

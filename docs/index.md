@@ -1,7 +1,7 @@
-i2pd
-====
-
 ![Logo](media/i2pd-logo.png)
+
+Invisible Internet Protocol (daemon)
+====================================
 
 i2pd (I2P Daemon) is a full-featured C++ implementation of I2P client.
 
@@ -17,13 +17,6 @@ applications (websites, instant messengers, chat-servers).
 I2P allows people from all around the world to communicate and share information
 without restrictions.
 
-* [Website](http://i2pd.website)
-* [Documentation](https://i2pd.readthedocs.io/en/latest/)
-* [Wiki](https://github.com/PurpleI2P/i2pd/wiki)
-* [Tickets/Issues](https://github.com/PurpleI2P/i2pd/issues)
-* [Specifications](https://geti2p.net/spec)
-* [Twitter](https://twitter.com/hashtag/i2pd)
-
 Features
 --------
 
@@ -31,5 +24,16 @@ Features
 * End-to-end encrypted communications
 * Small footprint, simple dependencies, fast performance
 * Rich set of APIs for developers of secure applications
+
+
+Resources
+---------
+
+* [Website](http://i2pd.website)
+* [Documentation](https://i2pd.readthedocs.io/en/latest/)
+* [Wiki](https://github.com/PurpleI2P/i2pd/wiki)
+* [Tickets/Issues](https://github.com/PurpleI2P/i2pd/issues)
+* [Specifications](https://geti2p.net/spec)
+* [Twitter](https://twitter.com/hashtag/i2pd)
 
 
