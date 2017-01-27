@@ -16,7 +16,7 @@ Go to the [latest release page](https://github.com/PurpleI2P/i2pd/releases/lates
 
 ## Docker images
 
-You can use [prebuilt docker image](https://hub.docker.com/r/meeh/i2pd/) by community member [Meeh](https://twitter.com/mikalv).
+You can use [prebuilt docker image](https://hub.docker.com/r/meeh/i2pd/) by PurpleI2P community member [Meeh](https://twitter.com/mikalv).
 
     docker pull meeh/i2pd
 
@@ -25,7 +25,7 @@ You can use [prebuilt docker image](https://hub.docker.com/r/meeh/i2pd/) by comm
 
 You can install binary packages from the [latest release page](https://github.com/PurpleI2P/i2pd/releases/latest). 
 
-Alternatively, you can use [PPA repository](https://launchpad.net/~purplei2p/+archive/ubuntu/i2pd) run by community member [R4SAS](https://twitter.com/i2pr4sas).
+Alternatively, you can use [PPA repository](https://launchpad.net/~purplei2p/+archive/ubuntu/i2pd) run by PurpleI2P community member [R4SAS](https://twitter.com/i2pr4sas).
 
     sudo add-apt-repository ppa:purplei2p/i2pd
     sudo apt-get update
@@ -35,6 +35,29 @@ Alternatively, you can use [PPA repository](https://launchpad.net/~purplei2p/+ar
 ## Debian
 
 Look for Debian packages at the [latest release page](https://github.com/PurpleI2P/i2pd/releases/latest).
+
+Alternatively, you can install i2pd by using repository run by PurpleI2P community member [R4SAS](https://twitter.com/i2pr4sas).
+
+Add repository to /etc/apt/sources.list:
+
+    # Debian 7
+    deb http://repo.lngserv.ru/debian wheezy main
+    deb-src http://repo.lngserv.ru/debian wheezy main
+    # Debain 8
+    deb http://repo.lngserv.ru/debian jessie main
+    deb-src http://repo.lngserv.ru/debian jessie main
+
+Import key that is used to sign the release:
+
+    gpg --keyserver keys.gnupg.net --recv-keys 98EBCFE2
+    gpg -a --export 98EBCFE2 | sudo apt-key add -
+
+After that you can install i2pd as any other software package:
+
+    apt-get update
+    apt-get install i2pd
+
+Look for more information about Debian repository [here](https://repo.lngserv.ru/.help/readme.txt).
 
 
 ## ArchLinux
