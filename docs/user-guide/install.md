@@ -4,7 +4,7 @@ Installing
 Building from source
 --------------------
 
-See developer section documentation for how to build i2pd from source on your OS.
+See [developer section documentation](../devs/building/requirements.md) for how to build i2pd from source on your OS.
 
 
 Windows, Android, Mac OS X  
