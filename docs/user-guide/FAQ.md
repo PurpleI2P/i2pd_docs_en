@@ -28,7 +28,7 @@ While [Java I2P](https://geti2p.net) is being original client for I2P network, i
 
 i2pd can be used to organize anonymous network layer for any of your applications.
 
-You can run websites, create public and private chat chatrooms, use instant 
+You can run websites, create public and private chatrooms, use instant 
 messaging and E-Mail, share files -- do everything with strong privacy and 
 security layer.
 
