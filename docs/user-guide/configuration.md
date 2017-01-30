@@ -181,6 +181,25 @@ limits.transittunnels                  | Override maximum number of transit tunn
 limits.openfiles                       | Maximum size of corefile in Kb (0 - use system limit)  
 limits.coresize                        | Maximum size of corefile in Kb (0 - use system limit)  
 
+### Trust options
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+trust.enabled                          | Enable explicit trust options. false by default
+trust.family                           | Make direct I2P connections only to routers in specified Family.
+trust.routers                          | Make direct I2P connections only to routers specified here. Comma separated list of base64 identities.
+trust.hidden                           | Should we hide our router from other routers? false by default
+
+### Websocket server
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+websockets.enabled                     | Enable websocket server. Disabled by default
+websockets.address                     | Address to bind websocket server on. 127.0.0.1 by default
+websockets.port                        | Port to bind websocket server on. 7666 by default
+
+
+
 
 Local addressbook
 -----------------
