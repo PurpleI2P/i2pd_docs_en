@@ -120,6 +120,23 @@ There are 2 types of UDP tunnels: `udpclient` and `udpserver`
 * port -- udp port to forward traffic on, required parameter
 
 
+Socks proxy
+-----------
+
+Socks proxy interface can be defined in ``tunnels.conf``.
+
+Example of Socks proxy:
+
+    [alt-socks]
+    type = socks
+    address = 127.0.0.1
+    port = 14447
+    keys = socks-keys.dat 
+
+* address -- local address Socks proxy binds to, defaults to `127.0.0.1`
+* port -- TCP port Socks proxy binds to
+
+
 I2CP parameters
 ---------------
 
