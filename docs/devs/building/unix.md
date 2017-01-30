@@ -1,13 +1,11 @@
 Building on Unix systems
 =============================
 
-First of all we need to make sure that all dependencies are satisfied.
-
 This doc is trying to cover:
 
 * [Debian/Ubuntu](#debian-ubuntu) (contains packaging instructions)
 * [Fedora/Centos](#fedora-centos)
-* [Fedora/Centos](#mac-os-x)
+* [Mac OS X](#mac-os-x)
 * [FreeBSD](#freebsd)
 
 Make sure you have all required dependencies for your system successfully installed.
@@ -105,7 +103,7 @@ But you can use cmake3 from the epel repository:
 
 ...and then use 'cmake3' instead 'cmake'.
 
-MAC OS X
+Mac OS X
 --------
 
 Requires [homebrew](http://brew.sh)
