@@ -22,7 +22,8 @@ pages:
     - Filesharing: tutorials/filesharing.md
     - Using RetroShare with i2pd: tutorials/retroshare.md  
 - Developer Section:
-    - Building from source: devs/building/requirements.md
+    - Building from source: 
+        - Requirements: devs/building/requirements.md
         - Unix: devs/building/unix.md
         - Windows: devs/building/windows.md
         - Android: devs/building/android.md
