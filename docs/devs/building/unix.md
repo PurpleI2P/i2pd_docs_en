@@ -66,7 +66,8 @@ Also you will need a bunch of development libraries:
 	    libboost-filesystem-dev \
 	    libboost-program-options-dev \
 	    libboost-system-dev \
-	    libssl-dev
+	    libssl-dev \
+	    zlib1g-dev
 
 If you need UPnP support miniupnpc development library should be installed (don't forget to rerun CMake with needed option):
 
