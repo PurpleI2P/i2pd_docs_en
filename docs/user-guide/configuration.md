@@ -200,8 +200,14 @@ websockets.enabled                     | Enable websocket server. Disabled by de
 websockets.address                     | Address to bind websocket server on. 127.0.0.1 by default
 websockets.port                        | Port to bind websocket server on. 7666 by default
 
+### Exploratory tunnels
 
-
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+exploratory.inbound.length             | Exploratory inbound tunnels length. 2 by default
+exploratory.inbound.quantity           | Exploratory inbound tunnels quantity. 3 by default
+exploratory.outbound.length            | Exploratory outbound tunnels length. 2 by default
+exploratory.outbound.quantity          | Exploratory outbound tunnels length. 3 by default
 
 Local addressbook
 -----------------
