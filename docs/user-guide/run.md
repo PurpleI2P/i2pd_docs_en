@@ -48,7 +48,7 @@ This way all i2pd-related files will be stored at `$HOME/dist`.
     mkdir $HOME/dist
     cp i2pd $HOME/dist
     cp -R contrib/certificates $HOME/dist
-    cp docs/i2pd.conf $HOME/dist
+    cp contrib/i2pd.conf $HOME/dist
     cd $HOME/dist
     ulimit -n 4096  # only on Linux, increasing open file limit
     ./i2pd --datadir .
