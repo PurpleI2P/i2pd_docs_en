@@ -55,7 +55,7 @@ port                                   | Port to listen for incoming connections
 daemon                                 | Router will go to background after start
 service                                | Router will use system folders like '/var/lib/i2pd'
 ipv6                                   | Enable communication through ipv6. false by default
-notransit                              | Router will not accept transit tunnels at startup. false by default
+notransit                              | Router will not accept transit tunnels, disabling transit traffic completely. false by default
 floodfill                              | Router will be floodfill. false by default
 bandwidth                              | Bandwidth limit: integer in KBps or letters: L (32), O (256), P (2048), X (>9000)
 family                                 | Name of a family, router belongs to
