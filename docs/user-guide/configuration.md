@@ -88,7 +88,8 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 httpproxy.enabled                      | If HTTP proxy is enabled. true by default  
 httpproxy.address                      | The address to listen on (HTTP Proxy)  
-httpproxy.port                         | The port to listen on (HTTP Proxy) 4444 by default  
+httpproxy.port                         | The port to listen on (HTTP Proxy) 4444 by default 
+httpproxy.addresshelper                | Enable of disable address helper (jump). true by default  
 httpproxy.keys                         | optional keys file for HTTP proxy local destination  
 httpproxy.signaturetype                | signature type for new keys if keys file is set. 7 by default
 httpproxy.inbound.length               | Inbound tunnels length if keys is set. 3 by default  
