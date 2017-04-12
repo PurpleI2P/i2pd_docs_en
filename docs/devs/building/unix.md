@@ -78,7 +78,7 @@ You may also build deb-package with the following:
 
 	sudo apt-get install fakeroot devscripts
 	cd i2pd
-	debuild --no-tgz-check
+	debuild --no-tgz-check -b
 
 Fedora/Centos
 -------------
