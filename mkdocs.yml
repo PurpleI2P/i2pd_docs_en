@@ -9,7 +9,7 @@ site_favicon: media/i2pd-logo.png
 
 pages:
 - Home: index.md
-- User Guide: 
+- User Guide:
     - Installing: user-guide/install.md
     - Running: user-guide/run.md
     - Configuring: user-guide/configuration.md
@@ -20,24 +20,25 @@ pages:
     - Anonymous websites: tutorials/http.md
     - Anonymous IRC chats: tutorials/irc.md
     - Filesharing: tutorials/filesharing.md
-    - Using RetroShare with i2pd: tutorials/retroshare.md  
+    - Using RetroShare with i2pd: tutorials/retroshare.md
+    - Bootstrapping without Reseed Servers: tutorials/floodfill-bootstrap.md
 - Developer Section:
-    - Building from source: 
+    - Building from source:
         - Requirements: devs/building/requirements.md
         - Unix: devs/building/unix.md
         - Windows: devs/building/windows.md
         - Android: devs/building/android.md
         - Cross-platform: devs/building/cross.md
         - iOS: devs/building/ios.md
-    - API: 
+    - API:
         - Choosing API for your project: devs/api/index.md
         - SAM: devs/api/SAM.md
         - BOB: devs/api/BOB.md
-        - I2CP: devs/api/I2CP.md  
+        - I2CP: devs/api/I2CP.md
         - I2PControl: devs/api/I2PControl.md
         - libi2pd: devs/api/libi2pd.md
     - Hacking the code: devs/hacking.md
-- About: 
+- About:
     - Community: about/community.md
     - History: about/history.md
     - License: about/license.md
