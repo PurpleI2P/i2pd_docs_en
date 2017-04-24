@@ -119,7 +119,7 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 sam.address                            | The address to listen on (SAM bridge)
 sam.port                               | Port of SAM bridge. Usually 7656. SAM is off if not specified
-sam.enabled                            | If SAM is enabled. false by default 
+sam.enabled                            | If SAM is enabled. true by default 
 
 ### BOB interface
 
