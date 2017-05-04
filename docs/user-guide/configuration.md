@@ -58,6 +58,7 @@ ipv6                                   | Enable communication through ipv6. fals
 notransit                              | Router will not accept transit tunnels, disabling transit traffic completely. false by default
 floodfill                              | Router will be floodfill. false by default
 bandwidth                              | Bandwidth limit: integer in KBps or letters: L (32), O (256), P (2048), X (>9000)
+share                                  | Max % of bandwidth limit for transit. 0-100. 100 by default
 family                                 | Name of a family, router belongs to
 netid                                  | Network ID, router belongs to. Main I2P is 2.
 
