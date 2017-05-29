@@ -61,6 +61,7 @@ bandwidth                              | Bandwidth limit: integer in KBps or let
 share                                  | Max % of bandwidth limit for transit. 0-100. 100 by default
 family                                 | Name of a family, router belongs to
 netid                                  | Network ID, router belongs to. Main I2P is 2.
+ntcpproxy                              | Specify proxy server for NTCP. Should be http://address:port or socks://address:port 
 
 ### Windows-specific options
 
