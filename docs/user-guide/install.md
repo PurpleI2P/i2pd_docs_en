@@ -67,7 +67,7 @@ i2pd packages are available at AUR: [release version](https://aur.archlinux.org/
 
 ## Gentoo Linux
 
-Install from Gentoo repository: [i2pd package](https://packages.gentoo.org/packages/net-misc/i2pd).
+Install from Gentoo repository: [i2pd package](https://packages.gentoo.org/packages/net-vpn/i2pd).
 
 
 FreeBSD
