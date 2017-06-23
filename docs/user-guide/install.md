@@ -16,9 +16,9 @@ Go to the [latest release page](https://github.com/PurpleI2P/i2pd/releases/lates
 
 ## Docker images
 
-You can use [prebuilt docker image](https://hub.docker.com/r/meeh/i2pd/) by PurpleI2P community member [Meeh](https://twitter.com/mikalv).
+You can use our [prebuilt docker images](https://hub.docker.com/r/purplei2p/i2pd/).
 
-    docker pull meeh/i2pd
+    docker pull purplei2p/i2pd
 
 
 ## Ubuntu
