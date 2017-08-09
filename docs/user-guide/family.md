@@ -2,13 +2,13 @@ Family configuration
 ====================
 
 Your might want to specify a family, your router belongs to.
-There are two possibilities: create new family or joing to existing.
+There are two possibilities: create new family or joining to existing.
 
 New family
 -----------
 
 You must create family self-signed certificate and key.  
-The only key type supposted is prime256v1.
+The only key type supported is prime256v1.
 Use the following list of commands:  
 
     openssl ecparam -name prime256v1 -genkey -out <your family name>.key  
@@ -20,8 +20,8 @@ Specify <your family name>.family.i2p.net for CN (Common Name) when requested.
 
 Once you are done with it place <your-family-name>.key and <your-family-name>.crt to <ip2d data>/family folder (for exmple ~/.i2pd/family).
 You should provide these two files to other members joining your family.
-If you want to register you family and let I2P network recorgnize it, create pull request for you .crt file into contrib/certificate/family.
-It will appear in i2pd and I2P next releases packages. Dont place .key file, it must be shared between you family members only.
+If you want to register you family and let I2P network recognize it, create pull request for you .crt file into contrib/certificate/family.
+It will appear in i2pd and I2P next releases packages. Don't place .key file, it must be shared between you family members only.
 
 How to join existing family
 ---------------------------

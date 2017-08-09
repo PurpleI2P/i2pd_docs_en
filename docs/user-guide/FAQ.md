@@ -44,7 +44,7 @@ I2P router to discover and fix that issue.
 First of all, synchronize system clock on your machine with Internet.
 
 If that does not help, on Linux machines, check the number of open file descriptors
-allowed to a proccess. Run:
+allowed to a process. Run:
 
     ulimit -n
 
@@ -72,7 +72,7 @@ Run i2pd for a long time, download and seed some popular torrents.
 
 ## What browser should I use to browse I2P websites?
 
-Use any opensource browser - for example, Firefox or Chromium based. Create separate profile for I2P ([firefox instructions](https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles)), try not to mix clearnet browsing with I2P. Learn how to configure your browser for better privacy and security.
+Use any open source browser - for example, Firefox or Chromium based. Create separate profile for I2P ([firefox instructions](https://support.mozilla.org/en-US/kb/profile-manager-create-and-remove-firefox-profiles)), try not to mix clearnet browsing with I2P. Learn how to configure your browser for better privacy and security.
 
 Good idea is to configure [privoxy](https://wiki.archlinux.org/index.php/Privoxy) for I2P/onion/clearnet browsing at the same time.
 
@@ -91,7 +91,7 @@ I2P and Tor has some similarities, but they are completely different in every wa
 Tor is designed to act as anonymous proxy for the regular Internet, I2P is 
 designed to create anonymous network layer with its own private resources.
 
-Tor Project was started by US military and has a long history of recieving funds
+Tor Project was started by US military and has a long history of receiving funds
 from the government, while I2P was started by community of independent civilians.
 
 Tor is highly centralized by design, while I2P is decentralized and distributed.

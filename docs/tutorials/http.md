@@ -37,4 +37,4 @@ If you wish to run your own website in Invisible Internet, follow those steps:
 
    Website is now available in Invisible Internet by visiting this address.
 
-5) (Optional) Register short and rememberable .i2p domain on [inr.i2p](http://inr.i2p).
+5) (Optional) Register short and memorable .i2p domain on [inr.i2p](http://inr.i2p).

@@ -14,11 +14,11 @@ This guide assumes:
 
 Notes on multithreading
 
-* every compontent runs in its own thread 
+* every component runs in its own thread
 
 * each component (usually) has a public function `GetService()` which can be used to obtain the `boost::asio::io_service` that it uses.
 
-* when talking between components/threads, **always** use `GetService().post()` and be mindfull of stack allocated memory.
+* when talking between components/threads, **always** use `GetService().post()` and be mindful of stack allocated memory.
 
 
 ### NetDb
@@ -83,7 +83,7 @@ If you use streaming please consider running all code within the destination thr
 
 #### Garlic.h
 
-Provides Inter-Destination routing primatives.
+Provides Inter-Destination routing primitives.
 
 ##### i2p::garlic::GarlicDestination
 
