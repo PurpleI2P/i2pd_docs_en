@@ -27,7 +27,7 @@ Generic build process looks like this (with cmake):
 	cd i2pd/
 	make
 
-After successfull build i2pd could be installed with:
+After successful build i2pd could be installed with:
 
 	make install
 

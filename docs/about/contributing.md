@@ -9,4 +9,4 @@ Coding guideline
 3. Don't reinvent a wheel. Try to find appropriate solution in std or boost. If a feature is presented in both, use std.
 4. Don't bring any additional dependency without discussion. However boost, openssl and zlib can be used in any amount.
 5. No requirements for formatting or coding style. You can do whatever you like.
-6. When you work with binary data, mind endianess. Use functions from I2PEndian.h
+6. When you work with binary data, mind endianness. Use functions from I2PEndian.h

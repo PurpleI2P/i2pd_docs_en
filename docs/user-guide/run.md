@@ -27,7 +27,7 @@ i2pd supports the following signals:
 
 ### systemd unit
 
-Some Linux packages have a systemd control unit, so it is possible to managage i2pd with it.
+Some Linux packages have a systemd control unit, so it is possible to manage i2pd with it.
 
 Start/stop i2pd:
 

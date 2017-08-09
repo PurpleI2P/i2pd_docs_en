@@ -10,7 +10,7 @@ I2PD has a unique feature that allows it to bootstrap off of any i2p router that
 * obtain a `router.info` file of a floodfill router out of band, save to `/tmp/floodfill.router.info` or some other path
 * run `i2pd --reseed.floodfill=/tmp/floodfill.router.info` and if that router is online you'll be able to bootstrap into the network from just that routers
 
-## Caviets
+## Caveats
 
 * The floodfill *must* be trustworthy, it could give you all colluding peers if it's a baddie.
 * *DO NOT* use a random floodfill unless you don't care about high security and just want to test out this feature.
