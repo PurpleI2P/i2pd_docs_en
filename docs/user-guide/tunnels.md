@@ -8,7 +8,25 @@ tunnels.conf is designed to support multiple I2P tunnels. Must be located in ``~
 
 This file uses .ini file format. It consists of multiple sections with unique name each.
 
-Section type is specified by *type* parameter  with possible values *client*, *server* or *http*. Each *client* specifies I2P client tunnel and each *server* specifies I2P server tunnel. *http* is special type of server tunnel for eepsites.
+Tunnel types
+------------
+
+Section type is specified by *type* parameter. 
+
+Available tunnel types:
+
+Type          | Description
+------------- | --------------------------------------
+client        | Client tunnel to remote I2P destination (TCP)
+server        | Generic server tunnel to setup any TCP service in I2P network 
+http          | HTTP server tunnel to setup a website in I2P
+irc           | IRC server tunnel to setup IRC server in I2P
+udpclient     | Forwards local UDP endpoint to remote I2P destination 
+udpserver     | Forwards traffic from N I2P destinations to local UDP endpoint 
+socks         | Custom Socks proxy service to use I2P with
+httpproxy     | Custom HTTP proxy service to use I2P with
+websocks      | WebSocket interface to use I2P with
+
 
 Client tunnels
 --------------
@@ -77,7 +95,7 @@ Example of http tunnel:
 Optional parameters:
 
 * hostoverride -- value to send in 'Host:' header, default: the same as *host* parameter
-* gzip         -- should we compress contents at i2p level. default: true
+* gzip         -- should we compress contents at I2P level. default: true
 
 Server/IRC tunnels
 -------------------
@@ -95,7 +113,7 @@ UDP Tunnels
 There are 2 types of UDP tunnels: `udpclient` and `udpserver`
 
 
-`udpclient` forwards 1 local udp endpoint to 1 remote i2p destination
+`udpclient` forwards 1 local UDP endpoint to 1 remote I2P destination
 
 
     [openvpn-client-simple]
@@ -104,20 +122,20 @@ There are 2 types of UDP tunnels: `udpclient` and `udpserver`
     port = 1194
 
 
-* destination -- the i2p destination of a udpserver tunnel, required parameter
-* address -- ip address to bind local udp endpoint to, defaults to `127.0.0.1`
-* port -- port to bind local udp endpoint to, required parameter
+* destination -- the I2P destination of a udpserver tunnel, required parameter
+* address -- IP address to bind local UDP endpoint to, defaults to `127.0.0.1`
+* port -- port to bind local UDP endpoint to, required parameter
 
-`udpserver` forwards traffic from N i2p destinations to 1 local udp endpoint
+`udpserver` forwards traffic from N I2P destinations to 1 local UDP endpoint
 
     [openvpn-simple-server]
     type = udpserver
     keys = openvpn.dat
     port = 1194
 
-* address -- ip address to use for local udp endpoints, defaults to `127.0.0.1`
-* host -- ip address to forward traffic to, defaults to `127.0.0.1`
-* port -- udp port to forward traffic on, required parameter
+* address -- IP address to use for local UDP endpoints, defaults to `127.0.0.1`
+* host -- IP address to forward traffic to, defaults to `127.0.0.1`
+* port -- UDP port to forward traffic on, required parameter
 
 
 Socks proxy
@@ -157,7 +175,7 @@ Other examples
     # mandatory parameters:
     # * type -- always "client"
     # * port -- local port to listen to
-    # * destination -- i2p hostname
+    # * destination -- I2P hostname
     # optional parameters (may be omitted)
     # * keys -- our identity, if unset, will be generated on every startup,
     #     if set and file missing, keys will be generated and placed to this file
@@ -173,12 +191,12 @@ Other examples
     # incoming tunnel sample, for local service
     # mandatory parameters:
     # * type -- "server" or "http"
-    # * host -- ip address of our service
+    # * host -- IP address of our service
     # * port -- port of our service
     # * keys -- file with LeaseSet of address in i2p
     # optional parameters (may be omitted)
-    # * inport -- optional, i2p service port, if unset - the same as 'port'
-    # * accesslist -- comma-separated list of i2p addresses, allowed to connect
+    # * inport -- optional, I2P service port, if unset - the same as 'port'
+    # * accesslist -- comma-separated list of I2P addresses, allowed to connect
     #    every address is b32 without '.b32.i2p' part
     [LOCALSITE]
     type = http

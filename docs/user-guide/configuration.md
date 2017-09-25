@@ -46,7 +46,7 @@ Option                                 | Description
 conf                                   | Config file (default: ~/.i2pd/i2pd.conf or /var/lib/i2pd/i2pd.conf). This parameter will be silently ignored if the specified config file does not exist.
 tunconf                                | Tunnels config file (default: ~/.i2pd/tunnels.conf or /var/lib/i2pd/tunnels.conf)
 pidfile                                | Where to write pidfile (dont write by default)
-log                                    | Logs destination: stdout, file (stdout if not set, file - otherwise, for compatibility)
+log                                    | Logs destination: stdout, file, syslog (stdout if not set, file - otherwise, for compatibility)
 logfile                                | Path to logfile (default - autodetect)
 loglevel                               | Log messages above this level (debug, info, warn, error)
 logclftime                             | Write full CLF-formatted date and time to log (default: write only time)
