@@ -113,7 +113,7 @@ socksproxy.inbound.length              | Inbound tunnels length if keys is set. 
 socksproxy.inbound.quantity            | Inbound tunnels quantity if keys is set. 5 by default  
 socksproxy.outbound.length             | Outbound tunnels length if keys is set. 3 by default  
 socksproxy.outbound.quantity           | Outbound tunnels quantity if keys is set. 5 by default  
-socksproxy.outproxy                    | Address of outproxy. requests outside i2p will go there  
+socksproxy.outproxy                    | Address of outproxy. requests outside I2P will go there  
 socksproxy.outproxyport                | Outproxy remote port  
 
 ### SAM interface

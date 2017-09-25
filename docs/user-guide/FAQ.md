@@ -76,7 +76,7 @@ Use any open source browser - for example, Firefox or Chromium based. Create sep
 
 Good idea is to configure [privoxy](https://wiki.archlinux.org/index.php/Privoxy) for I2P/onion/clearnet browsing at the same time.
 
-i2pd socks proxy has an option to pass all non-i2p traffic to Tor socks proxy. Make sure you know what are you doing!
+i2pd socks proxy has an option to pass all non-I2P traffic to Tor socks proxy. Make sure you know what are you doing!
 
 ## What is a floodfill mode?
 

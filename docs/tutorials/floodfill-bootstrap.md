@@ -1,9 +1,9 @@
 Bootstrapping without Reseed Servers
 ==============================================
 
-In some cases i2p's default reseed servers (servers used to fill i2p router's netdb with initial peers) are blocked.
+In some cases I2P's default reseed servers (servers used to fill I2P router's netdb with initial peers) are blocked.
 
-I2PD has a unique feature that allows it to bootstrap off of any i2p router that is participating in the DHT, they are called floodfill routers and have the router capacity `f` in their router info.
+i2pd has a unique feature that allows it to bootstrap off of any I2P router that is participating in the DHT, they are called floodfill routers and have the router capacity `f` in their router info.
 
 ## How To
 

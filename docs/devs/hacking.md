@@ -1,5 +1,5 @@
 
-# Hacking on I2PD
+# Hacking on i2pd
 
 This document contains notes compiled from hacking on i2pd
 
@@ -8,7 +8,7 @@ This document contains notes compiled from hacking on i2pd
 This guide assumes:
 
 * a decent understanding of c++ 
-* basic understanding of how i2p works at i2np level and up
+* basic understanding of how I2P works at i2np level and up
 
 ## general structure
 
@@ -38,7 +38,7 @@ For Pending RouterInfo/LeaseSet lookup and store requests
 
 #### ClientContext.h
 
-`i2p::client::ClientContext` spawns all destinations used by the i2p router including the shared local destination.
+`i2p::client::ClientContext` spawns all destinations used by the I2P router including the shared local destination.
 
 global singleton at `i2p::client::context` as of 2.10.1
 
@@ -48,7 +48,7 @@ global singleton at `i2p::client::context` as of 2.10.1
 
 File: Daemon.cpp
 
-`i2p::util::Daemon_Singleton_Private` subclasses implement the daemon start-up and tear-down, creates Http Webui and i2p control server.
+`i2p::util::Daemon_Singleton_Private` subclasses implement the daemon start-up and tear-down, creates Http Webui and I2P control server.
 
 
 
