@@ -55,13 +55,20 @@ host                                   | Router external IP for incoming connect
 port                                   | Port to listen for incoming connections (default: auto)
 daemon                                 | Router will go to background after start
 service                                | Router will use system folders like '/var/lib/i2pd'
-ipv6                                   | Enable communication through ipv6. false by default
+ifname                                 | Network interface to bind to
+ifname4                                | Network interface to bind to for IPv4
+ifname6                                | Network interface to bind to for IPv6
+nat                                    | If true, assume we are behind NAT. true by default
+ipv4                                   | Enable communication through IPv4. true by default
+ipv6                                   | Enable communication through IPv6. false by default
 notransit                              | Router will not accept transit tunnels, disabling transit traffic completely. false by default
 floodfill                              | Router will be floodfill. false by default
 bandwidth                              | Bandwidth limit: integer in KBps or letters: L (32), O (256), P (2048), X (>9000)
 share                                  | Max % of bandwidth limit for transit. 0-100. 100 by default
 family                                 | Name of a family, router belongs to
 netid                                  | Network ID, router belongs to. Main I2P is 2.
+ssu                                    | Enable SSU transport protocol (use UDP). true by default
+ntcp                                   | Enable NTCP transport protocol (use TCP). true by default
 ntcpproxy                              | Specify proxy server for NTCP. Should be http://address:port or socks://address:port 
 
 ### Windows-specific options
@@ -168,9 +175,11 @@ precomputation.elgamal                 | Use ElGamal precomputated tables. false
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-reseed.verify                          | Request SU3 signature verification  
-reseed.file                            | Full path to SU3 file to reseed from  
+reseed.verify                          | Verify .su3 signature. fase by default 
 reseed.urls                            | Reseed URLs, separated by comma
+reseed.file                            | Path to local .su3 file or HTTPS URL to reseed from
+reseed.zipfile                         | Path to local .zip file to reseed from
+reseed.threshold                       | Minimum number of known routers before requesting reseed. 25 by default
 
 ### Addressbook options
 
