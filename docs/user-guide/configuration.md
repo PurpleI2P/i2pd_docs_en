@@ -106,6 +106,7 @@ httpproxy.inbound.length               | Inbound tunnels length if keys is set. 
 httpproxy.inbound.quantity             | Inbound tunnels quantity if keys is set. 5 by default  
 httpproxy.outbound.length              | Outbound tunnels length if keys is set. 3 by default  
 httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. 5 by default    
+httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://false.i2p)  
 
 ### Socks proxy
 
