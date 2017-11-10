@@ -51,6 +51,7 @@ Optional parameters:
 
 * address         -- local interface tunnel binds to, '127.0.0.1' for connections from local host only, '0.0.0.0' for connections from everywhere. '127.0.0.1' by default.
 * signaturetype   -- signature type for new keys. 0 (DSA), 1 (ECDSA-P256), 7 (EDDSA). 1 by default
+* crytotype       -- crypto type for new keys. Experimental. Should be alway 0  
 * destinationport -- connect to particular port at destination. 0 by default
 
 So, with example above, if you telnet to 127.0.0.1:6668 on localhost, i2pd will connect to irc.echelon.i2p:6668
@@ -76,6 +77,7 @@ Optional parameters:
 * accesslist    -- list of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default.  
 * gzip          -- turns internal compression off if set to false. true by default.  
 * signaturetype -- means signature type for new keys. 0 - DSA, 1- ECDSA-P256, 7 -EDDSA.  1 by default.  
+* crytotype     -- crypto type for new keys. Experimental. Should be alway 0.  
 * enableuniquelocal -- if true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. true by default.  
 
 Server/http tunnels
