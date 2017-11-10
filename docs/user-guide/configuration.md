@@ -195,7 +195,9 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 limits.transittunnels                  | Override maximum number of transit tunnels. 2500 by default   
 limits.openfiles                       | Limit number of open file descriptors (0 - use system limit)  
-limits.coresize                        | Maximum size of corefile in Kb (0 - use system limit)  
+limits.coresize                        | Maximum size of corefile in Kb (0 - use system limit) 
+limits.ntcpsoft                        | Threshold to start probabalistic backoff with ntcp sessions (0 - use system limit) 
+limits.ntcphard                        | Maximum number of ntcp sessions (0 - use system limit) 
 
 ### Trust options
 
