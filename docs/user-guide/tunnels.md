@@ -44,7 +44,7 @@ Example of client tunnel:
     destination = irc.echelon.i2p
     keys = irc.dat
 
-If *keys* is empty, transient keys will be created on every restart. If keys file is not found, new keys will be created and stored into specified file.
+If *keys* is empty, transient keys will be created on every restart. If keys file is not found, new keys will be created and stored into specified file. If *keys* is equal to *transient*, new keys will be created, but not stored into a file.  
 Client tunnels might share same local destination, if keys file contains same identity.
 
 Optional parameters:
