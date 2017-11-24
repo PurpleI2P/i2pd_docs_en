@@ -168,6 +168,7 @@ I2CP parameter are common for all tunnel types and specify setting for a local d
 * outbound.quantity -- number of outbound tunnels. 5 by default
 * crypto.tagsToSend -- number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
 * explicitPeers     -- list of comma-separated b64 addresses of peers to use, default: unset
+* i2p.streaming.initialAckDelay -- milliseconds to wait before sending Ack. 200 by default
 
 
 Other examples
