@@ -50,7 +50,7 @@ Client tunnels might share same local destination, if keys file contains same id
 Optional parameters:
 
 * address         -- local interface tunnel binds to, '127.0.0.1' for connections from local host only, '0.0.0.0' for connections from everywhere. '127.0.0.1' by default.
-* signaturetype   -- signature type for new keys. 0 (DSA), 1 (ECDSA-P256), 7 (EDDSA). 1 by default
+* signaturetype   -- signature type for new keys. 0 (DSA), 1 (ECDSA-P256), 7 (EDDSA). RSA signatures (4,5,6) are not allowed and will be changed to 7. 1 by default
 * crytotype       -- crypto type for new keys. Experimental. Should be alway 0  
 * destinationport -- connect to particular port at destination. 0 by default
 
