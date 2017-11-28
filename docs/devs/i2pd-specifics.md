@@ -7,5 +7,5 @@ SESSION CREATE and DEST GENERATE support additional parameter CRYPTO_TYPE specif
 
 # I2PControl
 i2p.router.status is 1 if shared local destination is ready, and 0 if not  
-
+i2p.router.net.tunnels.successrate returns tunnel creation success rate in percents  
 # BOB
