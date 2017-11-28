@@ -37,6 +37,7 @@ pages:
         - I2CP: devs/api/I2CP.md
         - I2PControl: devs/api/I2PControl.md
         - libi2pd: devs/api/libi2pd.md
+    - i2pd-specific changes to I2P protocols: devs/i2pd-specifics.md
     - Hacking the code: devs/hacking.md
 - About:
     - Community: about/community.md
