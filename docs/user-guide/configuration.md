@@ -48,7 +48,7 @@ tunconf                                | Tunnels config file (default: ~/.i2pd/t
 pidfile                                | Where to write pidfile (dont write by default)
 log                                    | Logs destination: stdout, file, syslog (stdout if not set, file - otherwise, for compatibility)
 logfile                                | Path to logfile (default - autodetect)
-loglevel                               | Log messages above this level (debug, info, warn, error)
+loglevel                               | Log messages above this level (debug, info, warn, error, none; default - info)
 logclftime                             | Write full CLF-formatted date and time to log (default: write only time)
 datadir                                | Path to storage of i2pd data (RI, keys, peer profiles, ...)
 host                                   | Router external IP for incoming connections
@@ -99,9 +99,9 @@ Option                                 | Description
 httpproxy.enabled                      | If HTTP proxy is enabled. true by default  
 httpproxy.address                      | The address to listen on (HTTP Proxy)  
 httpproxy.port                         | The port to listen on (HTTP Proxy) 4444 by default 
-httpproxy.addresshelper                | Enable of disable address helper (jump). true by default  
-httpproxy.keys                         | optional keys file for HTTP proxy local destination  
-httpproxy.signaturetype                | signature type for new keys if keys file is set. 7 by default
+httpproxy.addresshelper                | Enable address helper (jump). true by default  
+httpproxy.keys                         | Optional keys file for HTTP proxy local destination  
+httpproxy.signaturetype                | Signature type for new keys if keys file is set. 7 by default
 httpproxy.inbound.length               | Inbound tunnels length if keys is set. 3 by default  
 httpproxy.inbound.quantity             | Inbound tunnels quantity if keys is set. 5 by default  
 httpproxy.outbound.length              | Outbound tunnels length if keys is set. 3 by default  
@@ -115,8 +115,8 @@ Option                                 | Description
 socksproxy.enabled                     | If SOCKS proxy is enabled. true by default  
 socksproxy.address                     | The address to listen on (SOCKS Proxy)  
 socksproxy.port                        | The port to listen on (SOCKS Proxy). 4447 by default  
-socksproxy.keys                        | optional keys file for SOCKS proxy local destination  
-socksproxy.signaturetype               | signature type for new keys if keys file is set. 7 by default
+socksproxy.keys                        | Optional keys file for SOCKS proxy local destination  
+socksproxy.signaturetype               | Signature type for new keys if keys file is set. 7 by default
 socksproxy.inbound.length              | Inbound tunnels length if keys is set. 3 by default  
 socksproxy.inbound.quantity            | Inbound tunnels quantity if keys is set. 5 by default  
 socksproxy.outbound.length             | Outbound tunnels length if keys is set. 3 by default  
