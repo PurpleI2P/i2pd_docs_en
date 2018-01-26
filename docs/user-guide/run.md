@@ -32,7 +32,9 @@ Some Linux packages have a systemd control unit, so it is possible to manage i2p
 Start/stop i2pd:
 
     sudo systemctl start i2pd.service
-    sudo systemctl stop i2pd.service
+    sudo systemctl stop i2pd.service --no-block
+
+Stop command initiates a graceful shutdown process, i2pd stops after finishing to route transit tunnels (maximum 10 minutes).
 
 Enable/disable i2pd to be started on bootup:
 
