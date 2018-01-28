@@ -78,7 +78,7 @@ You may also build deb-package with the following:
 
 	sudo apt-get install fakeroot devscripts dh-apparmor
 	cd i2pd
-	debuild --no-tgz-check -us -uc -ui -b
+	debuild --no-tgz-check -us -uc -b
 
 Fedora/Centos
 -------------
