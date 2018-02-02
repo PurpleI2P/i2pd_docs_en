@@ -8,7 +8,7 @@ Pre-requisites
 
 You need to install Android SDK, NDK  and QT with android support.
 
-- [SDK](https://developer.android.com/studio/index.html) (choose command line tools only)
+- [SDK](https://developer.android.com/studio/index.html) (choose command line tools only, and make sure you installed "Android SDK Build-Tools")
 - [NDK](https://developer.android.com/ndk/downloads/index.html)
 - [QT](https://www.qt.io/download-open-source/)(for QT only).
   Choose one for your platform for android. For example QT 5.6 under Linux would be [this file](http://download.qt.io/official_releases/qt/5.6/5.6.1-1/qt-opensource-linux-x64-android-5.6.1-1.run)
