@@ -44,6 +44,8 @@ Building the app with QT
 Building the app without QT
 ---------------------------
 
+The steps below assume you use older Android NDK (i.e. NDK r13b).
+
 - Change line `I2PD_LIBS_PATH` in `android/jni/Application.mk` to an actual path where you put the dependencies to
 - Run `ndk-build -j4` from android folder
 - Create or edit file 'local.properties'. Place 'sdk.dir=<path to SDK>' and 'ndk.dir=<path to NDK>'
