@@ -43,7 +43,7 @@ Add repository to /etc/apt/sources.list:
     # Debian 7
     deb http://repo.lngserv.ru/debian wheezy main
     deb-src http://repo.lngserv.ru/debian wheezy main
-    # Debain 8
+    # Debian 8
     deb http://repo.lngserv.ru/debian jessie main
     deb-src http://repo.lngserv.ru/debian jessie main
 
