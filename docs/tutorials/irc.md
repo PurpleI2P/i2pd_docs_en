@@ -16,9 +16,9 @@ To connect to IRC server at *irc.ilita.i2p:6667*, add this to ~/.i2pd/tunnels.co
     type = client
     address = 127.0.0.1
     port = 6669 
-    destination = walker.i2p
+    destination = irc.ilita.i2p
     destinationport = 6667
-    #keys = walker-keys.dat
+    #keys = irc-client-key.dat
 
 Restart i2pd, then connect to irc://127.0.0.1:6669 with your IRC client.
 
