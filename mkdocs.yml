@@ -19,6 +19,7 @@ pages:
 - How-To / Tutorials:
     - Anonymous websites: tutorials/http.md
     - Anonymous IRC chats: tutorials/irc.md
+    - Decentralized instant messenger (XMPP aka Jabber): tutorials/xmpp.md
     - Filesharing: tutorials/filesharing.md
     - Using RetroShare with i2pd: tutorials/retroshare.md
     - Bootstrapping without Reseed Servers: tutorials/floodfill-bootstrap.md
