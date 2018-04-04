@@ -17,14 +17,12 @@ and install
 
 ### With Qt Creator
 
-* Run Qt Creator
-* Open project git/i2pd/qt/i2pd_qt/i2pd_qt.pro
-* Set up mingw32 kit;
-* 
-
 TBD
 
 ### Without Qt Creator
+
+ /c/Qt/Qt5.10.1/5.10.1/mingw53_32/bin/
+
 
 TBD
 
