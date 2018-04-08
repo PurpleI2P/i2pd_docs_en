@@ -29,7 +29,7 @@ pacman -S mingw-w64-i686-qt-creator mingw-w64-x86_64-qt-creator
 
 TBD
 
-## Under Ubuntu TBD LTS
+## Under Ubuntu
 
 ### With Qt Creator
 
@@ -37,4 +37,12 @@ TBD
 
 ### Without Qt Creator
 
-TBD
+```
+sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qt5-default libqt5gui5 git
+mkdir git
+cd git
+git clone https://github.com/PurpleI2P/i2pd.git
+cd i2pd/qt/i2pd_qt
+qmake
+make USE_UPNP=yes
+```
