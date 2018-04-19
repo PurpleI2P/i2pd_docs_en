@@ -25,7 +25,7 @@ You can use our [prebuilt docker images](https://hub.docker.com/r/purplei2p/i2pd
 
 You can install binary packages from the [latest release page](https://github.com/PurpleI2P/i2pd/releases/latest). 
 
-Alternatively, you can use [PPA repository](https://launchpad.net/~purplei2p/+archive/ubuntu/i2pd) run by PurpleI2P community member [R4SAS](https://twitter.com/i2pr4sas).
+Alternatively, you can use [PPA repository](https://launchpad.net/~purplei2p/+archive/ubuntu/i2pd) or repository provided [below](#debian), run by PurpleI2P community member [R4SAS](https://twitter.com/i2pr4sas).
 
     sudo add-apt-repository ppa:purplei2p/i2pd
     sudo apt-get update
@@ -38,26 +38,20 @@ Look for Debian packages at the [latest release page](https://github.com/PurpleI
 
 Alternatively, you can install i2pd by using repository run by PurpleI2P community member [R4SAS](https://twitter.com/i2pr4sas).
 
-Add repository to /etc/apt/sources.list:
+Install apt-transport-https package
 
-    # Debian 7
-    deb http://repo.lngserv.ru/debian wheezy main
-    deb-src http://repo.lngserv.ru/debian wheezy main
-    # Debian 8
-    deb http://repo.lngserv.ru/debian jessie main
-    deb-src http://repo.lngserv.ru/debian jessie main
+    sudo apt-get install apt-transport-https
 
-Import key that is used to sign the release:
+Automaticly add repository
 
-    gpg --keyserver keys.gnupg.net --recv-keys 98EBCFE2
-    gpg -a --export 98EBCFE2 | sudo apt-key add -
+    wget -q -O - https://repo.i2pd.xyz/.help/add_repo | sudo bash -s -
 
 After that you can install i2pd as any other software package:
 
     apt-get update
     apt-get install i2pd
 
-Look for more information about Debian repository [here](https://repo.lngserv.ru/.help/readme.txt).
+Look for more information about Debian repository [here](https://repo.i2pd.xyz/.help/readme.txt).
 
 ## Fedora/CentOS
 
