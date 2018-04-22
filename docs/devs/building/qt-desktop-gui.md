@@ -23,7 +23,7 @@ TBD
 
 ### Without Qt Creator
 
-Under MSYS2 mingw32, run:
+All commands should be run under MSYS2 mingw32.
 
 ```
 pacman -Suy git make tar mingw-w64-i686-gcc mingw-w64-i686-boost mingw-w64-i686-libpng mingw-w64-i686-openssl mingw-w64-i686-zlib
