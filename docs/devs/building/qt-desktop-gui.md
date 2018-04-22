@@ -35,7 +35,7 @@ git clone https://github.com/PurpleI2P/i2pd.git
 cd i2pd
 git checkout openssl
 export MINGW='mingw32'
-export PATH=/$MINGW/bin:/usr/bin
+export PATH=/$MINGW/bin:/usr/bin:/mingw32/qt5-static/bin
 cd qt/i2pd_qt
 qmake
 make USE_UPNP=yes
