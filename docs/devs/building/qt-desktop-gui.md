@@ -23,9 +23,12 @@ TBD
 
 ### Without Qt Creator
 
-/c/Qt/Qt5.10.1/5.10.1/mingw53_32/bin/
- 
-pacman -S mingw-w64-i686-qt-creator mingw-w64-x86_64-qt-creator
+Under MSYS2 mingw32, run:
+
+```
+pacman -Suy git make tar mingw-w64-i686-gcc mingw-w64-i686-boost mingw-w64-i686-libpng mingw-w64-i686-openssl mingw-w64-i686-zlib
+pacman -Suy mingw-w64-i686-qt5-static
+```
 
 TBD
 
