@@ -26,9 +26,9 @@ TBD
 All commands should be run under MSYS2 mingw32.
 
 ```
-pacman -Suy git make tar mingw-w64-i686-gcc mingw-w64-i686-boost mingw-w64-i686-libpng mingw-w64-i686-openssl mingw-w64-i686-zlib
-pacman -Suy mingw-w64-i686-qt5-static
-pacman -Suy openssl-devel mingw-w64-i686-miniupnpc
+pacman -S git make tar mingw-w64-i686-gcc mingw-w64-i686-boost mingw-w64-i686-libpng mingw-w64-i686-openssl mingw-w64-i686-zlib
+pacman -S mingw-w64-i686-qt5-static
+pacman -S openssl-devel mingw-w64-i686-miniupnpc
 mkdir -p /c/dev/
 cd /c/dev/
 git clone https://github.com/PurpleI2P/i2pd.git
@@ -45,7 +45,7 @@ make USE_UPNP=yes
 
 It is important to restrict PATH as described above. If you have Strawberry Perl and/or Mercurial installed, it will pick up gcc & openssl from the wrong places.
 
-TBD
+If you are an Arch Linux user, refrain from updating system with pacman -Syu. Always update runtime separately as described on the home page, otherwise you might end up with DLLs incompatibility problems.
 
 ## Under Ubuntu
 
