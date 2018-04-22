@@ -28,6 +28,11 @@ All commands should be run under MSYS2 mingw32.
 ```
 pacman -Suy git make tar mingw-w64-i686-gcc mingw-w64-i686-boost mingw-w64-i686-libpng mingw-w64-i686-openssl mingw-w64-i686-zlib
 pacman -Suy mingw-w64-i686-qt5-static
+mkdir -p /c/dev/
+cd /c/dev/
+git clone https://github.com/PurpleI2P/i2pd.git
+cd i2pd
+git checkout openssl
 ```
 
 TBD
