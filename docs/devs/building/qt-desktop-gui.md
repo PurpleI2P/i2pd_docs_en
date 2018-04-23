@@ -30,7 +30,7 @@ make USE_UPNP=yes
 
 It is important to restrict PATH as described above. If you have Strawberry Perl and/or Mercurial installed, it will pick up gcc & openssl from the wrong places.
 
-If you are an Arch Linux user, refrain from updating system with pacman -Syu. Always update runtime separately as described on the home page, otherwise you might end up with DLLs incompatibility problems.
+If you are an Arch Linux user, refrain from updating system with `pacman -Syu`. Always update runtime separately as described on the home page, otherwise you might end up with DLLs incompatibility problems.
 
 ## Under Ubuntu
 
