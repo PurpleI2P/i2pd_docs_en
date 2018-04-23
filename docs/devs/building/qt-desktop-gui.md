@@ -6,28 +6,31 @@
 
 TBD
 
-* Run Git Bash and then:
+### Without Qt Creator
+
+All commands should be run under MSYS2 mingw32.
 
 ```
-mkdir git
-cd git
+pacman -S git make tar mingw-w64-i686-gcc mingw-w64-i686-boost mingw-w64-i686-libpng mingw-w64-i686-openssl mingw-w64-i686-zlib
+pacman -S mingw-w64-i686-qt5-static
+pacman -S openssl-devel mingw-w64-i686-miniupnpc
+mkdir -p /c/dev/
+cd /c/dev/
 git clone https://github.com/PurpleI2P/i2pd.git
 cd i2pd
 git checkout openssl
+export MINGW='mingw32'
+export PATH=/$MINGW/bin:/usr/bin:/mingw32/qt5-static/bin
+cd qt/i2pd_qt
+qmake
+make USE_UPNP=yes
 ```
 
-* Download [qt-opensource-windows-x86-5.10.1.exe](http://download.qt.io/official_releases/qt/5.10/5.10.1/qt-opensource-windows-x86-5.10.1.exe)
-and install
+#### Caveats
 
-TBD
+It is important to restrict PATH as described above. If you have Strawberry Perl and/or Mercurial installed, it will pick up gcc & openssl from the wrong places.
 
-### Without Qt Creator
-
-/c/Qt/Qt5.10.1/5.10.1/mingw53_32/bin/
- 
-pacman -S mingw-w64-i686-qt-creator mingw-w64-x86_64-qt-creator
-
-TBD
+If you are an Arch Linux user, refrain from updating system with `pacman -Syu`. Always update runtime separately as described on the home page, otherwise you might end up with DLLs incompatibility problems.
 
 ## Under Ubuntu
 
