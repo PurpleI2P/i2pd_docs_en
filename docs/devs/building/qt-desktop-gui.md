@@ -6,21 +6,6 @@
 
 TBD
 
-* Run Git Bash and then:
-
-```
-mkdir git
-cd git
-git clone https://github.com/PurpleI2P/i2pd.git
-cd i2pd
-git checkout openssl
-```
-
-* Download [qt-opensource-windows-x86-5.10.1.exe](http://download.qt.io/official_releases/qt/5.10/5.10.1/qt-opensource-windows-x86-5.10.1.exe)
-and install
-
-TBD
-
 ### Without Qt Creator
 
 All commands should be run under MSYS2 mingw32.
