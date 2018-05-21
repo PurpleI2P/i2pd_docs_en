@@ -81,8 +81,14 @@ i2pd packages are available at AUR: [release version](https://aur.archlinux.org/
 
 ## Gentoo Linux
 
-Install from Gentoo repository: [i2pd package](https://packages.gentoo.org/packages/net-vpn/i2pd).
+i2pd [has a working ebuild in the main gentoo repository](https://packages.gentoo.org/packages/net-vpn/i2pd). As of May 2018, the ebuild 
+is still listed as "unstable", and thus will request an exception in your package.keywords if you are using gentoo under the "stable" branch.
+To install i2pd, enter the command:
+    
+    emerge --ask net-vpn/i2pd
 
+If you use gcc to compile packages and would like to enable cmake's hardening features, use the i2p-hardening flag (recommended).
+If you intend to use the websocket server, enable the websocket flag.
 
 FreeBSD
 -------
