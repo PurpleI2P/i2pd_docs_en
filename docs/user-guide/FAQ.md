@@ -4,10 +4,10 @@ I2P (Invisible Internet Protocol) is a universal anonymous network layer.
 All communications over I2P are anonymous and end-to-end encrypted; 
 participants don't reveal their real IP addresses. 
 
-The I2Pd client is an implemmentation of the I2P protocol in C++, used to 
-transmit data via I2P. i2pd is used for anonymous peer-to-peer applications 
+i2pd is an implemmentation of the I2P protocol in C++.
+i2pd is used to facilitate anonymous peer-to-peer applications 
 (filesharing, cryptocurrencies) and anonymous client-server applications 
-(websites, instant messengers, chat-servers).
+(websites, instant messengers, chat-servers), all using I2P.
 
 I2P allows people from all around the world to communicate and share information
 without restrictions.
