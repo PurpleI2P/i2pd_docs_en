@@ -1,17 +1,18 @@
 i2pd configuration
 ==================
 
-i2pd can be configured via command-line arguments and config files. 
-Options are the same, for example, running i2pd with argument `--port=10123` and setting
-option `port = 10123` in config file will have same effect.
+i2pd can be configured via either command-line arguments or config files. 
+Modifying `i2pd.conf` is just a way of passing command line arguments to i2pd at boot; 
+for example, running i2pd with argument `--port=10123` and setting option `port = 10123` in config file will have 
+the same effect.
 
-There are two separate config files `i2pd.conf` and `tunnels.conf`. `i2pd.conf` is main configuration file, where
-you configure all options. `tunnels.conf` is I2P tunnel configuration file, where you configure I2P hidden services
-and client tunnels for you needs. `tunnels.conf` options are documented [here](tunnels.md).
+There are two separate config files: `i2pd.conf` and `tunnels.conf`. `i2pd.conf` is the main configuration file, where
+you configure all options. `tunnels.conf` is the tunnel configuration file, where you configure I2P hidden services
+and client tunnels. the `tunnels.conf` options are documented [here](tunnels.md).
 
-INI-like, syntax is the following : <key> = <value>.
-Comments are "#", not ";" as you may expect. See [boost ticket](https://svn.boost.org/trac/boost/ticket/808)
-All command-line parameters are allowed as keys, but note for those which contains dot (.).
+`i2pd.conf` accets INI-like syntax, such as the following : <key> = <value>.
+Comments are "#", not ";" as you might expect. See [boost ticket](https://svn.boost.org/trac/boost/ticket/808)
+All command-line parameters are allowed as keys, but for those which contains dot (.), there is a special syntax.
 
 For example:
 
@@ -28,7 +29,7 @@ i2pd.conf:
     [sam]
     enabled = true
 
-See also commented config with examples of all options in ``contrib/i2pd.conf``.
+You are also encouraged to see the commented config with examples of all options in ``contrib/i2pd.conf``.
 
 Options specified on the command line take precedence over those in the config file.
 If you are upgrading your very old router (< 2.3.0) see also [this](config_opts_after_2.3.0.md) page.
@@ -229,6 +230,7 @@ exploratory.outbound.quantity          | Exploratory outbound tunnels length. 3 
 Local addressbook
 -----------------
 
-There is also a special addressbook config file in working directory `addressbook/local.csv`.
-It is used to map long I2P destinations to short, human readable domain names. The syntax is csv.
+There is also a special addressbook config file in the working directory at `addressbook/local.csv`.
+It is used to map long I2P destinations to short, human readable domain names. The syntax is csv and
+it can be modified manually if the user wishes.
 
