@@ -4,14 +4,15 @@ I2P tunnel configuration
 Overview
 --------
 
-tunnels.conf is designed to support multiple I2P tunnels. Must be located in ``~/.i2pd`` (per-user) or ``/var/lib/i2pd`` (system-wide).
+`tunnels.conf` is designed to support multiple I2P tunnels. The configuration file must be located in 
+``~/.i2pd`` (per-user) or ``/var/lib/i2pd`` (system-wide).
 
-This file uses .ini file format. It consists of multiple sections with unique name each.
+This file uses the .ini file format. It consists of multiple sections each with a unique name.
 
 Tunnel types
 ------------
 
-Section type is specified by *type* parameter. 
+Section type is specified by the *type* parameter. 
 
 Available tunnel types:
 
@@ -33,9 +34,9 @@ Client tunnels
 
 Mnemonic: we can connect to someone as client
 
-Must contain few mandatory parameters, some optional parameters might be also presented.
+Each client tunnel must contain a few mandatory parameters, along with some optional ones.
 
-Example of client tunnel:
+Here is an example of a client tunnel:
 
     [irc-out]
     type = client
@@ -44,8 +45,9 @@ Example of client tunnel:
     destination = irc.echelon.i2p
     keys = irc.dat
 
-If *keys* is empty, transient keys will be created on every restart. If keys file is not found, new keys will be created and stored into specified file. If *keys* is equal to *transient*, new keys will be created, but not stored into a file.  
-Client tunnels might share same local destination, if keys file contains same identity.
+If *keys* is empty, transient keys will be created on every restart. If the keys file is not found, new keys will be created and stored into the specified file. 
+If *keys* is set to *transient*, new keys will be created, but not stored into a file.  
+Client tunnels might share the same local destination, if the keys file contains the same identity.
 
 Optional parameters:
 
@@ -54,14 +56,14 @@ Optional parameters:
 * crytotype       -- crypto type for new keys. Experimental. Should be alway 0  
 * destinationport -- connect to particular port at destination. 0 by default
 
-So, with example above, if you telnet to 127.0.0.1:6668 on localhost, i2pd will connect to irc.echelon.i2p:6668
+So, given the example above, if you connected to to 127.0.0.1:6668 on localhost, i2pd would tunnel that to irc.echelon.i2p:6668
 
 Server/generic tunnels
 ----------------------
 
 Mnemonic: we serving some service to others in network
 
-Example of server tunnel:
+Here is an example of a server tunnel:
 
     [smtp-in]
     type = server
@@ -69,7 +71,8 @@ Example of server tunnel:
     port = 25
     keys = smtp-in.dat
 
-*keys* must be presented, LeaseSet of address from keys file will be published. Server tunnel must use its own local destination.
+The file in *keys* must be present, and the LeaseSet of address from keys file will be published. 
+The server tunnel must use its own local destination such as host 127.0.0.1 and port 80.
 
 Optional parameters:
 
@@ -83,10 +86,10 @@ Optional parameters:
 Server/http tunnels
 -------------------
 
-*http* tunnel works same way as server tunnel, but replace 'Host:' field in HTTP header to address provided in configuration.
-Also resolves it if necessary.
+*http* tunnels are configured just like regular server tunnels, except the the 'Host:' field 
+must be assigned to the address provided in configuration. i2pd will also resolve it if necessary.
 
-Example of http tunnel:
+Here's an example of an http tunnel:
 
     [http-in]
     type = http
@@ -143,9 +146,9 @@ There are 2 types of UDP tunnels: `udpclient` and `udpserver`
 Socks proxy
 -----------
 
-Socks proxy interface can be defined in ``tunnels.conf``.
+The SOCKS proxy interface can be defined in ``tunnels.conf``.
 
-Example of Socks proxy:
+Here's an example of a Socks proxy:
 
     [alt-socks]
     type = socks
@@ -160,7 +163,7 @@ Example of Socks proxy:
 I2CP parameters
 ---------------
 
-I2CP parameter are common for all tunnel types and specify setting for a local destination.
+These I2CP parameter are common for all tunnel types and specify settings for a local destination.
 
 * inbound.length    -- number of hops of an inbound tunnel. 3 by default;  lower value is faster but dangerous
 * outbound.length   -- number of hops of an outbound tunnel. 3 by default; lower value is faster but dangerous
