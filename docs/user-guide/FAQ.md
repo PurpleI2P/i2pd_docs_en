@@ -1,13 +1,13 @@
 ## What is I2P?
 
 I2P (Invisible Internet Protocol) is a universal anonymous network layer. 
-All communications over I2P are anonymous and end-to-end encrypted; 
-participants don't reveal their real IP addresses. 
+All communications over I2P are anonymous and end-to-end encrypted, participants
+don't reveal their real IP addresses. 
 
-i2pd is an implemmentation of the I2P protocol in C++.
-i2pd is used to facilitate anonymous peer-to-peer applications 
-(filesharing, cryptocurrencies) and anonymous client-server applications 
-(websites, instant messengers, chat-servers), all using I2P.
+I2P client is a software used for building and using anonymous I2P 
+networks. Such networks are commonly used for anonymous peer-to-peer 
+applications (filesharing, cryptocurrencies) and anonymous client-server 
+applications (websites, instant messengers, chat-servers).
 
 I2P allows people from all around the world to communicate and share information
 without restrictions.
@@ -24,9 +24,9 @@ While [Java I2P](https://geti2p.net) and i2pd are both clients for the I2P netwo
 * i2pd can be compiled everywhere gcc or clang presented (including Raspberry and routers).
 * i2pd has some major optimizations for faster cryptography which leads to less consumption of processor time and energy.
 
-## Why is the i2p network so slow and unstable sometimes?
+## Why is the I2P network so slow and unstable sometimes?
 
-By design, in the i2p network, your connection gets encrypted through a chain of 6 
+By design, in the I2P network, your connection gets encrypted through a chain of 6 
 random computers in the way to it's final destination. If one of those computers
 is shut down, or experiences connectivity problems, it can take some time for your
 I2P router to discover and fix that issue. 
@@ -52,7 +52,7 @@ Contact developers with IRC or create an issue on GitHub.
 
 Average values are 15% - 40%. Larger is better.
 
-## Is there a place I can use to find running i2p websites?
+## Is there a place I can use to find running I2P websites?
 
 Sure, there is a list [here](http://identiguy.i2p.xyz/)
 
@@ -81,14 +81,14 @@ to share.
 
 I2P and Tor have some similarities, but they are completely different technologies.
 
-Tor is designed to act as an anonymous proxy for the regular Internet, and I2P is 
-a network layer wherein all network participants adhere to a protocol that protects
-the anonymity and privacy of all communications between users.
+Tor is designed to act as an anonymous proxy for the regular Internet, and I2P 
+is specifically designed to make a virtual anonymous network for hidden services 
+and p2p applications. 
 
 Tor Project was started by the US military and receives most of its funds
 from the government, while I2P was started by a community of independent civilians.
 
-Tor is highly centralized by design, while I2P is less so.
+Tor is highly centralized by design, while I2P is designed to be decentralized and distributed.
 
 ## Can use i2pd as a proxy for regular Internet?
 
