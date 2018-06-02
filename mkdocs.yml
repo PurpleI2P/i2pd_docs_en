@@ -31,6 +31,7 @@ pages:
         - Android: devs/building/android.md
         - Cross-platform: devs/building/cross.md
         - iOS: devs/building/ios.md
+        - GUI application: devs/building/qt-desktop-gui.md
     - API:
         - Choosing API for your project: devs/api/index.md
         - SAM: devs/api/SAM.md
