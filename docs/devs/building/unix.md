@@ -34,7 +34,7 @@ After successful build i2pd could be installed with:
 CMake Options
 -------------
 
-Available CMake options(each option has a form of `<key>=<value>`, for more information see `man 1 cmake`):
+Available CMake options(each option has a form of `-D<key>=<value>`, for more information see `man 1 cmake`):
 
 * `CMAKE_BUILD_TYPE` build profile (Debug/Release)
 * `WITH_BINARY`      build i2pd itself (default: ON)
