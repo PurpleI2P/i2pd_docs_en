@@ -45,7 +45,7 @@ To enable/disable autostart of i2pd upon bootup:
 Recommended way to run i2pd built from source
 ---------------------------------------------
 
-The following commands display the recommended way to build i2pd from source, without a package manager. Installing i2pd this 
+The following commands display the recommended way to run i2pd built from source, without a package manager. Installing i2pd this 
 way will ensure all i2pd-related files are stored at `$HOME/dist`.
 
     mkdir $HOME/dist
