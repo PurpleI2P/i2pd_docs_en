@@ -36,7 +36,7 @@ CMake Options
 
 Available CMake options(each option has a form of `-D<key>=<value>`, for more information see `man 1 cmake`):
 
-* `CMAKE_BUILD_TYPE` build profile (Debug/Release)
+* `CMAKE_BUILD_TYPE` build profile (Debug/Release, default: no optimization or debug symbols)
 * `WITH_BINARY`      build i2pd itself (default: ON)
 * `WITH_LIBRARY`     build libi2pd (default: ON)
 * `WITH_STATIC`      build static versions of library and i2pd binary (default: OFF)
