@@ -34,18 +34,22 @@ After successful build i2pd could be installed with:
 CMake Options
 -------------
 
-Available CMake options(each option has a form of `<key>=<value>`, for more information see `man 1 cmake`):
+Available CMake options(each option has a form of `-D<key>=<value>`, for more information see `man 1 cmake`):
 
-* `CMAKE_BUILD_TYPE` build profile (Debug/Release)
-* `WITH_BINARY`      build i2pd itself
-* `WITH_LIBRARY`     build libi2pd
-* `WITH_STATIC`      build static versions of library and i2pd binary
-* `WITH_UPNP`        build with UPnP support (requires libminiupnp)
-* `WITH_AESNI`       build with AES-NI support (ON/OFF)
-* `WITH_HARDENING`   enable hardening features (ON/OFF) (gcc only)
-* `WITH_PCH`         use pre-compiled header (experimental, speeds up build)
-* `WITH_I2LUA`       used when building i2lua
-* `WITH_WEBSOCKETS`  enable websocket server
+* `CMAKE_BUILD_TYPE` build profile (Debug/Release, default: no optimization or debug symbols)
+* `WITH_BINARY`      build i2pd itself (default: ON)
+* `WITH_LIBRARY`     build libi2pd (default: ON)
+* `WITH_STATIC`      build static versions of library and i2pd binary (default: OFF)
+* `WITH_UPNP`        build with UPnP support (requires libminiupnp, default: OFF)
+* `WITH_AESNI`       build with AES-NI support (default: OFF)
+* `WITH_HARDENING`   enable hardening features (gcc only, default: OFF)
+* `WITH_PCH`         use pre-compiled header (experimental, speeds up build, default: OFF)
+* `WITH_I2LUA`       used when building i2lua (default: OFF)
+* `WITH_WEBSOCKETS`  enable websocket server (default: OFF)
+* `WITH_AVX`         build with AVX support (default: OFF)
+* `WITH_MESHNET`     build for cjdns test network (default: OFF)
+* `WITH_ADDRSANITIZER`   build with Address Sanitizer (default: OFF)
+* `WITH_THREADSANITIZER` build with Thread Sanitizer (default: OFF)
 
 
 Also there is `-L` flag for CMake that could be used to list current cached options:
