@@ -46,6 +46,10 @@ Available CMake options(each option has a form of `-D<key>=<value>`, for more in
 * `WITH_PCH`         use pre-compiled header (experimental, speeds up build, default: OFF)
 * `WITH_I2LUA`       used when building i2lua (default: OFF)
 * `WITH_WEBSOCKETS`  enable websocket server (default: OFF)
+* `WITH_AVX`         build with AVX support (default: OFF)
+* `WITH_MESHNET`     build for cjdns test network (default: OFF)
+* `WITH_ADDRSANITIZER`   build with Address Sanitizer (default: OFF)
+* `WITH_THREADSANITIZER` build with Thread Sanitizer (default: OFF)
 
 
 Also there is `-L` flag for CMake that could be used to list current cached options:
