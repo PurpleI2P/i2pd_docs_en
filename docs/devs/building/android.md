@@ -13,7 +13,7 @@ You need to install Android SDK, NDK  and QT with android support.
 - [QT](https://www.qt.io/download-open-source/)(for QT only).
   Choose one for your platform for android. For example QT 5.6 under Linux would be [this file](http://download.qt.io/official_releases/qt/5.6/5.6.1-1/qt-opensource-linux-x64-android-5.6.1-1.run)
 
-You also need Java JDK and Ant.
+You also need Java JDK (prefer Oracle Java 8), Ant and [latest Gradle](https://gradle.org/releases/) (min version 3.4).
 
 QT-Creator (for QT only)
 ------------------------
@@ -24,7 +24,7 @@ If everything is correct you will see two set available:
 Android for armeabi-v7a (gcc, qt) and Android for x86 (gcc, qt).
 
 Dependencies
---------------
+------------
 
 Take following pre-compiled binaries from PurpleI2P's repositories.
 
@@ -32,6 +32,14 @@ Take following pre-compiled binaries from PurpleI2P's repositories.
 	git clone https://github.com/PurpleI2P/OpenSSL-for-Android-Prebuilt.git
 	git clone https://github.com/PurpleI2P/MiniUPnP-for-Android-Prebuilt.git
 	git clone https://github.com/PurpleI2P/android-ifaddrs.git
+
+Prepare Android SDK and install required packages
+
+	mkdir android-sdk
+	cd android-sdk
+	wget <link to latest SDK from Android site>
+	unzip sdk-tools-XXXXXX-XXXXXX.zip
+	./tools/bin/sdkmanager "build-tools;25.0.3" "platforms;android-14" "platforms;android-25" "platform-tools"
 
 Building the app with QT
 ------------------------
@@ -45,21 +53,44 @@ Building the app without QT
 ---------------------------
 
 - Change line `I2PD_LIBS_PATH` in `android/jni/Application.mk` to an actual path where you put the dependencies to
-- Run `ndk-build -j4` from android folder
 - Create or edit file 'local.properties'. Place 'sdk.dir=<path to SDK>' and 'ndk.dir=<path to NDK>'
-- Run `ant clean debug`
+- Run `gradle clean assembleDebug` from `android` folder
+- You will find an .apk file in `android/build/outputs/apk` folder
 
 Creating release .apk
-----------------------
+---------------------
 
 In order to create release .apk you must obtain a Java keystore file(.jks). Either you have in already, or you can generate it yourself using keytool, or from one of you existing well-know certificates.
 For example, i2pd release are signed with this [certificate](https://github.com/PurpleI2P/i2pd/blob/openssl/contrib/certificates/router/orignal_at_mail.i2p.crt).
 
-Create file 'ant.properties':
+Change file 'build.gradle':
 
-	key.store='path to keystore file'
-	key.alias='alias name'
-	key.store.password='keystore password'
-	key.alias.password='alias password'
+```patch
+--- a/android/build.gradle
++++ b/android/build.gradle
+@@ -46,11 +46,17 @@ android {
+             keyAlias "i2pdapk"
+             keyPassword "android"
+         }
++        release {
++            storeFile file("path to .jks")
++            storePassword "Store Password"
++            keyAlias "alias"
++            keyPassword "Key Passwordq"
++        }
+     }
+     buildTypes {
+         release {
+             minifyEnabled true
+-            signingConfig signingConfigs.orignal
++            signingConfig signingConfigs.release
+```
 
-Run `ant clean release`
+Run `gradle clean assembleRelease`
+
+Building executable android binary
+------------------------------
+
+- Change line `I2PD_LIBS_PATH` in `android_binary_only/jni/Application.mk` to an actual path where you put the dependencies to
+- Run `ndk-build -j <threads>` from `android_binary_only` folder
+- You will find an `i2pd` executable in `android_binary_only/libs/armeabi-v7a` folder
