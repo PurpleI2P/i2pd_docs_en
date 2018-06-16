@@ -72,6 +72,10 @@ ssu                                    | Enable SSU transport protocol (use UDP)
 ntcp                                   | Enable NTCP transport protocol (use TCP). true by default
 ntcpproxy                              | Specify proxy server for NTCP. Should be http://address:port or socks://address:port 
 
+#### Notes
+
+`datadir` and `service` options are only used as arguments for i2pd, these options have no effect when set in `i2pd.conf`.
+
 ### Windows-specific options
 
 Option                                 | Description
