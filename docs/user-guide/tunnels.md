@@ -53,7 +53,7 @@ Optional parameters:
 
 * address         -- local interface tunnel binds to, '127.0.0.1' for connections from local host only, '0.0.0.0' for connections from everywhere. '127.0.0.1' by default.
 * signaturetype   -- signature type for new keys. 0 (DSA), 1 (ECDSA-P256), 7 (EDDSA). RSA signatures (4,5,6) are not allowed and will be changed to 7. 1 by default
-* crytotype       -- crypto type for new keys. Experimental. Should be alway 0  
+* cryptotype       -- crypto type for new keys. Experimental. Should be always 0
 * destinationport -- connect to particular port at destination. 0 by default
 
 So, given the example above, if you connected to to 127.0.0.1:6668 on localhost, i2pd would tunnel that to irc.echelon.i2p:6668
@@ -80,13 +80,13 @@ Optional parameters:
 * accesslist    -- list of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default.  
 * gzip          -- turns internal compression off if set to false. true by default.  
 * signaturetype -- means signature type for new keys. 0 - DSA, 1- ECDSA-P256, 7 -EDDSA.  1 by default.  
-* crytotype     -- crypto type for new keys. Experimental. Should be alway 0.  
+* cryptotype     -- crypto type for new keys. Experimental. Should be always 0.
 * enableuniquelocal -- if true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. true by default.  
 
 Server/http tunnels
 -------------------
 
-*http* tunnels are configured just like regular server tunnels, except the the 'Host:' field 
+*http* tunnels are configured just like regular server tunnels, except the 'Host:' field
 must be assigned to the address provided in configuration. i2pd will also resolve it if necessary.
 
 Here's an example of an http tunnel:
