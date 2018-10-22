@@ -96,6 +96,8 @@ http.port                              | The port to listen on (HTTP server) 707
 http.auth                              | Enable basic HTTP auth for webconsole
 http.user                              | Username for basic auth (default: i2pd)
 http.pass                              | Password for basic auth (default: random, see logs)
+http.strictheaders                     | Enable strict host checking on WebUI. true by default
+http.hostname                          | Expected hostname for WebUI (default: localhost)
 
 ### HTTP proxy
 
