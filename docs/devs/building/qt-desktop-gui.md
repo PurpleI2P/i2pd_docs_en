@@ -49,3 +49,12 @@ cd i2pd/qt/i2pd_qt
 qmake
 make USE_UPNP=yes
 ```
+
+## Building a Flatpak package
+
+```
+sudo apt install flatpak flatpak-builder
+flatpak --user install org.kde.Sdk/x86_64/5.11     # required SDK version might be higher, recheck the manifest 
+git clone https://github.com/flathub/website.i2pd.i2pd && cd website.i2pd.i2pd 
+flatpak-builder --user --install --force-clean i2pd_build_dir website.i2pd.i2pd.json
+```
