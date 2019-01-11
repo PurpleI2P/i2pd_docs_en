@@ -233,6 +233,14 @@ exploratory.inbound.quantity           | Exploratory inbound tunnels quantity. 3
 exploratory.outbound.length            | Exploratory outbound tunnels length. 2 by default
 exploratory.outbound.quantity          | Exploratory outbound tunnels length. 3 by default
 
+### NTCP2 options
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+ntcp2.enabled                          | Enable NTCP2. Enabled by default
+ntcp2.published                        | Enable incoming NTCP2 connections. Disabled by default
+ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto)
+
 Local addressbook
 -----------------
 
