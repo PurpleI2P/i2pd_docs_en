@@ -249,6 +249,11 @@ nettime.enabled                        | Enable NTP sync. Disabled by default
 nettime.ntpservers                     | Comma-separated list of NTP server. pool.ntp.org by default
 nettime.ntpsyncinterval                | NTP time sync interval in hours. 72 by default
 
+### Network information persist
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+persist.profiles                       | Enable peer profile persisting to disk. Enabled by default
 
 Local addressbook
 -----------------
