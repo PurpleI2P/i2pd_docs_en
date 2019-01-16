@@ -173,6 +173,7 @@ These I2CP parameter are common for all tunnel types and specify settings for a 
 * explicitPeers     -- list of comma-separated b64 addresses of peers to use, default: unset
 * i2p.streaming.initialAckDelay -- milliseconds to wait before sending Ack. 200 by default
 * i2cp.leaseSetType -- type of LeaseSet to be sent. 1 or 3. 1 by default
+* i2cp.leaseSetEncType -- encryption type to be used in LeaseSet type 3. Identity's type by default
 
 
 Other examples
