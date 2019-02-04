@@ -63,15 +63,13 @@ run by PurpleI2P community member [villain](https://twitter.com/el_villano_loco)
     curl -s https://copr.fedorainfracloud.org/coprs/supervillain/i2pd/repo/epel-7/supervillain-i2pd-epel-7.repo -o /etc/yum.repos.d/i2pd-epel-7.repo
     yum install epel-release -y
     yum install i2pd -y
-    systemctl enable i2pd
-    systemctl start i2pd
+    systemctl enable --now i2pd
 
 ### Fedora:
 
     dnf copr enable supervillain/i2pd
     dnf install i2pd -y
-    systemctl enable i2pd
-    systemctl start i2pd
+    systemctl enable --now i2pd
 
 
 ## ArchLinux
