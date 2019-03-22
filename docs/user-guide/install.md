@@ -95,7 +95,8 @@ You can install i2pd from [ports](https://www.freshports.org/security/i2pd/).
 
 ## MacOS X
 
-You can install i2pd from [brew](https://brew.sh/) package manager
+You can install i2pd from [brew](https://brew.sh/) package manager:
 
     brew install i2pd
 
+or use staticly precompiled binary from [latest release page](https://github.com/PurpleI2P/i2pd/releases/latest).
