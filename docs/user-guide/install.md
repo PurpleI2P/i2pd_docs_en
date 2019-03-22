@@ -93,3 +93,9 @@ FreeBSD
 
 You can install i2pd from [ports](https://www.freshports.org/security/i2pd/).
 
+## MacOS X
+
+You can install i2pd from [brew](https://brew.sh/) package manager
+
+    brew install i2pd
+
