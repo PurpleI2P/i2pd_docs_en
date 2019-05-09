@@ -240,6 +240,7 @@ Option                                 | Description
 ntcp2.enabled                          | Enable NTCP2. Enabled by default
 ntcp2.published                        | Enable incoming NTCP2 connections. Disabled by default
 ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto)
+ntcp2.addressv6                        | External IPv6 for incoming connections
 
 ### Time sync
 
