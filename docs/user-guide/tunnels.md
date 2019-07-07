@@ -174,6 +174,7 @@ These I2CP parameter are common for all tunnel types and specify settings for a 
 * i2p.streaming.initialAckDelay -- milliseconds to wait before sending Ack. 200 by default
 * i2cp.leaseSetType -- type of LeaseSet to be sent. 1, 3 or 5. 1 by default
 * i2cp.leaseSetEncType -- encryption type to be used in LeaseSet type 3. Identity's type by default
+* i2cp.leaseSetPrivKey -- decryption key for encrypted LeaseSet in base64. PSK or private DH  
 
 
 Other examples
