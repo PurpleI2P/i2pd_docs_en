@@ -175,7 +175,9 @@ These I2CP parameter are common for all tunnel types and specify settings for a 
 * i2cp.leaseSetType -- type of LeaseSet to be sent. 1, 3 or 5. 1 by default
 * i2cp.leaseSetEncType -- encryption type to be used in LeaseSet type 3. Identity's type by default
 * i2cp.leaseSetPrivKey -- decryption key for encrypted LeaseSet in base64. PSK or private DH  
-
+* i2cp.leaseSetAuthType -- authentication type for encrypted LeaseSet. 0 - no authentication(default), 1 - DH, 2 - PSK  
+* i2cp.leaseSetClient.dh.nnn -- client name:client's public DH in base64, for authentication type 1, nnn is integer  
+* i2cp.leaseSetClient.psk.nnn -- client name:client's PSK in base64, for authentication type 2, nnn is integer 
 
 Other examples
 --------------
