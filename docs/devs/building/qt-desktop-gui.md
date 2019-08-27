@@ -36,7 +36,15 @@ If you are an Arch Linux user, refrain from updating system with `pacman -Syu`. 
 
 ### With Qt Creator
 
-TBD
+```
+sudo apt install qtcreator qt5-default build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 git
+mkdir git
+cd git
+git clone https://github.com/PurpleI2P/i2pd.git
+```
+
+Then, open Qt Creator. Open `git/i2pd/qt/i2pd_qt/i2pd_qt.pro`; set build make parameter
+`-jNUMBER-OF-CPU-CORES`, e.g. `-j7`. Then, finally, press Make button.
 
 ### Without Qt Creator
 
