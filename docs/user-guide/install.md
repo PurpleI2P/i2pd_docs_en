@@ -100,3 +100,12 @@ You can install i2pd from [brew](https://brew.sh/) package manager:
     brew install i2pd
 
 or use staticly precompiled binary from [latest release page](https://github.com/PurpleI2P/i2pd/releases/latest).
+
+GUI application
+---------------
+
+You can install i2pd GUI from flatpak:
+
+    sudo apt install flatpak
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak install flathub website.i2pd.i2pd
