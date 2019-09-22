@@ -41,7 +41,7 @@ TBD
 ### Without Qt Creator
 
 ```
-sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qt5-default libqt5gui5 git
+sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qt5-default libqt5gui5 git zlib1g-dev
 mkdir git
 cd git
 git clone https://github.com/PurpleI2P/i2pd.git
@@ -54,7 +54,8 @@ make USE_UPNP=yes
 
 ```
 sudo apt install flatpak flatpak-builder
-flatpak --user install org.kde.Sdk/x86_64/5.11     # required SDK version might be higher, recheck the manifest 
+flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak --user install flathub org.kde.Sdk/x86_64/5.11     # required SDK version might be higher, recheck the manifest 
 git clone https://github.com/flathub/website.i2pd.i2pd && cd website.i2pd.i2pd 
 flatpak-builder --user --install --force-clean i2pd_build_dir website.i2pd.i2pd.json
 ```
