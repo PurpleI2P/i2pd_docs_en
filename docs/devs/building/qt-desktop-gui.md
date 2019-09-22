@@ -37,7 +37,7 @@ If you are an Arch Linux user, refrain from updating system with `pacman -Syu`. 
 ### With Qt Creator
 
 ```
-sudo apt install qtcreator qt5-default build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 git
+sudo apt install qtcreator qt5-default build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 git zlib1g-dev
 mkdir git
 cd git
 git clone https://github.com/PurpleI2P/i2pd.git
@@ -63,7 +63,7 @@ make USE_UPNP=yes
 ```
 sudo apt install flatpak flatpak-builder
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak --user install flathub org.kde.Sdk/x86_64/5.11     # required SDK version might be higher, recheck the manifest 
+flatpak --user install flathub org.kde.Sdk/x86_64/5.12     # required SDK version might be higher, check the manifest at https://github.com/flathub/website.i2pd.i2pd/blob/master/website.i2pd.i2pd.json
 git clone https://github.com/flathub/website.i2pd.i2pd && cd website.i2pd.i2pd 
 flatpak-builder --user --install --force-clean i2pd_build_dir website.i2pd.i2pd.json
 ```
