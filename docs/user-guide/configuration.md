@@ -183,7 +183,7 @@ precomputation.elgamal                 | Use ElGamal precomputated tables. false
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-reseed.verify                          | Verify .su3 signature. fase by default 
+reseed.verify                          | Verify .su3 signature. false by default 
 reseed.urls                            | Reseed URLs, separated by comma
 reseed.file                            | Path to local .su3 file or HTTPS URL to reseed from
 reseed.zipfile                         | Path to local .zip file to reseed from
