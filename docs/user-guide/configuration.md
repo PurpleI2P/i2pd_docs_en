@@ -138,6 +138,7 @@ Option                                 | Description
 sam.address                            | The address to listen on (SAM bridge)
 sam.port                               | Port of SAM bridge. Usually 7656. SAM is off if not specified
 sam.enabled                            | If SAM is enabled. true by default 
+sam.singlethread                       | If false every SAM session runs in own thread. true by default  
 
 ### BOB interface
 
