@@ -26,7 +26,6 @@ udpclient     | Forwards local UDP endpoint to remote I2P destination
 udpserver     | Forwards traffic from N I2P destinations to local UDP endpoint 
 socks         | Custom Socks proxy service to use I2P with
 httpproxy     | Custom HTTP proxy service to use I2P with
-websocks      | WebSocket interface to use I2P with
 
 
 Client tunnels
@@ -130,6 +129,7 @@ There are 2 types of UDP tunnels: `udpclient` and `udpserver`
 * destination -- the I2P destination of a udpserver tunnel, required parameter
 * address -- IP address to bind local UDP endpoint to, defaults to `127.0.0.1`
 * port -- port to bind local UDP endpoint to, required parameter
+* gzip -- turns internal compression off if set to false. true by default.  
 
 `udpserver` forwards traffic from N I2P destinations to 1 local UDP endpoint
 
@@ -141,6 +141,7 @@ There are 2 types of UDP tunnels: `udpclient` and `udpserver`
 * address -- IP address to use for local UDP endpoints, defaults to `127.0.0.1`
 * host -- IP address to forward traffic to, defaults to `127.0.0.1`
 * port -- UDP port to forward traffic on, required parameter
+* gzip -- turns internal compression off if set to false. true by default.  
 
 
 Socks proxy
