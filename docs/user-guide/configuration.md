@@ -114,6 +114,8 @@ httpproxy.inbound.quantity             | Inbound tunnels quantity if keys is set
 httpproxy.outbound.length              | Outbound tunnels length if keys is set. 3 by default  
 httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. 5 by default    
 httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://false.i2p)  
+httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default  
+httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5  
 
 ### Socks proxy
 
@@ -130,6 +132,8 @@ socksproxy.outbound.length             | Outbound tunnels length if keys is set.
 socksproxy.outbound.quantity           | Outbound tunnels quantity if keys is set. 5 by default  
 socksproxy.outproxy                    | Address of outproxy. requests outside I2P will go there  
 socksproxy.outproxyport                | Outproxy remote port  
+socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default  
+socksproxy.i2cp.leaseSetEncType        | Comma separated encryption types to be used in LeaseSet type 3 or 5  
 
 ### SAM interface
 
