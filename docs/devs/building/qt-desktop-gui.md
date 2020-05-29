@@ -63,7 +63,8 @@ make USE_UPNP=yes
 ```
 sudo apt install flatpak flatpak-builder
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-flatpak --user install flathub org.kde.Sdk/x86_64/5.12     # required SDK version might be higher, check the manifest at https://github.com/flathub/website.i2pd.i2pd/blob/master/website.i2pd.i2pd.json
+flatpak --user install flathub org.kde.Sdk/x86_64/5.14     # required SDK version might be higher, check the manifest at https://github.com/flathub/website.i2pd.i2pd/blob/master/website.i2pd.i2pd.json
 git clone https://github.com/flathub/website.i2pd.i2pd && cd website.i2pd.i2pd 
+export FLATPAK_BUILDER_N_JOBS=4                            # build process jobs count
 flatpak-builder --user --install --force-clean i2pd_build_dir website.i2pd.i2pd.json
 ```
