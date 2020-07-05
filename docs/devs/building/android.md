@@ -38,7 +38,7 @@ Prepare Android SDK and install required packages
 	mkdir android-sdk
 	cd android-sdk
 	wget -t0 <link to latest SDK from Android site>
-	unzip sdk-tools-XXXXXX-XXXXXX.zip -d cmdline-tools
+	unzip commandlinetools-XXXXXX-XXXXXX.zip -d cmdline-tools
 	./cmdline-tools/tools/bin/sdkmanager "build-tools;25.0.3" "platforms;android-14" "platforms;android-25" "platform-tools"
 
 Building the app with QT
