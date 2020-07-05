@@ -6,7 +6,7 @@ There are two versions: with QT and without QT.
 Pre-requisites
 --------------
 
-You need to install Android SDK, NDK  and QT with android support.
+You need to install Android SDK and NDK. For QT version, you also need QT with android support.
 
 - [SDK](https://developer.android.com/studio/index.html) (choose command line tools only, and make sure you installed "Android SDK Build-Tools")
 - [NDK](https://developer.android.com/ndk/downloads/index.html)
@@ -28,7 +28,7 @@ Dependencies
 
 Take following pre-compiled binaries from PurpleI2P's repositories.
 
-	git clone https://github.com/PurpleI2P/Boost-for-Android-Prebuilt.git
+	git clone https://github.com/PurpleI2P/Boost-for-Android-Prebuilt.git -b boost-1_72_0
 	git clone https://github.com/PurpleI2P/OpenSSL-for-Android-Prebuilt.git
 	git clone https://github.com/PurpleI2P/MiniUPnP-for-Android-Prebuilt.git
 	git clone https://github.com/PurpleI2P/android-ifaddrs.git
@@ -37,9 +37,9 @@ Prepare Android SDK and install required packages
 
 	mkdir android-sdk
 	cd android-sdk
-	wget <link to latest SDK from Android site>
-	unzip sdk-tools-XXXXXX-XXXXXX.zip
-	./tools/bin/sdkmanager "build-tools;25.0.3" "platforms;android-14" "platforms;android-25" "platform-tools"
+	wget -t0 <link to latest SDK from Android site>
+	unzip commandlinetools-XXXXXX-XXXXXX.zip -d cmdline-tools
+	./cmdline-tools/tools/bin/sdkmanager "build-tools;25.0.3" "platforms;android-14" "platforms;android-25" "platform-tools"
 
 Building the app with QT
 ------------------------
@@ -53,8 +53,8 @@ Building the app without QT
 ---------------------------
 
 - Change line `I2PD_LIBS_PATH` in `android/jni/Application.mk` to an actual path where you put the dependencies to
-- Create or edit file 'local.properties'. Place 'sdk.dir=<path to SDK>' and 'ndk.dir=<path to NDK>'
-- Run `gradle clean assembleDebug` from `android` folder
+- Create or edit file 'local.properties'. Place 'sdk.dir=`<path to SDK>`' and 'ndk.dir=`<path to NDK>`'
+- Run `gradle clean cleanBuildCache assembleDebug` from `android` folder
 - You will find an .apk file in `android/build/outputs/apk` folder
 
 Creating release .apk
@@ -86,7 +86,7 @@ Change file 'build.gradle':
 +            signingConfig signingConfigs.release
 ```
 
-Run `gradle clean assembleRelease`
+Run `gradle clean cleanBuildCache assembleRelease`
 
 Building executable android binary
 ------------------------------
