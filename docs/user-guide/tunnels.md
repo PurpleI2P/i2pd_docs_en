@@ -45,7 +45,7 @@ Here is an example of a client tunnel:
     keys = irc.dat
 
 If *keys* is empty, transient keys will be created on every restart. If the keys file is not found, new keys will be created and stored into the specified file. 
-If *keys* is set to *transient*, new keys will be created, but not stored into a file.  
+If *keys* starts from *transient*, new keys will be created, but not stored into a file.  
 Client tunnels might share the same local destination, if the keys file contains the same identity.
 
 Optional parameters:
