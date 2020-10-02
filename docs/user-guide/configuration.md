@@ -159,6 +159,7 @@ Option                                 | Description
 i2cp.address                           | The address to listen on or an abstract address for Android LocalSocket
 i2cp.port                              | Port of I2CP server. Usually 7654. Ignored for Andorid
 i2cp.enabled                           | If I2CP is enabled. false by default. Other services don't require I2CP 
+i2cp.singlethread                      | If false every I2CP session runs in own thread. true by default  
 
 ### I2PControl interface
 
