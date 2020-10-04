@@ -69,8 +69,6 @@ share                                  | Max % of bandwidth limit for transit. 0
 family                                 | Name of a family, router belongs to
 netid                                  | Network ID, router belongs to. Main I2P is 2.
 ssu                                    | Enable SSU transport protocol (use UDP). true by default
-ntcp                                   | Enable NTCP transport protocol (use TCP). true by default
-ntcpproxy                              | Specify proxy server for NTCP. Should be http://address:port or socks://address:port 
 
 #### Notes
 
@@ -247,6 +245,7 @@ ntcp2.enabled                          | Enable NTCP2. Enabled by default
 ntcp2.published                        | Enable incoming NTCP2 connections. Disabled by default
 ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto)
 ntcp2.addressv6                        | External IPv6 for incoming connections
+ntcp2.proxy                            | Specify proxy server for NTCP2. Should be http://address:port or socks://address:port 
 
 ### Time sync
 
