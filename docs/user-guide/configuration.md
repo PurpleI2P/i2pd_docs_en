@@ -128,6 +128,7 @@ socksproxy.inbound.length              | Inbound tunnels length if keys is set. 
 socksproxy.inbound.quantity            | Inbound tunnels quantity if keys is set. 5 by default  
 socksproxy.outbound.length             | Outbound tunnels length if keys is set. 3 by default  
 socksproxy.outbound.quantity           | Outbound tunnels quantity if keys is set. 5 by default  
+socksproxy.outproxy.enabled            | Enable or disable SOCKS outproxy. Disabled by default
 socksproxy.outproxy                    | Address of outproxy. requests outside I2P will go there  
 socksproxy.outproxyport                | Outproxy remote port  
 socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default  
