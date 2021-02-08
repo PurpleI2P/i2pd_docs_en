@@ -202,6 +202,7 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 addressbook.defaulturl                 | AddressBook subscription URL for initial setup
 addressbook.subscriptions              | AddressBook subscriptions URLs, separated by comma
+addressbook.hostsfile                  | File to dump AddressesBook in hosts.txt format
 
 ### Limits
 
