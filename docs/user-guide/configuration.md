@@ -264,6 +264,14 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 persist.profiles                       | Enable peer profile persisting to disk. Enabled by default
 
+### Meshnets transports
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+meshnets.yggdrasil                     | Support transports through the Yggdrasil
+meshnets.yggaddress                    | Local Yggdrasil's address to publish
+
+
 Local addressbook
 -----------------
 
