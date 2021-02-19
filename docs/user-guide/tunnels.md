@@ -79,8 +79,9 @@ Optional parameters:
 * accesslist    -- list of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default.  
 * gzip          -- turns internal compression off if set to false. true by default.  
 * signaturetype -- means signature type for new keys. 0 - DSA, 1- ECDSA-P256, 7 -EDDSA, 11 -RedDSA.  7 by default.  
-* cryptotype     -- crypto type for new keys. Experimental. Should be always 0.
+* cryptotype    -- crypto type for new keys. Experimental. Should be always 0.
 * enableuniquelocal -- if true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. true by default.  
+* address       -- IP address of an interface tunnel is connected to host from. Usually not used.   
 
 Server/http tunnels
 -------------------
