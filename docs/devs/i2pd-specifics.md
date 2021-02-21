@@ -12,4 +12,6 @@ GOST_GOSTR3411512_GOSTR3410TC26A512 or 10
 i2p.router.status is 1 if shared local destination is ready, and 0 if not  
 i2p.router.net.tunnels.successrate returns tunnel creation success rate in percents  
 # BOB
+Unlike Java-I2P, i2pd keep supporting BOB with the following extensions  
 newkeys signaturetype cryptotype. DSA and ElGamal by default  
+lookuplocal - looks for LeaseSet with specified address in router's netdb  
