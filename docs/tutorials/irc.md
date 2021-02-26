@@ -32,20 +32,24 @@ Restart i2pd, then connect to irc://127.0.0.1:6669 with your IRC client.
 
    Simplest case, if your server does not support WebIRC, add this to ~/.i2pd/tunnels.conf:
 
-    [anon-chatserver]
-    type = irc
-    host = 127.0.0.1     
-    port = 5555
-    keys = chatserver-key.dat
+```
+[anon-chatserver]
+type = irc
+host = 127.0.0.1     
+port = 5555
+keys = chatserver-key.dat
+```
 
    And that is it.
 
    Alternatively, if your IRC server supports WebIRC, for example, UnreadIRCd, put this into UnrealIRCd config:
 
-    webirc {
-        mask 127.0.0.1;
-        password your_password;
-    };
+```
+webirc {
+    mask 127.*.*.*;
+    password your_password;
+};
+```
 
    Also change line:
 
