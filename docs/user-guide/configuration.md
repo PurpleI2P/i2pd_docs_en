@@ -59,6 +59,8 @@ service                                | Router will use system folders like '/v
 ifname                                 | Network interface to bind to
 ifname4                                | Network interface to bind to for IPv4
 ifname6                                | Network interface to bind to for IPv6
+address4                               | Local address to bind to for IPv4
+address6                               | Local address to bind to for IPv6
 nat                                    | If true, assume we are behind NAT. true by default
 ipv4                                   | Enable communication through IPv4. true by default
 ipv6                                   | Enable communication through IPv6. false by default
