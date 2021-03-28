@@ -1,3 +1,5 @@
+# Yggdrasil only router configuration
+
 For a router talking to other routers and reseed servers through Yggdrasil only.  
 Start yggdrasil first and make sure you're running from a fresh i2pd installation. Create `~/.i2pd/i2pd.conf`
 
