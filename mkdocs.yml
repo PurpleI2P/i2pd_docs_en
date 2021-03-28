@@ -23,6 +23,7 @@ pages:
     - Filesharing: tutorials/filesharing.md
     - Using RetroShare with i2pd: tutorials/retroshare.md
     - Bootstrapping without Reseed Servers: tutorials/floodfill-bootstrap.md
+    - Yggdrasil only router configuration: tutorials/yggdrasil-only-mode.md
 - Developer Section:
     - Building from source:
         - Requirements: devs/building/requirements.md
