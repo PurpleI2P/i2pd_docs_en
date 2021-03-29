@@ -1,7 +1,7 @@
 Family configuration
 ====================
 
-Your might want to specify a family your router belongs to.
+You might want to specify a family your router belongs to.
 There are two ways to do this: create a new family or join to an existing one.
 
 New family
