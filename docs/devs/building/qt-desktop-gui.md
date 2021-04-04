@@ -52,11 +52,21 @@ Then, open Qt Creator. Open `git/i2pd/qt/i2pd_qt/i2pd_qt.pro`; set build make pa
 sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qt5-default libqt5gui5 git zlib1g-dev
 mkdir git
 cd git
-git clone https://github.com/PurpleI2P/i2pd.git
-cd i2pd/qt/i2pd_qt
-qmake
-make USE_UPNP=yes
+git clone https://github.com/PurpleI2P/i2pd-qt.git
+cd i2pd-qt
 ```
+
+For release build,
+
+`qmake`
+
+For debug build,
+
+`qmake i2pd_qt.pro "CONFIG += debug"`
+
+And when `qmake` completed, run:
+
+`make USE_UPNP=yes`
 
 ## Building a Flatpak package
 
