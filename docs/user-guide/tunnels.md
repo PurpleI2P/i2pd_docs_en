@@ -47,14 +47,23 @@ EDDSA_SHA512_ED25519                 | 7    | **Default**
 *EDDSA_SHA512_ED25519ph*             | 8    | Not implemented
 GOSTR3410_CRYPTO_PRO_A_GOSTR3411_256 | 9    | Not compatible with Java router
 GOSTR3410_TC26_A_512_GOSTR3411_512   | 10   | Not compatible with Java router
-REDDSA_SHA512_ED25519                | 11   | For keys blinding
+REDDSA_SHA512_ED25519                | 11   | For keys blinding (encrypted LeaseSet)
 
-Encryption types
+LeaseSet
 ------------
 
-Parameter `i2cp.leaseSetEncType = <code>` in a tunnel config.
+Available LeaseSet **types** (parameter `i2cp.leaseSetType = <code>` in a tunnel config):
 
-Available encryption types:
+Type        | Code | Comment
+----------- | ---- | -----------
+OLD         | 1    | **Default** for server tunnels because encryption type for server is `0`
+STANDARD    | 3    | **Default** for client tunnels because encryption type can be `0` or `4`
+ENCRYPTED   | 5    | Encrypted LeaseSet. Hiding information from floodfill
+META        | 7    | Not implemented
+
+*0, 2, 4, 6 types are reserved for routers (RouterInfo types).*
+
+Available LeaseSet **encryption** types (parameter `i2cp.leaseSetEncType = <code>` in a tunnel config):
 
 Type                                 | Code | Comment
 ------------------------------------ | ---- | -----------
@@ -63,7 +72,7 @@ ECIES_P256_SHA256_AES256CBC          | 1    | Not compatible with Java router
 *ECIES_P384_SHA384_AES256CBC*        | 2    | Not implemented
 *ECIES_P521_SHA512_AES256CBC*        | 3    | Not implemented
 ECIES_X25519_AEAD                    | 4    | **Default** for routers
-    
+
 Client tunnels
 --------------
 
@@ -77,7 +86,7 @@ Here is an example of a client tunnel:
     type = client
     address = 127.0.0.1
     port = 6668
-    destination = irc.echelon.i2p
+    destination = irc.ilita.i2p
     keys = irc.dat
 
 If *keys* is empty, transient keys will be created on every restart. If the keys file is not found, new keys will be created and stored into the specified file. 
@@ -235,7 +244,7 @@ Other examples
     type = client
     address = 127.0.0.1
     port = 6668
-    destination = irc.postman.i2p
+    destination = irc.ilita.i2p
     keys = irc-keys.dat
     #
     # incoming tunnel sample, for local service
