@@ -27,7 +27,43 @@ udpserver     | Forwards traffic from N I2P destinations to local UDP endpoint
 socks         | Custom Socks proxy service to use I2P with
 httpproxy     | Custom HTTP proxy service to use I2P with
 
+Signature types
+------------
 
+Parameter `signaturetype = <code>` in a tunnel config.
+
+Available signature types:
+
+Type                                 | Code | Comment
+------------------------------------ | ---- | -----------
+DSA_SHA1                             | 0    | Deprecated
+ECDSA_SHA256_P256                    | 1    | *None, actively used*
+ECDSA_SHA384_P384                    | 2    | *None, actively used*
+ECDSA_SHA512_P521                    | 3    | *None, actively used*
+RSA_SHA256_2048                      | 4    | Deprecated
+RSA_SHA384_3072                      | 5    | Deprecated
+RSA_SHA512_4096                      | 6    | Deprecated
+EDDSA_SHA512_ED25519                 | 7    | **Default**
+*EDDSA_SHA512_ED25519ph*             | 8    | Not implemented
+GOSTR3410_CRYPTO_PRO_A_GOSTR3411_256 | 9    | Not compatible with Java router
+GOSTR3410_TC26_A_512_GOSTR3411_512   | 10   | Not compatible with Java router
+REDDSA_SHA512_ED25519                | 11   | For keys blinding
+
+Encryption types
+------------
+
+Parameter `i2cp.leaseSetEncType = <code>` in a tunnel config.
+
+Available encryption types:
+
+Type                                 | Code | Comment
+------------------------------------ | ---- | -----------
+ELGAMAL                              | 0    | **Default** for destinations
+ECIES_P256_SHA256_AES256CBC          | 1    | Not compatible with Java router
+*ECIES_P384_SHA384_AES256CBC*        | 2    | Not implemented
+*ECIES_P521_SHA512_AES256CBC*        | 3    | Not implemented
+ECIES_X25519_AEAD                    | 4    | **Default** for routers
+    
 Client tunnels
 --------------
 
