@@ -49,7 +49,21 @@ GOSTR3410_CRYPTO_PRO_A_GOSTR3411_256 | 9    | Not compatible with Java router
 GOSTR3410_TC26_A_512_GOSTR3411_512   | 10   | Not compatible with Java router
 REDDSA_SHA512_ED25519                | 11   | For keys blinding
 
+Encryption types
+------------
 
+Parameter `i2cp.leaseSetEncType = <code>` in a tunnel config.
+
+Available encryption types:
+
+Type                                 | Code | Comment
+------------------------------------ | ---- | -----------
+ELGAMAL                              | 0    | **Default** for destinations
+ECIES_P256_SHA256_AES256CBC          | 1    | Not compatible with Java router
+*ECIES_P384_SHA384_AES256CBC*        | 2    | Not implemented
+*ECIES_P521_SHA512_AES256CBC*        | 3    | Not implemented
+ECIES_X25519_AEAD                    | 4    | **Default** for routers
+    
 Client tunnels
 --------------
 
