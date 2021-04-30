@@ -86,7 +86,7 @@ Here is an example of a client tunnel:
     type = client
     address = 127.0.0.1
     port = 6668
-    destination = irc.echelon.i2p
+    destination = irc.ilita.i2p
     keys = irc.dat
 
 If *keys* is empty, transient keys will be created on every restart. If the keys file is not found, new keys will be created and stored into the specified file. 
@@ -244,7 +244,7 @@ Other examples
     type = client
     address = 127.0.0.1
     port = 6668
-    destination = irc.postman.i2p
+    destination = irc.ilita.i2p
     keys = irc-keys.dat
     #
     # incoming tunnel sample, for local service
