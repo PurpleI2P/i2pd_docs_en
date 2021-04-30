@@ -37,9 +37,9 @@ Available signature types:
 Type                                 | Code | Comment
 ------------------------------------ | ---- | -----------
 DSA_SHA1                             | 0    | Deprecated
-ECDSA_SHA256_P256                    | 1    | *None, acively used*
-ECDSA_SHA384_P384                    | 2    | *None, acively used*
-ECDSA_SHA512_P521                    | 3    | *None, acively used*
+ECDSA_SHA256_P256                    | 1    | *None, actively used*
+ECDSA_SHA384_P384                    | 2    | *None, actively used*
+ECDSA_SHA512_P521                    | 3    | *None, actively used*
 RSA_SHA256_2048                      | 4    | Deprecated
 RSA_SHA384_3072                      | 5    | Deprecated
 RSA_SHA512_4096                      | 6    | Deprecated
