@@ -47,23 +47,23 @@ EDDSA_SHA512_ED25519                 | 7    | **Default**
 *EDDSA_SHA512_ED25519ph*             | 8    | Not implemented
 GOSTR3410_CRYPTO_PRO_A_GOSTR3411_256 | 9    | Not compatible with Java router
 GOSTR3410_TC26_A_512_GOSTR3411_512   | 10   | Not compatible with Java router
-REDDSA_SHA512_ED25519                | 11   | For keys blinding
+REDDSA_SHA512_ED25519                | 11   | For keys blinding (encrypted leaseset)
 
 LeaseSet
 ------------
 
-Available LeaseSet types (parameter `i2cp.leaseSetType = <code>` in a tunnel config):
+Available LeaseSet **types** (parameter `i2cp.leaseSetType = <code>` in a tunnel config):
 
 Type        | Code | Comment
 ----------- | ---- | -----------
 OLD         | 1    | **Default** for server tunnels because encryption type for server is `0`
 STANDARD    | 3    | **Default** for client tunnels because encryption type can be `0` or `4`
-ENCRYPTED   | 5    | For keys blinding. Hiding information from floodfill.
+ENCRYPTED   | 5    | Encrypted leaseset. Hiding information from floodfill
 META        | 7    | Not implemented
 
 *0, 2, 4, 6 types are reserved for routers (RouterInfo types).*
 
-Available LeaseSet encryption types (parameter `i2cp.leaseSetEncType = <code>` in a tunnel config):
+Available LeaseSet **encryption** types (parameter `i2cp.leaseSetEncType = <code>` in a tunnel config):
 
 Type                                 | Code | Comment
 ------------------------------------ | ---- | -----------
