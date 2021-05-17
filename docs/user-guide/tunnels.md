@@ -36,18 +36,18 @@ Available signature types:
 
 Type                                 | Code | Comment
 ------------------------------------ | ---- | -----------
-DSA_SHA1                             | 0    | Deprecated
-ECDSA_SHA256_P256                    | 1    | *None, actively used*
-ECDSA_SHA384_P384                    | 2    | *None, actively used*
-ECDSA_SHA512_P521                    | 3    | *None, actively used*
-RSA_SHA256_2048                      | 4    | Deprecated
-RSA_SHA384_3072                      | 5    | Deprecated
-RSA_SHA512_4096                      | 6    | Deprecated
-EDDSA_SHA512_ED25519                 | 7    | **Default**
-*EDDSA_SHA512_ED25519ph*             | 8    | Not implemented
-GOSTR3410_CRYPTO_PRO_A_GOSTR3411_256 | 9    | Not compatible with Java router
-GOSTR3410_TC26_A_512_GOSTR3411_512   | 10   | Not compatible with Java router
-REDDSA_SHA512_ED25519                | 11   | For keys blinding (encrypted LeaseSet)
+DSA-SHA1                             | 0    | Deprecated
+ECDSA-P256                           | 1    | *None, actively used*
+ECDSA-P384                           | 2    | *None, actively used*
+ECDSA-P521                           | 3    | *None, actively used*
+RSA-2048-SHA256                      | 4    | Deprecated
+RSA-3072-SHA384                      | 5    | Deprecated
+RSA-4096-SHA512                      | 6    | Deprecated
+ED25519-SHA512                       | 7    | **Default**
+*ED25519ph-SHA512*                   | 8    | Not implemented
+GOSTR3410-A-GOSTR3411-256            | 9    | Not compatible with Java router
+GOSTR3410-TC26-A-GOSTR3411-512       | 10   | Not compatible with Java router
+RED25519-SHA512                      | 11   | For keys blinding (encrypted LeaseSet)
 
 LeaseSet
 ------------
