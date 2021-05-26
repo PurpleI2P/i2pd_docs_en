@@ -182,10 +182,11 @@ There are 2 types of UDP tunnels: `udpclient` and `udpserver`
     [openvpn-simple-server]
     type = udpserver
     keys = openvpn.dat
+    host = 127.0.0.1
     port = 1194
 
 * address -- IP address to use for local UDP endpoints, defaults to `127.0.0.1`
-* host -- IP address to forward traffic to, defaults to `127.0.0.1`
+* host -- IP address to forward traffic to, required parameter.
 * port -- UDP port to forward traffic on, required parameter
 * gzip -- turns internal compression off if set to false. true by default.  
 
