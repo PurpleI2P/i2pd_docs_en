@@ -7,6 +7,6 @@ Alternative torrent-clients are [Robert](http://en.wikipedia.org/wiki/Robert_%28
 
 Robert uses BOB protocol, i2pd must be run with parameter --bob.enabled=true.
 
-Vuze uses I2CP protocol, i2pd must be run with parameter --i2cp.enabled=true.
+Vuze and [BiglyBT](https://www.biglybt.com) uses I2CP protocol, i2pd must be run with parameter --i2cp.enabled=true.
 
 Also, visit [postman tracker](http://tracker2.postman.i2p).
