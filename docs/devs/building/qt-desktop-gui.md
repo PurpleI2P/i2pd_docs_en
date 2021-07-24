@@ -54,6 +54,7 @@ mkdir git
 cd git
 git clone https://github.com/PurpleI2P/i2pd-qt.git
 cd i2pd-qt
+git submodule update --init
 ```
 
 For release build,
