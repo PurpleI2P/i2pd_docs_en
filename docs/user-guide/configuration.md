@@ -10,7 +10,7 @@ There are two separate config files: `i2pd.conf` and `tunnels.conf`. `i2pd.conf`
 you configure all options. `tunnels.conf` is the tunnel configuration file, where you configure I2P hidden services
 and client tunnels. the `tunnels.conf` options are documented [here](tunnels.md).
 
-`i2pd.conf` accets INI-like syntax, such as the following : <key> = <value>.
+`i2pd.conf` accepts INI-like syntax, such as the following : <key> = <value>.
 Comments are "#", not ";" as you might expect. See [boost ticket](https://svn.boost.org/trac/boost/ticket/808)
 All command-line parameters are allowed as keys, but for those which contains dot (.), there is a special syntax.
 
