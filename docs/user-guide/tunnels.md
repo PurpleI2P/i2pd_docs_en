@@ -213,10 +213,10 @@ I2CP parameters
 
 These I2CP parameter are common for all tunnel types and specify settings for a local destination.
 
-* inbound.length    -- number of hops of an inbound tunnel. 3 by default;  lower value is faster but dangerous
-* outbound.length   -- number of hops of an outbound tunnel. 3 by default; lower value is faster but dangerous
-* inbound.quantity  -- number of inbound tunnels.  5 by default
-* outbound.quantity -- number of outbound tunnels. 5 by default
+* inbound.length    -- number of hops of an inbound tunnel. 3 by default, 8 by max;  lower value is faster but dangerous
+* outbound.length   -- number of hops of an outbound tunnel. 3 by default, 8 by max; lower value is faster but dangerous
+* inbound.quantity  -- number of inbound tunnels. 5 by default, 16 by max
+* outbound.quantity -- number of outbound tunnels. 5 by default, 16 by max
 * crypto.tagsToSend -- number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
 * explicitPeers     -- list of comma-separated b64 addresses of peers to use, default: unset
 * i2p.streaming.initialAckDelay -- milliseconds to wait before sending Ack. 200 by default
