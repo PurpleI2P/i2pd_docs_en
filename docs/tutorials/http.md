@@ -26,8 +26,9 @@ If you wish to run your own website in Invisible Internet, follow those steps:
     [anon-website]
     type = http
     host = 127.0.0.1
-    port = 8080
+    port = 8080 # webserver bind
     keys = anon-website.dat
+    inport = 80 # available for visiting on it. If not set – same as port
 
 3) Restart i2pd.
 
