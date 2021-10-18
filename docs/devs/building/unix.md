@@ -113,7 +113,7 @@ Mac OS X
 
 Requires [homebrew](http://brew.sh)
 
-	brew install boost libressl
+	brew install boost openssl@1.1
 
 Then build:
 
