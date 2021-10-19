@@ -115,9 +115,17 @@ Requires [homebrew](http://brew.sh)
 
 	brew install boost openssl@1.1
 
-Then build:
+To build:
 
-	make HOMEBREW=1
+	make HOMEBREW=1 -j8 # uses 8 threads
+
+To install into the system root (`/`):
+
+	sudo make install HOMEBREW=1
+
+To install into the Homebrew root (`/usr/local/`):
+
+	sudo make install HOMEBREW=1 PREFIX=/usr/local
 
 FreeBSD
 -------
