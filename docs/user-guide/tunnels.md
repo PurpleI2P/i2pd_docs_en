@@ -100,7 +100,7 @@ Optional parameters:
 * cryptotype       -- crypto type for new keys. Experimental. Should be always 0
 * destinationport -- connect to particular port at destination. 0 by default
 
-So, given the example above, if you connected to to 127.0.0.1:6668 on localhost, i2pd would tunnel that to irc.echelon.i2p:6668
+So, given the example above, if you connected to 127.0.0.1:6668 on localhost, i2pd would tunnel that to irc.echelon.i2p:6668
 
 Server/generic tunnels
 ----------------------

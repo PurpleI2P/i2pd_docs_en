@@ -27,7 +27,7 @@ While [Java I2P](https://geti2p.net) and i2pd are both clients for the I2P netwo
 ## Why is the I2P network so slow and unstable sometimes?
 
 By design, in the I2P network, your connection gets encrypted through a chain of 6 
-random computers in the way to it's final destination. If one of those computers
+random computers in the way to its final destination. If one of those computers
 is shut down, or experiences connectivity problems, it can take some time for your
 I2P router to discover and fix that issue. 
 
