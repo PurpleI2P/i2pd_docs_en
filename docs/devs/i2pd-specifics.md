@@ -2,7 +2,7 @@ i2pd-specific changes to I2P protocols
 ======================================
 
 # SAM
-SESSION CREATE and DEST GENERATE support additional parameter CRYPTO_TYPE specifing crypto type for new local destination  
+SESSION CREATE and DEST GENERATE support additional parameter CRYPTO_TYPE specifying crypto type for new local destination  
 
 new values for SIGNATURE_TYPE  
 GOST_GOSTR3411256_GOSTR3410CRYPTOPROA or 9  

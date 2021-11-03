@@ -42,7 +42,7 @@ Install apt-transport-https package
 
     sudo apt-get install apt-transport-https
 
-Automaticly add repository
+Automatically add repository
 
     wget -q -O - https://repo.i2pd.xyz/.help/add_repo | sudo bash -s -
 
