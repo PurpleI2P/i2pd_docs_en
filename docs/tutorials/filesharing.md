@@ -1,7 +1,7 @@
 Anonymous filesharing
 =====================
 
-You can share and download torrents with [Transmission-I2P](https://github.com/l-n-s/transmission-i2p).
+You can share and download torrents with [XD](https://github.com/majestrate/XD).
 
 Alternative torrent-clients are [Robert](http://en.wikipedia.org/wiki/Robert_%28P2P_Software%29) and [Vuze](https://en.wikipedia.org/wiki/Vuze).
 
