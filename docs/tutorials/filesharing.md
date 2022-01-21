@@ -5,7 +5,7 @@ Anonymous filesharing
 
 - [I2PSnark standalone](https://gitlab.com/i2pplus/I2P.Plus/-/jobs/artifacts/master/raw/i2psnark-standalone.zip?job=Java8) (standalone build provided by [I2P+ project](https://i2pplus.github.io/)). I2PSnark uses I2CP protocol, i2pd must be run with parameter `--i2cp.enabled=true` or with a similar setting in the configuration file.
 
-- [Vuze](https://en.wikipedia.org/wiki/Vuze) and [BiglyBT](https://www.biglybt.com) (Vuze fork). Vuse and BiglyBT uses I2CP protocol, i2pd must be run with parameter `--i2cp.enabled=true` or with a similar setting in the configuration file.
+- [Vuze](https://en.wikipedia.org/wiki/Vuze) and [BiglyBT](https://www.biglybt.com) (Vuze fork). Vuse and BiglyBT uses I2CP protocol, i2pd must be run with parameter `--i2cp.enabled=true` or with a similar setting in the configuration file. *Use carefully and pay attention to the settings. The software works both in I2P and via clearnet. Unwanted leaks of your addresses are likely.*
 
 - [XD](https://github.com/majestrate/XD). *Warning: XD uses SAM API which can currently crash i2pd.*
 
