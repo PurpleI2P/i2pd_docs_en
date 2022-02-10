@@ -247,7 +247,7 @@ exploratory.outbound.quantity          | Exploratory outbound tunnels length. 3 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
 ntcp2.enabled                          | Enable NTCP2. Enabled by default
-ntcp2.published                        | Enable incoming NTCP2 connections. Disabled by default
+ntcp2.published                        | Enable incoming NTCP2 connections. Enabled by default
 ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto)
 ntcp2.addressv6                        | External IPv6 for incoming connections
 ntcp2.proxy                            | Specify proxy server for NTCP2. Should be http://address:port or socks://address:port 
