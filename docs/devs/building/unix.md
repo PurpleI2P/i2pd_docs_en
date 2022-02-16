@@ -41,13 +41,9 @@ Available CMake options(each option has a form of `-D<key>=<value>`, for more in
 * `WITH_LIBRARY`     build libi2pd (default: ON)
 * `WITH_STATIC`      build static versions of library and i2pd binary (default: OFF)
 * `WITH_UPNP`        build with UPnP support (requires libminiupnp, default: OFF)
-* `WITH_AESNI`       build with AES-NI support (default: OFF)
+* `WITH_AESNI`       build with AES-NI support (default: ON)
 * `WITH_HARDENING`   enable hardening features (gcc only, default: OFF)
-* `WITH_PCH`         use pre-compiled header (experimental, speeds up build, default: OFF)
-* `WITH_I2LUA`       used when building i2lua (default: OFF)
-* `WITH_WEBSOCKETS`  enable websocket server (default: OFF)
-* `WITH_AVX`         build with AVX support (default: OFF)
-* `WITH_MESHNET`     build for cjdns test network (default: OFF)
+* `WITH_MESHNET`     build for cjdns test network (makes impossible to use the application with the main network, default: OFF)
 * `WITH_ADDRSANITIZER`   build with Address Sanitizer (default: OFF)
 * `WITH_THREADSANITIZER` build with Thread Sanitizer (default: OFF)
 
@@ -100,7 +96,7 @@ If you need UPnP support miniupnpc development library should be installed (don'
 
 Latest Fedora systems using [DNF](https://en.wikipedia.org/wiki/DNF_(software)) instead of YUM by default, you may prefer to use DNF, but YUM should be ok
 
-Centos 7 has CMake 2.8.11 in the official repositories that too old to build i2pd, CMake >=2.8.12 is required.
+Centos 7 has CMake 2.8.11 in the official repositories that too old to build i2pd, CMake >=3.7 is required.
 But you can use cmake3 from the epel repository:
 
 	yum install epel-release -y
