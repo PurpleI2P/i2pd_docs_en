@@ -111,8 +111,10 @@ httpproxy.keys                         | Optional keys file for HTTP proxy local
 httpproxy.signaturetype                | Signature type for new keys if keys file is set. 7 by default
 httpproxy.inbound.length               | Inbound tunnels length if keys is set. 3 by default  
 httpproxy.inbound.quantity             | Inbound tunnels quantity if keys is set. 5 by default  
+httpproxy.inbound.lengthVariance       | Inbound tunnels length variance if keys is set. 0 by default      
 httpproxy.outbound.length              | Outbound tunnels length if keys is set. 3 by default  
-httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. 5 by default    
+httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. 5 by default  
+httpproxy.outbound.lengthVariance      | Outbound tunnels length variance if keys is set. 0 by default      
 httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://false.i2p)  
 httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default  
 httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5  
@@ -127,9 +129,11 @@ socksproxy.port                        | The port to listen on (SOCKS Proxy). 44
 socksproxy.keys                        | Optional keys file for SOCKS proxy local destination  
 socksproxy.signaturetype               | Signature type for new keys if keys file is set. 7 by default
 socksproxy.inbound.length              | Inbound tunnels length if keys is set. 3 by default  
-socksproxy.inbound.quantity            | Inbound tunnels quantity if keys is set. 5 by default  
+socksproxy.inbound.quantity            | Inbound tunnels quantity if keys is set. 5 by default 
+socksproxy.inbound.lengthVariance      | Inbound tunnels length variance if keys is set. 0 by default      
 socksproxy.outbound.length             | Outbound tunnels length if keys is set. 3 by default  
-socksproxy.outbound.quantity           | Outbound tunnels quantity if keys is set. 5 by default  
+socksproxy.outbound.quantity           | Outbound tunnels quantity if keys is set. 5 by default 
+socksproxy.outbound.lengthVariance     | Outbound tunnels length variance if keys is set. 0 by default      
 socksproxy.outproxy.enabled            | Enable or disable SOCKS outproxy. Disabled by default
 socksproxy.outproxy                    | Address of outproxy. requests outside I2P will go there  
 socksproxy.outproxyport                | Outproxy remote port  
