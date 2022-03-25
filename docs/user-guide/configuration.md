@@ -60,10 +60,10 @@ ifname                                 | Network interface to bind to
 ifname4                                | Network interface to bind to for IPv4
 ifname6                                | Network interface to bind to for IPv6
 address4                               | Local address to bind to for IPv4
-address6                               | Local address to bind to for IPv6
+address6                               | Local address to bind to for clearnet IPv6
 nat                                    | If true, assume we are behind NAT. true by default
 ipv4                                   | Enable communication through IPv4. true by default
-ipv6                                   | Enable communication through IPv6. false by default
+ipv6                                   | Enable communication through clearnet IPv6. false by default
 notransit                              | Router will not accept transit tunnels, disabling transit traffic completely. false by default
 floodfill                              | Router will be floodfill. false by default
 bandwidth                              | Bandwidth limit: integer in KBps or letters: L (32), O (256), P (2048), X (>9000)
