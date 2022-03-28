@@ -24,4 +24,4 @@ Go to webconsole -> [I2P tunnels page](http://127.0.0.1:7070/?page=i2p_tunnels).
 Now when everything is prepared, you can run RetroShare itself and create a new profile.
 Mark it as **hidden** and enter your **.b32.i2p address** and **port** you have specified at tunnels.conf.
 
-More information about RetroShare at their [website](http://retroshare.net).
+More information about RetroShare at their [website](http://retroshare.cc).
