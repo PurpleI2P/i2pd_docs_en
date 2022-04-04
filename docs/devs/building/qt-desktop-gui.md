@@ -69,6 +69,31 @@ And when `qmake` completed, run:
 
 `make USE_UPNP=yes`
 
+## Under Kali
+
+### Without Qt Creator
+
+```
+sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qtbase5-dev libqt5gui5 git zlib1g-dev
+mkdir git
+cd git
+git clone https://github.com/PurpleI2P/i2pd-qt.git
+cd i2pd-qt
+git submodule update --init
+```
+
+For release build,
+
+`qmake`
+
+For debug build,
+
+`qmake i2pd_qt.pro "CONFIG += debug"`
+
+And when `qmake` completed, run:
+
+`make USE_UPNP=yes`
+
 ## Building a Flatpak package
 
 ```
