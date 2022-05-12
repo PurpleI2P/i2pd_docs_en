@@ -53,10 +53,12 @@ Building Android application
 ### Build application
 
 - Create `local.properties` file with path to SDK and NDK
+
   ```
   sdk.dir=/opt/android-sdk
   ndk.dir=/opt/android-sdk/ndk/21.4.7075529
   ```
+
 - Run `gradle clean assembleDebug`
 - You will find an .apk file in `app/build/outputs/apk` folder
 
@@ -82,9 +84,11 @@ Building executable binary
 ------------------------------
 
 - Set environment variables:
+
   ```
   export ANDROID_SDK_ROOT=/opt/android-sdk
   export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/21.4.7075529
   ```
+
 - Run `$ANDROID_NDK_HOME/ndk-build -j <threads> NDK_MODULE_PATH=$PWD` from `binary/jni` folder
 - You will find an `i2pd` executable in `binary/libs/<architecture>` folder
