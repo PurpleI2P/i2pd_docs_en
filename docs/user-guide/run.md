@@ -59,3 +59,20 @@ Then, to run i2pd, simply travel to the installation directory and type:
 
     ./i2pd --datadir .
 
+Overriding systemd service parameters
+-----
+
+For overriding systemd service defaults create `/etc/systemd/system/i2pd.service.d/override.conf` file and place overriden options. Don't forget use option section.
+
+```
+mkdir -p /etc/systemd/system/i2pd.service.d/
+touch /etc/systemd/system/i2pd.service.d/override.conf
+```
+
+Example content with enabled coredump and increased `nofile` limit
+
+```
+[Service]
+LimitNOFILE=16386
+LimitCORE=infinity
+```
