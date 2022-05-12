@@ -1,96 +1,90 @@
 Building on Android
 ===================
 
-There are two versions: with QT and without QT.
+### Note: *Build works ONLY on Linux systems. Current documentation shows how to build application on Ubuntu 18.04*
 
 Pre-requisites
 --------------
 
-You need to install Android SDK and NDK. For QT version, you also need QT with android support.
+You need to install `rename` (required for building libraries), `OpenJDK` 11+, `gradle` 5.1+ and `Android SDK`.
 
-- [SDK](https://developer.android.com/studio/index.html) (choose command line tools only, and make sure you installed "Android SDK Build-Tools")
-- [NDK](https://developer.android.com/ndk/downloads/index.html)
-- [QT](https://www.qt.io/download-open-source/)(for QT only).
-  Choose one for your platform for android. For example QT 5.6 under Linux would be [this file](http://download.qt.io/official_releases/qt/5.6/5.6.1-1/qt-opensource-linux-x64-android-5.6.1-1.run)
+```
+sudo apt-get install g++ rename openjdk-11-jdk gradle
+```
 
-You also need Java JDK (prefer Oracle Java 8), Ant and [latest Gradle](https://gradle.org/releases/) (min version 3.4).
-
-QT-Creator (for QT only)
-------------------------
-
-Open QT-creator that should be installed with QT.
-Go to Settings/Android and specify correct paths to SDK and NDK.
-If everything is correct you will see two set available:
-Android for armeabi-v7a (gcc, qt) and Android for x86 (gcc, qt).
+- Android [SDK](https://developer.android.com/studio#downloads) (choose command line tools only)
+- If your system provides gradle with version < 5.1, download it from [Gradle](https://gradle.org/install/) homepage
 
 Dependencies
 ------------
 
-Take following pre-compiled binaries from PurpleI2P's repositories.
-
-	git clone https://github.com/PurpleI2P/Boost-for-Android-Prebuilt.git -b boost-1_72_0
-	git clone https://github.com/PurpleI2P/OpenSSL-for-Android-Prebuilt.git
-	git clone https://github.com/PurpleI2P/MiniUPnP-for-Android-Prebuilt.git
-	git clone https://github.com/PurpleI2P/android-ifaddrs.git
-
 Prepare Android SDK and install required packages
 
-	mkdir android-sdk
-	cd android-sdk
-	wget -t0 <link to latest SDK from Android site>
-	unzip commandlinetools-XXXXXX-XXXXXX.zip -d cmdline-tools
-	./cmdline-tools/tools/bin/sdkmanager "build-tools;25.0.3" "platforms;android-14" "platforms;android-25" "platform-tools"
-
-Building the app with QT
-------------------------
-
-- Open `qt/i2pd_qt/i2pd_qt.pro` in the QT-creator
-- Change line `MAIN_PATH = /path/to/libraries` to an actual path where you put the dependencies to
-- Select appropriate project (usually armeabi-v7a) and build
-- You will find an .apk file in `android-build/bin` folder
-
-Building the app without QT
----------------------------
-
-- Change line `I2PD_LIBS_PATH` in `android/jni/Application.mk` to an actual path where you put the dependencies to
-- Create or edit file 'local.properties'. Place 'sdk.dir=`<path to SDK>`' and 'ndk.dir=`<path to NDK>`'
-- Run `gradle clean cleanBuildCache assembleDebug` from `android` folder
-- You will find an .apk file in `android/build/outputs/apk` folder
-
-Creating release .apk
----------------------
-
-In order to create release .apk you must obtain a Java keystore file(.jks). Either you have in already, or you can generate it yourself using keytool, or from one of you existing well-known certificates.
-For example, i2pd release are signed with this [certificate](https://github.com/PurpleI2P/i2pd/blob/openssl/contrib/certificates/router/orignal_at_mail.i2p.crt).
-
-Change file 'build.gradle':
-
-```patch
---- a/android/build.gradle
-+++ b/android/build.gradle
-@@ -46,11 +46,17 @@ android {
-             keyAlias "i2pdapk"
-             keyPassword "android"
-         }
-+        release {
-+            storeFile file("path to .jks")
-+            storePassword "Store Password"
-+            keyAlias "alias"
-+            keyPassword "Key Passwordq"
-+        }
-     }
-     buildTypes {
-         release {
-             minifyEnabled true
--            signingConfig signingConfigs.orignal
-+            signingConfig signingConfigs.release
+```bash
+mkdir /tmp/android-sdk
+cd /tmp/android-sdk
+wget <latest SDK link>
+unzip commandlinetools-linux-*_latest.zip
+# install required tools
+./cmdline-tools/bin/sdkmanager --sdk_root=/opt/android-sdk "build-tools;31.0.0" "cmake;3.18.1" "ndk;21.4.7075529"
 ```
 
-Run `gradle clean cleanBuildCache assembleRelease`
+Clone repository with submodules
+```bash
+git clone --recurse-submodules https://github.com/PurpleI2P/i2pd-android.git
+```
 
-Building executable android binary
+Compile required libraries
+
+```bash
+export ANDROID_SDK_ROOT=/opt/android-sdk
+export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/21.4.7075529
+
+pushd app/jni
+./build_boost.sh
+./build_openssl.sh
+./build_miniupnpc.sh
+popd
+```
+
+Building Android application
+--------
+
+### Build application
+
+- Create `local.properties` file with path to SDK and NDK
+  ```
+  sdk.dir=/opt/android-sdk
+  ndk.dir=/opt/android-sdk/ndk/21.4.7075529
+  ```
+- Run `gradle clean assembleDebug`
+- You will find an .apk file in `app/build/outputs/apk` folder
+
+### Creating release .apk
+
+In order to create release .apk you must obtain a Java keystore file(.jks). Either you have in already, or you can generate it yourself using keytool, or from one of you existing well-known certificates.
+For example, i2pd release are signed with this [certificate](https://raw.githubusercontent.com/PurpleI2P/i2pd/9000b3df4edcbe7f2c8afd0e1e30609746311ace/contrib/certificates/router/orignal_at_mail.i2p.crt).
+
+Change file `app\build.gradle` by replacing pre-defined values with your own
+
+```
+release {
+    storeFile file("i2pdapk.jks")
+    storePassword "android"
+    keyAlias "i2pdapk"
+    keyPassword "android"
+}
+```
+
+Run `gradle clean assembleRelease`
+
+Building executable binary
 ------------------------------
 
-- Change line `I2PD_LIBS_PATH` in `android_binary_only/jni/Application.mk` to an actual path where you put the dependencies to
-- Run `ndk-build -j <threads>` from `android_binary_only` folder
-- You will find an `i2pd` executable in `android_binary_only/libs/armeabi-v7a` folder
+- Set environment variables:
+  ```
+  export ANDROID_SDK_ROOT=/opt/android-sdk
+  export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/21.4.7075529
+  ```
+- Run `$ANDROID_NDK_HOME/ndk-build -j <threads> NDK_MODULE_PATH=$PWD` from `binary/jni` folder
+- You will find an `i2pd` executable in `android_binary_only/libs/<architecture>` folder
