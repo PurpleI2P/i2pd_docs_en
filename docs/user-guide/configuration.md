@@ -281,7 +281,6 @@ meshnets.yggaddress                    | Local Yggdrasil's address to publish
 Local addressbook
 -----------------
 
-There is also a special addressbook config file in the working directory at `addressbook/local.csv`.
-It is used to map long I2P destinations to short, human readable domain names. The syntax is csv and
-it can be modified manually if the user wishes.
-
+There is also a special addressbook config file in the working directory at `addressbook/local.csv`.  
+It lets your routers to work as a resolver for 3ld domains if you run that 2ld address on your router and it' presented in addressbook.  
+Only i2pd can resolve such addresses, but sending special datagram requests.
