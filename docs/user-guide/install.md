@@ -74,7 +74,7 @@ run by PurpleI2P community member [villain](https://twitter.com/el_villano_loco)
 
 ## ArchLinux
 
-i2pd packages are available at AUR: [release version](https://aur.archlinux.org/packages/i2pd/),
+i2pd packages are available at Community repository for [release version](https://archlinux.org/packages/community/x86_64/i2pd/), and AUR for
 [nightly builds](https://aur.archlinux.org/packages/i2pd-git/)
 
 ## Gentoo Linux
