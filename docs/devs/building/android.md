@@ -87,4 +87,4 @@ Building executable binary
   export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk/21.4.7075529
   ```
 - Run `$ANDROID_NDK_HOME/ndk-build -j <threads> NDK_MODULE_PATH=$PWD` from `binary/jni` folder
-- You will find an `i2pd` executable in `android_binary_only/libs/<architecture>` folder
+- You will find an `i2pd` executable in `binary/libs/<architecture>` folder
