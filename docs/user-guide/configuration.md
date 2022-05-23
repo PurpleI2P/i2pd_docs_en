@@ -165,7 +165,7 @@ i2cp.address                           | The address to listen on or an abstract
 i2cp.port                              | Port of I2CP server. Usually 7654. Ignored for Andorid
 i2cp.enabled                           | If I2CP is enabled. false by default. Other services don't require I2CP 
 i2cp.singlethread                      | If false every I2CP session runs in own thread. true by default  
-
+  
 ### I2PControl interface
 
 Option                                 | Description
@@ -228,14 +228,6 @@ trust.enabled                          | Enable explicit trust options. false by
 trust.family                           | Make direct I2P connections only to routers in specified Family.
 trust.routers                          | Make direct I2P connections only to routers specified here. Comma separated list of base64 identities.
 trust.hidden                           | Should we hide our router from other routers? false by default
-
-### Websocket server
-
-Option                                 | Description
--------------------------------------- | --------------------------------------
-websockets.enabled                     | Enable websocket server. Disabled by default
-websockets.address                     | Address to bind websocket server on. 127.0.0.1 by default
-websockets.port                        | Port to bind websocket server on. 7666 by default
 
 ### Exploratory tunnels
 
