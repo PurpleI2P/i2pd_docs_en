@@ -34,5 +34,59 @@ Publish your family
 Run i2pd with the parameters 'family=&lt;your-family-name>', and make sure you have &lt;your-family-name>.key and &lt;your-family-name>.crt in your 'family' folder.
 If everything is set properly, you router.info will contain two new fields: 'family' and 'family.sig'.
 If not, your router will complain on startup with log messages starting with "Family:" prefix and severity 'warn' or 'error'.
+    
+Export to Java-I2P from i2pd
+------------------
+1. **Convert private key file to PKCS#8**
+    
+The private key is in an openssl "EC Parameter File" format:
+```
+-----BEGIN EC PARAMETERS-----
+(base64)
+-----END EC PARAMETERS-----
+-----BEGIN EC PRIVATE KEY-----
+(base64)
+-----END EC PRIVATE KEY-----
+```
+It must be converted to PKCS#8 format first.
+```
+openssl pkcs8 -topk8 -nocrypt -in your-family-name.key -out your-family-name.pkcs8
+```
+Now you have a pkcs8 private key in the your-family-name.pkcs8 file: 
+```
+-----BEGIN PRIVATE KEY-----
+(base64)
+-----END PRIVATE KEY-----
+```
+2. **Combine PKCS#8 and certificate files**
+    
+Now combine the pkcs8 and certificate files into a single file: 
+```
+cat your-family-name.pkcs8 your-family-name.crt > your-family-name.secret
+```
+3. **Import combined file**
+    
+Now go to Java i2p console http://127.0.0.1:7657/configfamily page and Join Existing Router Family selecting the file your-family-name.secret to join that family.
+
+([source](http://zzz.i2p/topics/3313))
+
+Export to i2pd from Java-I2P
+----------------------------
+
+Go to Java i2p console http://127.0.0.1:7657/configfamily page and export family key. You'll have a file `family-your-family-name-secret.crt`. It contains both the private key and the public key certificate.
+
+Copy it to `your-family-name.key` and `your-family-name.crt`.
+    
+Edit `your-family-name.key` in a text editor to remove the certificate part so it contains only the private key part.
+    
+Edit `your-family-name.crt` in a text editor to remove the private key part so it contains only the certificate part.
+
+Move the `your-family-name.key` and `your-family-name.crt` files to the i2pd /certificates/family/ folder, as instructed [here](https://i2pd.readthedocs.io/en/latest/user-guide/family/).
+    
+This assumes that i2pd/openssl can handle the PKCS#8 format for the private key. 
+
+([source](http://zzz.i2p/topics/3313))
+
+------------------------
 
 TODO: List common errors
