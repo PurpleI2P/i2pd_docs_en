@@ -1,9 +1,9 @@
 i2pd configuration
 ==================
 
-i2pd can be configured via either command-line arguments or config files. 
-Modifying `i2pd.conf` is just a way of passing command line arguments to i2pd at boot; 
-for example, running i2pd with argument `--port=10123` and setting option `port = 10123` in config file will have 
+i2pd can be configured via either command-line arguments or config files.
+Modifying `i2pd.conf` is just a way of passing command line arguments to i2pd at boot;
+for example, running i2pd with argument `--port=10123` and setting option `port = 10123` in config file will have
 the same effect.
 
 There are two separate config files: `i2pd.conf` and `tunnels.conf`. `i2pd.conf` is the main configuration file, where
@@ -36,7 +36,6 @@ If you are upgrading your very old router (< 2.3.0) see also [this](config_opts_
 
 Available options
 -----------------
-
 
 Run `./i2pd --help` to show builtin help message (default value of option will be shown in braces)
 
@@ -90,7 +89,7 @@ All options below still possible in cmdline, but better write it in config file:
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-http.enabled                           | If webconsole is enabled. true by default  
+http.enabled                           | If webconsole is enabled. true by default
 http.address                           | The address to listen on (HTTP server)
 http.port                              | The port to listen on (HTTP server) 7070 by default
 http.auth                              | Enable basic HTTP auth for webconsole
@@ -103,42 +102,42 @@ http.hostname                          | Expected hostname for WebUI (default: l
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-httpproxy.enabled                      | If HTTP proxy is enabled. true by default  
-httpproxy.address                      | The address to listen on (HTTP Proxy)  
-httpproxy.port                         | The port to listen on (HTTP Proxy) 4444 by default 
-httpproxy.addresshelper                | Enable address helper (jump). true by default  
-httpproxy.keys                         | Optional keys file for HTTP proxy local destination  
+httpproxy.enabled                      | If HTTP proxy is enabled. true by default
+httpproxy.address                      | The address to listen on (HTTP Proxy)
+httpproxy.port                         | The port to listen on (HTTP Proxy) 4444 by default
+httpproxy.addresshelper                | Enable address helper (jump). true by default
+httpproxy.keys                         | Optional keys file for HTTP proxy local destination
 httpproxy.signaturetype                | Signature type for new keys if keys file is set. 7 by default
-httpproxy.inbound.length               | Inbound tunnels length if keys is set. 3 by default  
-httpproxy.inbound.quantity             | Inbound tunnels quantity if keys is set. 5 by default  
-httpproxy.inbound.lengthVariance       | Inbound tunnels length variance if keys is set. 0 by default      
-httpproxy.outbound.length              | Outbound tunnels length if keys is set. 3 by default  
-httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. 5 by default  
-httpproxy.outbound.lengthVariance      | Outbound tunnels length variance if keys is set. 0 by default      
-httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://false.i2p)  
-httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default  
-httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5  
+httpproxy.inbound.length               | Inbound tunnels length if keys is set. 3 by default
+httpproxy.inbound.quantity             | Inbound tunnels quantity if keys is set. 5 by default
+httpproxy.inbound.lengthVariance       | Inbound tunnels length variance if keys is set. 0 by default
+httpproxy.outbound.length              | Outbound tunnels length if keys is set. 3 by default
+httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. 5 by default
+httpproxy.outbound.lengthVariance      | Outbound tunnels length variance if keys is set. 0 by default
+httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://false.i2p)
+httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default
+httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5
 
 ### Socks proxy
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-socksproxy.enabled                     | If SOCKS proxy is enabled. true by default  
-socksproxy.address                     | The address to listen on (SOCKS Proxy)  
-socksproxy.port                        | The port to listen on (SOCKS Proxy). 4447 by default  
-socksproxy.keys                        | Optional keys file for SOCKS proxy local destination  
+socksproxy.enabled                     | If SOCKS proxy is enabled. true by default
+socksproxy.address                     | The address to listen on (SOCKS Proxy)
+socksproxy.port                        | The port to listen on (SOCKS Proxy). 4447 by default
+socksproxy.keys                        | Optional keys file for SOCKS proxy local destination
 socksproxy.signaturetype               | Signature type for new keys if keys file is set. 7 by default
-socksproxy.inbound.length              | Inbound tunnels length if keys is set. 3 by default  
-socksproxy.inbound.quantity            | Inbound tunnels quantity if keys is set. 5 by default 
-socksproxy.inbound.lengthVariance      | Inbound tunnels length variance if keys is set. 0 by default      
-socksproxy.outbound.length             | Outbound tunnels length if keys is set. 3 by default  
-socksproxy.outbound.quantity           | Outbound tunnels quantity if keys is set. 5 by default 
-socksproxy.outbound.lengthVariance     | Outbound tunnels length variance if keys is set. 0 by default      
+socksproxy.inbound.length              | Inbound tunnels length if keys is set. 3 by default
+socksproxy.inbound.quantity            | Inbound tunnels quantity if keys is set. 5 by default
+socksproxy.inbound.lengthVariance      | Inbound tunnels length variance if keys is set. 0 by default
+socksproxy.outbound.length             | Outbound tunnels length if keys is set. 3 by default
+socksproxy.outbound.quantity           | Outbound tunnels quantity if keys is set. 5 by default
+socksproxy.outbound.lengthVariance     | Outbound tunnels length variance if keys is set. 0 by default
 socksproxy.outproxy.enabled            | Enable or disable SOCKS outproxy. Disabled by default
-socksproxy.outproxy                    | Address of outproxy. requests outside I2P will go there  
-socksproxy.outproxyport                | Outproxy remote port  
-socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default  
-socksproxy.i2cp.leaseSetEncType        | Comma separated encryption types to be used in LeaseSet type 3 or 5  
+socksproxy.outproxy                    | Address of outproxy. requests outside I2P will go there
+socksproxy.outproxyport                | Outproxy remote port
+socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5. 1 by default
+socksproxy.i2cp.leaseSetEncType        | Comma separated encryption types to be used in LeaseSet type 3 or 5
 
 ### SAM interface
 
@@ -146,8 +145,8 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 sam.address                            | The address to listen on (SAM bridge)
 sam.port                               | Port of SAM bridge. Usually 7656. SAM is off if not specified
-sam.enabled                            | If SAM is enabled. true by default 
-sam.singlethread                       | If false every SAM session runs in own thread. true by default  
+sam.enabled                            | If SAM is enabled. true by default
+sam.singlethread                       | If false every SAM session runs in own thread. true by default
 
 ### BOB interface
 
@@ -155,7 +154,7 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 bob.address                            | The address to listen on (BOB command channel)
 bob.port                               | Port of BOB command channel. Usually 2827. BOB is off if not specified
-bob.enabled                            | If BOB is enabled. false by default 
+bob.enabled                            | If BOB is enabled. false by default
 
 ### I2CP interface
 
@@ -163,62 +162,59 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 i2cp.address                           | The address to listen on or an abstract address for Android LocalSocket
 i2cp.port                              | Port of I2CP server. Usually 7654. Ignored for Andorid
-i2cp.enabled                           | If I2CP is enabled. false by default. Other services don't require I2CP 
-i2cp.singlethread                      | If false every I2CP session runs in own thread. true by default  
-  
+i2cp.enabled                           | If I2CP is enabled. false by default. Other services don't require I2CP
+i2cp.singlethread                      | If false every I2CP session runs in own thread. true by default
+
 ### I2PControl interface
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-i2pcontrol.address                     | The address to listen on (I2P control service)  
-i2pcontrol.port                        | Port of I2P control service. Usually 7650. I2PControl is off if not specified  
-i2pcontrol.enabled                     | If I2P control is enabled. false by default  
-i2pcontrol.password                    | I2P control authentication password. itoopie by default  
-i2pcontrol.cert                        | I2P control HTTPS certificate file name. i2pcontrol.crt.pem by default  
-i2pcontrol.key                         | I2P control HTTPS certificate key file name. i2pcontrol.key.pem by default  
+i2pcontrol.address                     | The address to listen on (I2P control service)
+i2pcontrol.port                        | Port of I2P control service. Usually 7650. I2PControl is off if not specified
+i2pcontrol.enabled                     | If I2P control is enabled. false by default
+i2pcontrol.password                    | I2P control authentication password. itoopie by default
+i2pcontrol.cert                        | I2P control HTTPS certificate file name. i2pcontrol.crt.pem by default
+i2pcontrol.key                         | I2P control HTTPS certificate key file name. i2pcontrol.key.pem by default
 
 ### UPNP
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-upnp.enabled                           | Enable or disable UPnP, false by default for CLI and true for GUI (Windows, Android)  
-upnp.name                              | Name i2pd appears in UPnP forwardings list. I2Pd by default  
+upnp.enabled                           | Enable or disable UPnP, false by default for CLI and true for GUI (Windows, Android)
+upnp.name                              | Name i2pd appears in UPnP forwardings list. I2Pd by default
 
 ### Cryptography
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-precomputation.elgamal                 | Use ElGamal precomputated tables. false for x64 and true for other platforms by default  
+precomputation.elgamal                 | Use ElGamal precomputated tables. false for x64 and true for other platforms by default
 
 ### Reseeding
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-reseed.verify                          | Verify .su3 signature. false by default 
-reseed.urls                            | Reseed URLs, separated by comma  
-reseed.yggurls                         | Reseed Yggdrasil's URLs, separated by comma  
+reseed.verify                          | Verify .su3 signature. false by default
+reseed.urls                            | Reseed URLs, separated by comma
+reseed.yggurls                         | Reseed Yggdrasil's URLs, separated by comma
 reseed.file                            | Path to local .su3 file or HTTPS URL to reseed from
 reseed.zipfile                         | Path to local .zip file to reseed from
 reseed.threshold                       | Minimum number of known routers before requesting reseed. 25 by default
-reseed.proxy                           | Url for https/socks reseed proxy  
+reseed.proxy                           | Url for https/socks reseed proxy
 
 ### Addressbook options
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
 addressbook.defaulturl                 | AddressBook subscription URL. Only used to initialize the AddressBook.
-addressbook.subscriptions              | AddressBook subscriptions URLs, separated by comma. Note that defaulturl is not added to subscriptions URLs 
+addressbook.subscriptions              | AddressBook subscriptions URLs, separated by comma. Note that defaulturl is not added to subscriptions URLs
 addressbook.hostsfile                  | File to dump AddressesBook in hosts.txt format
 
 ### Limits
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-limits.transittunnels                  | Override maximum number of transit tunnels. 2500 by default   
-limits.openfiles                       | Limit number of open file descriptors (0 - use system limit)  
-limits.coresize                        | Maximum size of corefile in Kb (0 - use system limit) 
-limits.ntcpsoft                        | Threshold to start probabalistic backoff with ntcp sessions (0 - use system limit) 
-limits.ntcphard                        | Maximum number of ntcp sessions (0 - use system limit) 
+limits.transittunnels                  | Override maximum number of transit tunnels. 2500 by default
+limits.openfiles                       | Limit number of open file descriptors (0 - use system limit)
 
 ### Trust options
 
@@ -246,7 +242,7 @@ ntcp2.enabled                          | Enable NTCP2. Enabled by default
 ntcp2.published                        | Enable incoming NTCP2 connections. Enabled by default
 ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto)
 ntcp2.addressv6                        | External IPv6 for incoming connections
-ntcp2.proxy                            | Specify proxy server for NTCP2. Should be http://address:port or socks://address:port 
+ntcp2.proxy                            | Specify proxy server for NTCP2. Should be http://address:port or socks://address:port
 
 ### Time sync
 
@@ -273,6 +269,6 @@ meshnets.yggaddress                    | Local Yggdrasil's address to publish
 Local addressbook
 -----------------
 
-There is also a special addressbook config file in the working directory at `addressbook/local.csv`.  
-It lets your routers to work as a resolver for 3ld domains if you run that 2ld address on your router and it' presented in addressbook.  
-Only i2pd can resolve such addresses, but sending special datagram requests.
+There is also a special addressbook config file in the working directory at `addressbook/local.csv`.
+It lets your routers to work as a resolver for 3ld domains if you run that 2ld address on your router and it' presented in addressbook.
+Only i2pd can resolve such addresses, by sending special datagram requests.
