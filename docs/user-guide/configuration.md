@@ -54,7 +54,7 @@ datadir                                | Path to storage of i2pd data (RI, keys,
 host                                   | Router external IP for incoming connections
 port                                   | Port to listen for incoming connections (default: auto)
 daemon                                 | Router will go to background after start
-service                                | Router will use system folders like '/var/lib/i2pd'
+service                                | Router will use system folders like '/var/lib/i2pd' (on unix) or 'C:\ProgramData\i2pd' (on Windows). Ignored on MacOS and Android
 ifname                                 | Network interface to bind to
 ifname4                                | Network interface to bind to for IPv4
 ifname6                                | Network interface to bind to for IPv6
