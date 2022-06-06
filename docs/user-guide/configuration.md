@@ -232,7 +232,7 @@ Option                                 | Description
 exploratory.inbound.length             | Exploratory inbound tunnels length. 2 by default
 exploratory.inbound.quantity           | Exploratory inbound tunnels quantity. 3 by default
 exploratory.outbound.length            | Exploratory outbound tunnels length. 2 by default
-exploratory.outbound.quantity          | Exploratory outbound tunnels length. 3 by default
+exploratory.outbound.quantity          | Exploratory outbound tunnels quantity. 3 by default
 
 ### NTCP2
 
