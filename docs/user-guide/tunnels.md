@@ -98,10 +98,10 @@ Optional parameters:
 * address         -- local interface tunnel binds to, '127.0.0.1' for connections from local host only, '0.0.0.0' for connections from everywhere. '127.0.0.1' by default.
 * signaturetype   -- signature type for new keys. 0 (DSA), 1 (ECDSA-P256), 7 (EDDSA), 11 (RedDSA). RSA signatures (4,5,6) are not allowed and will be changed to 7. 7 by default
 * cryptotype       -- crypto type for new keys. Experimental. Should be always 0
-* destinationport -- connect to particular port at destination. 0 by default
+* destinationport -- connect to particular port at destination. 0 by default (targeting first tunnel on server side for destination)
 * keepaliveinterval -- send ping to the destination after this interval in seconds. 0 by default meaning no pings
 
-So, given the example above, if you connected to 127.0.0.1:6668 on localhost, i2pd would tunnel that to irc.echelon.i2p:6668
+So, given the example above, if you connected to 127.0.0.1:6668 on localhost, i2pd would tunnel that connection to irc.ilita.i2p
 
 Server/generic tunnels
 ----------------------
