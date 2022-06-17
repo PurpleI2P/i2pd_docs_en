@@ -9,6 +9,7 @@ ipv4=false
 ipv6=false
 ssu=false
 ntcp2.enabled=false
+ssu2.enabled=false
 meshnets.yggdrasil=true  
 ```
 
