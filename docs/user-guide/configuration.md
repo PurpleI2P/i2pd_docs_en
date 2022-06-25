@@ -271,7 +271,7 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 unix.handle_sigtstp                    | Handle SIGTSTP and SIGCONT signals. Disabled by default
 
-`handle_sigtstp` enables handling of SIGTSTP and SIGCONT signals. (~will be added in 2.43.0~)
+`handle_sigtstp` enables handling of SIGTSTP and SIGCONT signals (*since 2.43.0*).
 
 SIGTSTP can be called using Ctrl+Z in terminal with running i2pd in it or by `kill` command. When signal recveived, i2pd will switch to offline mode and stop sending traffic and cleaning of netDb. All active tunnels will be frozen.
 
