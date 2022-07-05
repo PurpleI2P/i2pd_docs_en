@@ -139,7 +139,7 @@ Here's an example of an http tunnel:
 
     [http-in]
     type = http
-    host = ourwebsite.com
+    host = 127.0.0.1  
     port = 80
     keys = our-website.dat
 
