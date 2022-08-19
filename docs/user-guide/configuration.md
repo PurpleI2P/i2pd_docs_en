@@ -75,13 +75,23 @@ ssu                                    | Enable SSU transport protocol (use UDP)
 
 `datadir` and `service` options are only used as arguments for i2pd, these options have no effect when set in `i2pd.conf`.
 
-### Windows-specific options
+### NTCP2
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-svcctl                                 | Windows service management (--svcctl="install" or --svcctl="remove")
-insomnia                               | Prevent system from sleeping
-close                                  | Action on close: minimize, exit, ask
+ntcp2.enabled                          | Enable NTCP2. Enabled by default
+ntcp2.published                        | Enable incoming NTCP2 connections. Enabled by default
+ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto)
+ntcp2.addressv6                        | External IPv6 for incoming connections
+ntcp2.proxy                            | Specify proxy server for NTCP2. Should be http://address:port or socks://address:port
+
+### SSU2
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+ssu2.enabled                           | Enable SSU2. Disabled by default on 2.43.0
+ssu2.published                         | Enable incoming SSU2 connections. Disabled by default on 2.43.0
+ssu2.port                              | Port to listen for incoming SSU2 connections (default: auto - 'port' from general section or 'port + 1' if SSU is enabled)
 
 All options below still possible in cmdline, but better write it in config file:
 
@@ -234,16 +244,6 @@ exploratory.inbound.quantity           | Exploratory inbound tunnels quantity. 3
 exploratory.outbound.length            | Exploratory outbound tunnels length. 2 by default
 exploratory.outbound.quantity          | Exploratory outbound tunnels quantity. 3 by default
 
-### NTCP2
-
-Option                                 | Description
--------------------------------------- | --------------------------------------
-ntcp2.enabled                          | Enable NTCP2. Enabled by default
-ntcp2.published                        | Enable incoming NTCP2 connections. Enabled by default
-ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto)
-ntcp2.addressv6                        | External IPv6 for incoming connections
-ntcp2.proxy                            | Specify proxy server for NTCP2. Should be http://address:port or socks://address:port
-
 ### Time sync
 
 Option                                 | Description
@@ -265,7 +265,14 @@ Option                                 | Description
 meshnets.yggdrasil                     | Support transports through the Yggdrasil
 meshnets.yggaddress                    | Local Yggdrasil's address to publish
 
-### UNIX-specific
+### Windows-specific options
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+insomnia                               | Prevent system from sleeping
+close                                  | Action on close: minimize, exit, ask
+
+### UNIX-specific options
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
