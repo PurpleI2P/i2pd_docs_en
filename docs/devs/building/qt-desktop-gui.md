@@ -1,10 +1,14 @@
 # Qt Desktop GUI build instructions
 
+## Build Requirements
+
+Qt 5 is necessary (because Qt 4 lacks `QtWidgets` folder).
+
 ## Under Windows
 
 ### With Qt Creator
 
-TBD
+Instructions are not known.
 
 ### Without Qt Creator
 
@@ -37,24 +41,27 @@ If you are an Arch Linux user, refrain from updating system with `pacman -Syu`. 
 ### With Qt Creator
 
 ```
-sudo apt install qtcreator qt5-default build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 git zlib1g-dev
+sudo apt install qtcreator qt5-default build-essential g++ make libcrypto++-dev \
+  libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 git \
+  zlib1g-dev
 mkdir git
 cd git
-git clone https://github.com/PurpleI2P/i2pd.git
+git clone --recursive https://github.com/PurpleI2P/i2pd-qt.git
 ```
 
-Then, open Qt Creator. Open `git/i2pd/qt/i2pd_qt/i2pd_qt.pro`; set build make parameter
+Then, open Qt Creator; open `git/i2pd-qt/i2pd_qt.pro`; set build make parameter
 `-jNUMBER-OF-CPU-CORES`, e.g. `-j7`. Then, finally, press Make button.
 
 ### Without Qt Creator
 
 ```
-sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qt5-default libqt5gui5 git zlib1g-dev
+sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev \
+  libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qt5-default \
+  libqt5gui5 git zlib1g-dev
 mkdir git
 cd git
-git clone https://github.com/PurpleI2P/i2pd-qt.git
+git clone --recursive https://github.com/PurpleI2P/i2pd-qt.git
 cd i2pd-qt
-git submodule update --init
 ```
 
 For release build,
@@ -74,12 +81,13 @@ And when `qmake` completed, run:
 ### Without Qt Creator
 
 ```
-sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qtbase5-dev libqt5gui5 git zlib1g-dev
+sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev \
+  libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qtbase5-dev \
+  libqt5gui5 git zlib1g-dev
 mkdir git
 cd git
-git clone https://github.com/PurpleI2P/i2pd-qt.git
+git clone --recursive https://github.com/PurpleI2P/i2pd-qt.git
 cd i2pd-qt
-git submodule update --init
 ```
 
 For release build,
@@ -104,3 +112,7 @@ git clone https://github.com/flathub/website.i2pd.i2pd && cd website.i2pd.i2pd
 export FLATPAK_BUILDER_N_JOBS=4                            # build process jobs count
 flatpak-builder --user --install --force-clean i2pd_build_dir website.i2pd.i2pd.json
 ```
+
+## More details
+
+For more details on build procedures, see the GitHub actions at https://github.com/PurpleI2P/i2pd-qt/tree/master/.github/workflows .
