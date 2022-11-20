@@ -92,7 +92,10 @@ Option                                 | Description
 ssu2.enabled                           | Enable SSU2. Disabled by default on 2.43.0
 ssu2.published                         | Enable incoming SSU2 connections. Disabled by default on 2.43.0
 ssu2.port                              | Port to listen for incoming SSU2 connections (default: auto - 'port' from general section or 'port + 1' if SSU is enabled)
-
+ssu2.proxy                             | Specify UDP socks5 proxy server for NTCP2. Should be socks://address:port  
+ssu2.mtu4                              | MTU for local ipv4. Auto-detect by default  
+ssu2.mtu6                              | MTU for local ipv6. Auto-detect by default  
+    
 All options below still possible in cmdline, but better write it in config file:
 
 ### HTTP webconsole
