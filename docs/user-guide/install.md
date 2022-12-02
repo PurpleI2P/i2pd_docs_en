@@ -1,17 +1,37 @@
 Installing
 ==========
 
-Building from source
---------------------
+## Building from source
 
 See [developer section documentation](../devs/building/requirements.md) for how to build i2pd from source on your OS.
 
 
-Windows, Android, Mac OS X  
---------------------------
+## Installation from prebuilt packages
 
-The easiest way to install i2pd is by using precompiled binaries. 
+The easiest way to install i2pd is by using precompiled packages and binaries.  
 Go to the [latest release page](https://github.com/PurpleI2P/i2pd/releases/latest) and choose a file for your operating system.
+
+
+## Windows
+
+Check for [latest release page](https://github.com/PurpleI2P/i2pd/releases/latest) and choose a file for your system architecture:
+* i2pd_*_win32_mingw.zip -- for x86 systems
+* i2pd_*_win64_mingw.zip -- for x86_64 (x64) systems
+* i2pd_*_winxp_mingw.zip -- Windows XP compatible build
+* setup_i2pd_*.exe -- Installer with automatic detection of used system and correct extraction of a configuration files
+
+
+## Android
+
+You can get application on F-Droid:
+
+[<img src="https://fdroid.gitlab.io/artwork/badge/get-it-on.png"
+     alt="Get it on F-Droid"
+     height="80">](https://f-droid.org/packages/org.purplei2p.i2pd/)
+
+Alternatively, you can install i2pd by using F-Droid repository run by PurpleI2P community member [R4SAS](https://twitter.com/i2pr4sas): [repository homepage](https://fdroid.i2pd.xyz/)
+
+Also, packages can be found on i2pd-android repository [releases page](https://github.com/PurpleI2P/i2pd-android/releases/latest)
 
 
 ## Docker images
@@ -48,15 +68,15 @@ Automatically add repository
 
 After that you can install i2pd as any other software package:
 
-    apt-get update
-    apt-get install i2pd
+    sudo apt-get update
+    sudo apt-get install i2pd
 
-Look for more information about Debian repository [here](https://repo.i2pd.xyz/.help/readme.txt).
+Look for more information about Debian repository [here](https://repo.i2pd.xyz/.help/readme.html).
 
 ## Fedora/CentOS
 
 You can install i2pd from [repository](https://copr.fedorainfracloud.org/coprs/supervillain/i2pd/) 
-run by PurpleI2P community member [villain](https://twitter.com/el_villano_loco).
+run by PurpleI2P community member [villain](https://twitter.com/el_villano_loco) and maintained by [R4SAS](https://twitter.com/i2pr4sas).
 
 ### Centos 7:
 
