@@ -128,13 +128,15 @@ If *keys* is empty, transient keys will be created on every restart. If the *key
 Destination address from *keys* file will be loaded and the LeaseSet of address will be published.
 The server tunnel must use its own destination such as host 127.0.0.1 and port 80.
 
+The *port* is (non-I2P) TCP listening port on IP host that the listening local destination gets connected to.
+
 This tunnel type should be used for any protocol other than HTTP, even HTTP with SSL encryption (HTTPS).
 
 Optional parameters:
 
 Option              | Description
 --------------------|--------------------
-inport              | what port at local destination server tunnel listens to. Same as *port* by default
+inport              | (non-TCP non-UDP) I2P local destination port to listen to; an unsigned 16-bit integer. What port at local destination server tunnel listens to. Same as *port* by default
 accesslist          | list of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default
 gzip                | turns internal compression off if set to false. true by default
 signaturetype       | means signature type for new keys. 0 - DSA, 1- ECDSA-P256, 7 -EDDSA, 11 -RedDSA. 7 by default
