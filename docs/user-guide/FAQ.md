@@ -50,7 +50,7 @@ Contact developers with IRC or create an issue on GitHub.
 
 ## What is good tunnel creation success rate value?
 
-Average values are 15% - 40%. Larger is better.
+\>10%. Larger is better.
 
 ## Is there a place I can use to find running I2P websites?
 
@@ -73,9 +73,8 @@ i2pd's socks proxy has an option to pass all non-I2P traffic to the Tor socks pr
 
 ## What is a floodfill mode?
 
-Floodfill mode is a special mode, which contributes to the I2P network more.
-You may want to enable floodfill mode if you have stable uptime and high bandwidth
-to share.
+Floodfill mode make your router a floodfill, that means what other routers will publish and get LeaseSets and RIs on your router. [Read more](http://geti2p.net/en/docs/how/network-database).
+Floodfill mode require more bandwith, CPU time. If you sure, what you have stable uptime, you can enable floodfill: `floodfill = true`
 
 ## How is I2P different from Tor?
 
@@ -92,5 +91,5 @@ Tor is highly centralized by design, while I2P is designed to be decentralized a
 
 ## Can use i2pd as a proxy for regular Internet?
 
-Not out of the box. You better use [Tor](https://www.torproject.org/) for that.
+Yes, but better use [Tor](https://www.torproject.org/) for that.
 

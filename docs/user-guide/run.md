@@ -4,7 +4,7 @@ Running i2pd
 Starting, stopping and reloading configuration
 ----------------------------------------------
 
-This chapter explains how to start and manage the i2pd daemon under \*nix operation systems.
+This chapter explains how to start and manage the i2pd daemon under Unix-like operation systems.
 
 After you have built i2pd from source, just run the binary:
 
