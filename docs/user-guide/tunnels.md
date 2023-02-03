@@ -56,8 +56,8 @@ Available LeaseSet **types** (parameter `i2cp.leaseSetType = <code>` in a tunnel
 
 Type        | Code | Comment
 ----------- | ---- | -----------
-OLD         | 1    | **Default** for server tunnels because encryption type for server is `0`
-STANDARD    | 3    | **Default** for client tunnels because encryption type can be `0` or `4`
+OLD         | 1    | Deprecated
+STANDARD    | 3    | **Default**
 ENCRYPTED   | 5    | Encrypted LeaseSet. Hiding information from floodfill
 META        | 7    | Not implemented
 
@@ -67,11 +67,11 @@ Available LeaseSet **encryption** types (parameter `i2cp.leaseSetEncType = <code
 
 Type                                 | Code | Comment
 ------------------------------------ | ---- | -----------
-ELGAMAL                              | 0    | **Default** for destinations
+ELGAMAL                              | 0    | **Default** (only for support old routers)
 ECIES_P256_SHA256_AES256CBC          | 1    | Not compatible with Java router
 *ECIES_P384_SHA384_AES256CBC*        | 2    | Not implemented
 *ECIES_P521_SHA512_AES256CBC*        | 3    | Not implemented
-ECIES_X25519_AEAD                    | 4    | **Default** for routers
+ECIES_X25519_AEAD                    | 4    | **Default**
 
 Client tunnels
 --------------
@@ -100,13 +100,15 @@ Optional parameters:
 
 Option              | Description
 --------------------|--------------------
-address             | local interface tunnel binds to, '127.0.0.1' for connections from local host only, '0.0.0.0' for connections from everywhere. '127.0.0.1' by default
-signaturetype       | signature type for new keys. 0 (DSA), 1 (ECDSA-P256), 7 (EDDSA), 11 (RedDSA). RSA signatures (4,5,6) are not allowed and will be changed to 7. 7 by default
-cryptotype          | crypto type for new keys. Experimental. Should be always 0
-destinationport     | connect to particular port at destination. 0 by default (targeting first tunnel on server side for destination)
-keepaliveinterval   | send ping to the destination after this interval in seconds. 0 by default meaning no pings
+address             | Local interface tunnel binds to, '127.0.0.1' for connections from local host only, '0.0.0.0' for connections from everywhere. (default: 127.0.0.1)
+port                | Port of client tunnel.
+signaturetype       | Signature type for new keys. RSA signatures (4,5,6) are not allowed and will be changed to 7. (default: 7)
+cryptotype          | Crypto type for new keys. Experimental. Should be always 0
+destinationport     | Connect to particular port at destination. 0 by default (targeting first tunnel on server side for destination)
+keepaliveinterval   | Send ping to the destination after this interval in seconds. (default: 0 - no pings)
+keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
 
-So, given the example above, if you connected to 127.0.0.1:6668 on localhost, i2pd would tunnel that connection to irc.ilita.i2p
+So, given the example above, if you connected to 127.0.0.1:6668 on localhost, i2pd would tunnel that connection to irc.ilita.i2p.
 
 Server/generic tunnels
 ----------------------
@@ -136,13 +138,16 @@ Optional parameters:
 
 Option              | Description
 --------------------|--------------------
-inport              | (non-TCP non-UDP) I2P local destination port to listen to; an unsigned 16-bit integer. What port at local destination server tunnel listens to. Same as *port* by default
-accesslist          | list of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default
-gzip                | turns internal compression off if set to false. true by default
-signaturetype       | means signature type for new keys. 0 - DSA, 1- ECDSA-P256, 7 -EDDSA, 11 -RedDSA. 7 by default
-cryptotype          | crypto type for new keys. Experimental. Should be always 0
-enableuniquelocal   | if true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. true by default
+host                | IP address of server (on this address i2pd will send data from I2P)
+port                | Port of server tunnel.
+inport              | (non-TCP non-UDP) I2P local destination port to listen to; an unsigned 16-bit integer. What port at local destination server tunnel listens to (default: same as *port*)
+accesslist          | List of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default
+gzip                | Turns internal compression off if set to false. (default: false)
+signaturetype       | Signature type for new keys. (default: 7)
+cryptotype          | Crypto type for new keys. Experimental. Should be always 0
+enableuniquelocal   | If true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. (default: true)
 address             | IP address of an interface tunnel is connected to *host* from. Usually not used
+keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
 
 Server/http tunnels
 -------------------
@@ -164,9 +169,8 @@ Optional parameters:
 
 Option              | Description
 --------------------|--------------------
-hostoverride        | value to send in 'Host:' header, default: the same as *host* parameter
-gzip                | should we compress contents at I2P level. default: true
-ssl                 | use SSL connection to upstream server. `hostoverride` parameter can be used to set SNI domain. default: false (since 2.44.0)
+hostoverride        | Value to send in 'Host:' header, default: the same as *host* parameter
+ssl                 | Use SSL connection to upstream server. `hostoverride` parameter can be used to set SNI domain. default: false (since 2.44.0)
 
 Server/IRC tunnels
 -------------------
@@ -177,7 +181,7 @@ Optional parameters:
 
 Option              | Description
 --------------------|--------------------
-webircpassword      | password to send with WEBIRC command
+webircpassword      | Password to send with WEBIRC command
 
 UDP Tunnels
 -----------
@@ -196,10 +200,11 @@ port = 1194
 
 Option              | Description
 --------------------|--------------------
-destination         | the I2P destination of a udpserver tunnel, required parameter
-address             | IP address to bind local UDP endpoint to, defaults to `127.0.0.1`
-port                | port to bind local UDP endpoint to, required parameter
-gzip                | turns internal compression off if set to false. true by default
+destination         | The I2P destination of a udpserver tunnel, required parameter
+address             | IP address to bind local UDP endpoint to (default: `127.0.0.1`)
+port                | Port to bind local UDP endpoint to, required parameter
+gzip                | Turns internal compression off if set to false. (default: false)
+keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
 
 `udpserver` forwards traffic from N I2P destinations to 1 local UDP endpoint
 
@@ -213,10 +218,11 @@ port = 1194
 
 Option              | Description
 --------------------|--------------------
-address             | IP address to use for local UDP endpoints, defaults to `127.0.0.1`
+address             | IP address to use for local UDP endpoints (default: `127.0.0.1`)
 host                | IP address to forward traffic to, required parameter
 port                | UDP port to forward traffic on, required parameter
-gzip                | turns internal compression off if set to false. true by default
+gzip                | Turns internal compression off if set to false. (default: false)
+keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
 
 Socks proxy
 -----------
@@ -235,7 +241,7 @@ keys = socks-keys.dat
 
 Option              | Description
 --------------------|--------------------
-address             | local address Socks proxy binds to, defaults to `127.0.0.1`
+address             | Local address Socks proxy binds to (default: `127.0.0.1`)
 port                | TCP port Socks proxy binds to
 
 I2CP parameters
@@ -245,22 +251,23 @@ These I2CP parameter are common for all tunnel types and specify settings for a 
 
 Parameter                     | Description
 ------------------------------|--------------------
-inbound.length                | number of hops of an inbound tunnel. 3 by default, 8 by max;  lower value is faster but dangerous
-outbound.length               | number of hops of an outbound tunnel. 3 by default, 8 by max; lower value is faster but dangerous
-inbound.quantity              | number of inbound tunnels. 5 by default, 16 by max
-outbound.quantity             | number of outbound tunnels. 5 by default, 16 by max
-inbound.lengthVariance        | random number of hops to add or subtract to an inbound tunnel between -3 and 3. 0 by default **(since 2.42.0)**
-outbound.lengthVariance       | random number of hops to add or subtract to an outbound tunnel between -3 and 3. 0 by default **(since 2.42.0)**
-crypto.tagsToSend             | number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
-explicitPeers                 | list of comma-separated b64 addresses of peers to use, default: unset
-i2p.streaming.initialAckDelay | milliseconds to wait before sending Ack. 200 by default
-i2p.streaming.answerPings     | enable sending pongs. true by default
-i2cp.leaseSetType             | type of LeaseSet to be sent. 1, 3 or 5. 1 by default
-i2cp.leaseSetEncType          | comma separated encryption types to be used in LeaseSet type 3 or 5. Identity's type by default
-i2cp.leaseSetPrivKey          | decryption key for encrypted LeaseSet in base64. PSK or private DH
-i2cp.leaseSetAuthType         | authentication type for encrypted LeaseSet. 0 - no authentication(default), 1 - DH, 2 - PSK
-i2cp.leaseSetClient.dh.nnn    | client name:client's public DH in base64, for authentication type 1, nnn is integer
-i2cp.leaseSetClient.psk.nnn   | client name:client's PSK in base64, for authentication type 2, nnn is integer
+inbound.length                | Number of hops of an inbound tunnel. 3 by default, 8 by max;  lower value is faster but have more deanonimize risks
+outbound.length               | Number of hops of an outbound tunnel. 3 by default, 8 by max; lower value is faster but have more deanonimize risks
+inbound.quantity              | Number of inbound tunnels. 5 by default, 16 by max
+outbound.quantity             | Number of outbound tunnels. 5 by default, 16 by max
+inbound.lengthVariance        | Random number of hops to add or subtract to an inbound tunnel between -3 and 3. 0 by default **(since 2.42.0)**
+outbound.lengthVariance       | Random number of hops to add or subtract to an outbound tunnel between -3 and 3. 0 by default **(since 2.42.0)**
+crypto.tagsToSend             | Number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
+crypto.ratchet.inboundTags    | None for now
+explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
+i2p.streaming.initialAckDelay | Milliseconds to wait before sending Ack. (default: 200)
+i2p.streaming.answerPings     | Enable sending pongs. true by default
+i2cp.leaseSetType             | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
+i2cp.leaseSetEncType          | Comma separated encryption types to be used in LeaseSet type 3 or 5. (default: 0,4)
+i2cp.leaseSetPrivKey          | Decryption key for encrypted LeaseSet in base64. PSK or private DH
+i2cp.leaseSetAuthType         | Authentication type for encrypted LeaseSet. 0 - no authentication(default), 1 - DH, 2 - PSK
+i2cp.leaseSetClient.dh.nnn    | Client name:client's public DH in base64, for authentication type 1, nnn is integer
+i2cp.leaseSetClient.psk.nnn   | Client name:client's PSK in base64, for authentication type 2, nnn is integer
 
 Other examples
 --------------

@@ -92,12 +92,12 @@ run by PurpleI2P community member [villain](https://twitter.com/el_villano_loco)
     systemctl enable --now i2pd
 
 
-## ArchLinux
+## Arch
 
-i2pd packages are available at Community repository for [release version](https://archlinux.org/packages/community/x86_64/i2pd/), and AUR for
+i2pd packages are available at Arch's repository for [release version](https://archlinux.org/packages/community/x86_64/i2pd/), and AUR for
 [nightly builds](https://aur.archlinux.org/packages/i2pd-git/)
 
-## Gentoo Linux
+## Gentoo
 
 i2pd [has a working ebuild in the main gentoo repository](https://packages.gentoo.org/packages/net-vpn/i2pd). As of May 2018, the ebuild 
 is still listed as "unstable", and thus will request an exception in your package.keywords if you are using gentoo under the "stable" branch.
