@@ -78,7 +78,15 @@ You may also build deb-package with the following:
 	sudo apt-get install fakeroot devscripts dh-apparmor
 	cd i2pd
 	debuild --no-tgz-check -us -uc -b
+Arch/Manjaro
+-------------
+You will need a compiler and other tools that could be installed with `base-devel` package:
+	
+	sudo pacman -S base-devel
 
+Also you will need a bunch of libraries
+	
+	sudo pacman -S boost zlib openssl
 Fedora/Centos
 -------------
 
