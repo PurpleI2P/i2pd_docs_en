@@ -2,7 +2,7 @@
 
 ## Build Requirements
 
-Qt 5 is necessary (because Qt 4 lacks `QtWidgets` folder).
+Qt 5
 
 ## Under Windows
 
@@ -36,14 +36,22 @@ It is important to restrict PATH as described above. If you have Strawberry Perl
 
 If you are an Arch Linux user, refrain from updating system with `pacman -Syu`. Always update runtime separately as described on the home page, otherwise you might end up with DLLs incompatibility problems.
 
-## Under Ubuntu
+## Under Debian/Ubuntu
 
 ### With Qt Creator
 
-```
+```bash
+
+# Debian
+sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev \
+  libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 \
+  libqt5widgets5 git zlib1g-dev qt5-qmake qtbase5-dev
+
+# Ubuntu
 sudo apt install qtcreator qt5-default build-essential g++ make libcrypto++-dev \
   libssl-dev libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 git \
   zlib1g-dev
+
 mkdir git
 cd git
 git clone --recursive https://github.com/PurpleI2P/i2pd-qt.git
@@ -55,9 +63,16 @@ Then, open Qt Creator; open `git/i2pd-qt/i2pd_qt.pro`; set build make parameter
 ### Without Qt Creator
 
 ```
+# Debian
+sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev \
+  libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 \
+  libqt5widgets5 git zlib1g-dev qt5-qmake qtbase5-dev
+
+# Ubuntu
 sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev \
   libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qt5-default \
   libqt5gui5 git zlib1g-dev
+
 mkdir git
 cd git
 git clone --recursive https://github.com/PurpleI2P/i2pd-qt.git
