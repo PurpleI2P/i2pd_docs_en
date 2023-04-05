@@ -1,4 +1,4 @@
-# Qt Desktop GUI build instructions
+# Qt Desktop GUI app build instructions
 
 ## Build Requirements
 
@@ -6,15 +6,13 @@ Qt 5
 
 ## Under Windows
 
-### With Qt Creator
-
-Instructions are not known.
-
 ### Without Qt Creator
 
 All commands should be run under MSYS2 mingw32.
 
-```
+(obsolete instructions, please do a PR if you have working instrucitons)
+
+```bash
 pacman -S git make tar mingw-w64-i686-gcc mingw-w64-i686-boost mingw-w64-i686-libpng mingw-w64-i686-openssl mingw-w64-i686-zlib
 pacman -S mingw-w64-i686-qt5-static
 pacman -S openssl-devel mingw-w64-i686-miniupnpc
@@ -62,7 +60,7 @@ Then, open Qt Creator; open `git/i2pd-qt/i2pd_qt.pro`; set build make parameter
 
 ### Without Qt Creator
 
-```
+```bash
 # Debian
 sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev \
   libboost-all-dev libminiupnpc-dev libwebsocketpp-dev libqt5gui5 \
@@ -95,7 +93,7 @@ And when `qmake` completed, run:
 
 ### Without Qt Creator
 
-```
+```bash
 sudo apt-get install build-essential g++ make libcrypto++-dev libssl-dev \
   libboost-all-dev libminiupnpc-dev libwebsocketpp-dev qtbase5-dev \
   libqt5gui5 git zlib1g-dev
@@ -119,7 +117,7 @@ And when `qmake` completed, run:
 
 ## Building a Flatpak package
 
-```
+```bash
 sudo apt install flatpak flatpak-builder
 flatpak --user remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak --user install flathub org.kde.Sdk/x86_64/5.14     # required SDK version might be higher, check the manifest at https://github.com/flathub/website.i2pd.i2pd/blob/master/website.i2pd.i2pd.json
