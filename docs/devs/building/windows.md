@@ -76,6 +76,23 @@ You can install it through the MSYS2 and build with `USE_UPNP` key.
 Using Visual Studio
 -------------------
 
+### Installing dependencies through vcpkg
+
+Requirements:
+
+* [vcpkg](https://vcpkg.io/) (NOTE: Due to Microsoft's telemetry policies, it is strongly advised to opt out of data collection by referring to [this document](https://github.com/microsoft/vcpkg#telemetry).)
+* [Visual Studio Community Edition](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) (tested with VS2022)
+
+This part assumes that you know how to use and integrate vcpkg into Visual Studio.
+Read [this](https://learn.microsoft.com/en-us/vcpkg/) if you are unsure.
+Navigate to the vcpkg directory, and run(change x64-windows to x86-windows for a 32bit build):
+
+    .\vcpkg install boost:x64-windows miniupnpc:x64-windows openssl:x64-windows
+
+You may now skip directly to the [build process](#creating-visual-studio-project).
+
+### Without vcpkg
+
 Requirements for building:
 
 * [CMake](https://cmake.org/) (tested with 3.1.3)
@@ -149,6 +166,7 @@ Alternatively, if you feel adventurous, try that from the command line
 	cmake ..\build -G "Visual Studio 12 2013" -DWITH_UPNP=ON -DWITH_PCH=ON -DCMAKE_INSTALL_PREFIX:PATH=C:\dev\Debug_Win32_stage
 
 If necessary files are not found `WITH_UPNP` will stay off.
+vcpkg users may refer to [this](https://learn.microsoft.com/en-us/vcpkg/users/buildsystems/cmake-integration) for CMake flags.
 
 ### Building i2pd
 
