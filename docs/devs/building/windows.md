@@ -166,6 +166,7 @@ Alternatively, if you feel adventurous, try that from the command line
 	cmake ..\build -G "Visual Studio 12 2013" -DWITH_UPNP=ON -DWITH_PCH=ON -DCMAKE_INSTALL_PREFIX:PATH=C:\dev\Debug_Win32_stage
 
 If necessary files are not found `WITH_UPNP` will stay off.
+vcpkg users may refer to [this](https://learn.microsoft.com/en-us/vcpkg/users/buildsystems/cmake-integration) for CMake flags.
 
 ### Building i2pd
 
