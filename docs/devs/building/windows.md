@@ -76,6 +76,23 @@ You can install it through the MSYS2 and build with `USE_UPNP` key.
 Using Visual Studio
 -------------------
 
+### Installing dependencies through vcpkg
+
+Requirements:
+
+* [vcpkg](https://vcpkg.io/)
+* [Visual Studio Community Edition](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) (tested with VS2022)
+
+This part assumes that you know how to use and integrate vcpkg into Visual Studio.
+Read [this](https://learn.microsoft.com/en-us/vcpkg/) if you are unsure.
+Navigate to the vcpkg directory, and run(change x64-windows to x86-windows for a 32bit build):
+
+    .\vcpkg install boost:x64-windows miniupnpc:x64-windows openssl:x64-windows
+
+You may now skip directly to the [build process](#creating-visual-studio-project).
+
+### Without vcpkg
+
 Requirements for building:
 
 * [CMake](https://cmake.org/) (tested with 3.1.3)
