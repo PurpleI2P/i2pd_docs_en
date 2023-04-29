@@ -80,7 +80,7 @@ Using Visual Studio
 
 Requirements:
 
-* [vcpkg](https://vcpkg.io/)
+* [vcpkg](https://vcpkg.io/) (NOTE: Due to Microsoft's telemetry policies, it is strongly advised to opt out of data collection by referring to [this document](https://github.com/microsoft/vcpkg#telemetry).)
 * [Visual Studio Community Edition](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) (tested with VS2022)
 
 This part assumes that you know how to use and integrate vcpkg into Visual Studio.
