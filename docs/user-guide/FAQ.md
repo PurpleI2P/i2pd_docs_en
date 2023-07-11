@@ -74,7 +74,7 @@ i2pd's socks proxy has an option to pass all non-I2P traffic to the Tor socks pr
 ## What is a floodfill mode?
 
 Floodfill mode make your router a floodfill, that means what other routers will publish and get LeaseSets and RIs on your router. [Read more](http://geti2p.net/en/docs/how/network-database).
-Floodfill mode require more bandwith, CPU time. If you sure, what you have stable uptime, you can enable floodfill: `floodfill = true`
+Floodfill mode require more bandwith, CPU time. You can enable floodfill only if it has public ipv4 address and minimal bandwidth O: `floodfill = true`
 
 ## How is I2P different from Tor?
 
