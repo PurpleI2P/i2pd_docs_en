@@ -14,6 +14,11 @@ i2p.router.net.tunnels.successrate returns tunnel creation success rate in perce
 i2p.router.net.total.received.bytes returns total received bytes since last restart  
 i2p.router.net.total.sent.bytes returns total sent bytes since last restart  
 # BOB
-Unlike Java-I2P, i2pd keep supporting BOB with the following extensions  
-newkeys signaturetype cryptotype. DSA and ElGamal by default  
-lookuplocal - looks for LeaseSet with specified address in router's netdb  
+Unlike Java-I2P, i2pd keep supporting BOB with the following extensions:
+- newkeys
+- signaturetype
+- cryptotype.
+
+DSA and ElGamal by default.
+
+lookuplocal - looks for LeaseSet with specified address in router's netdb
