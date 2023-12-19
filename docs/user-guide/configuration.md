@@ -65,7 +65,7 @@ ipv4                                   | Enable communication through IPv4 (defa
 ipv6                                   | Enable communication through clearnet IPv6 (default: false)
 notransit                              | Router will not accept transit tunnels, disabling transit traffic completely. G router cap will be published (default: false)
 floodfill                              | Router will be floodfill (default: false)
-bandwidth                              | Bandwidth limit: integer in KBps or letters: L (32), O (256), P (2048), X (unlimited).
+bandwidth                              | Bandwidth limit: integer in KBps or letters: K (12), L (48), M (64), N (128), O (256), P (2048), X (unlimited).
 share                                  | Max % of bandwidth limit for transit. 0-100 (default: 100)
 family                                 | Name of a family, router belongs to
 netid                                  | Network ID, router belongs to. Main I2P is 2.
