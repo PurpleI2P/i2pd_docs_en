@@ -68,11 +68,64 @@ webirc {
     keys = chatserver-key.dat
     webircpassword = your_password
 
-3) Restart i2pd.
+3) Securing UnrealIRCd
 
-4) Find b32 destination of your anonymous IRC server.
+   By default if you run an I2Pd service, I2P will connect to the IRCd at localhost using IP 127.0.0.1
+   
+   This is bad for two reasons:
+   
+   First, you would be unable to separate I2P traffic from other localhost traffic.
+   Second, all I2P users would be unbanable because 127.0.0.1 is exempt from all bans, including glines.
+
+   So, we can fake host to separate localhost traffic from i2pd traffic.
+
+   To do this, we will create the directory that UnrealIRCd will access and create the socket file:
+
+```
+    mkdir /etc/i2pd/unrealircd
+    chown unrealircd:unrealircd /etc/i2pd/unrealircd
+    chmod 750 /etc/i2pd/unrealircd
+```
+   NOTE: This assumes your IRCd user is called unrealircd. If not, change the unrealircd:unrealircd in the chown command of above.
+
+   If you are on Debian/Ubuntu and have AppArmor installed (you probably do!) then run the next few commands. If you don't do this then everything will fail mysteriously later.
+
+   Still as root, run:
+```
+    echo "/etc/i2pd/unrealircd/ip2d_ircd.socket rw," >>/etc/apparmor.d/local/system_i2pd
+    apparmor_parser -r /etc/apparmor.d/system_i2pd
+```
+
+   Configure UnrealIRCd, adding this to your unrealircd.conf file:
+```
+    listen {
+    file "/etc/i2pd/unrealircd/i2pd_ircd.socket";
+    mode 0777;
+    spoof-ip 127.0.0.3;
+    }
+```
+
+   And to turn off ban checking:
+```
+   except ban {
+    mask { ip 127.0.0.3; }
+    type { blacklist; connect-flood; maxperip; handshake-data-flood; }
+    }
+```
+   
+   We will create a communication that act like bridge between a TCP/IP on port 5555 and UNIX socket located at "/etc/i2pd/unrealircd/i2pd_ircd.socket".
+
+   Just run:
+```
+    socat TCP-LISTEN:5555,bind=localhost,reuseaddr,fork UNIX-CONNECT:/etc/i2pd/unrealircd/i2pd_ircd.socket &
+```
+   This way, when users connecting on I2P tunnel client address, they will be redirect to 127.0.0.1:5555 that will bridge to Unix Socket created by UnrealIrcd, that come up with an IP 127.0.0.3 and exempt them from ban checking.
+
+4) Restart i2pd.
+
+5) Find b32 destination of your anonymous IRC server.
 
    Go to webconsole -> [I2P tunnels page](http://127.0.0.1:7070/?page=i2p_tunnels). Look for Sever tunnels and you will see address like \<long random string\>.b32.i2p next to anon-chatserver.
 
    Clients will use this address to connect to your server anonymously.
-
+   
