@@ -5,9 +5,7 @@ site_author: PurpleI2P Team
 
 repo_url: https://github.com/PurpleI2P/i2pd_docs_en
 
-site_favicon: media/i2pd-logo.png
-
-pages:
+nav:
 - Home: index.md
 - User Guide:
     - Installing: user-guide/install.md
@@ -53,5 +51,5 @@ theme: readthedocs
 
 
 markdown_extensions:
-    - toc:
-        permalink: 
+  - toc:
+      permalink: true
