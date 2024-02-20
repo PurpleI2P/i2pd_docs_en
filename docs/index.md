@@ -1,4 +1,4 @@
-![Logo](media/i2pd-logo.png)
+![Logo](img/logo.png)
 
 Invisible Internet Protocol (daemon)
 ====================================
