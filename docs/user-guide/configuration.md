@@ -225,7 +225,7 @@ addressbook.hostsfile                  | File to dump AddressesBook in hosts.txt
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-limits.transittunnels                  | Override maximum number of transit tunnels. (default: 5000)
+limits.transittunnels                  | Override maximum number of transit tunnels. (default: 10000)
 limits.openfiles                       | Limit number of open file descriptors (default: 0 - use system limit)
 limits.coresize                        | Maximum size of corefile in Kb (default: 0 - use system limit)
 limits.zombies                         | Minimum percentage of successfully created tunnels under which tunnel cleanup is paused (default [%]: 0.00)
