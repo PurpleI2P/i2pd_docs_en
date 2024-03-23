@@ -55,9 +55,9 @@ Also there is `-L` flag for CMake that could be used to list current cached opti
 Debian/Ubuntu
 -------------
 
-You will need a compiler and other tools that could be installed with `build-essential` and `debhelper` packages:
+You will need a compiler and other tools that could be installed with `build-essential`, `debhelper` and `cmake` packages:
 
-	sudo apt-get install build-essential debhelper
+	sudo apt-get install build-essential debhelper cmake
 
 Also you will need a bunch of development libraries:
 
