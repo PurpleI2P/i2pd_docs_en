@@ -29,7 +29,7 @@ Generic build process looks like this (with cmake):
 
 Then run the tests:
 
-    cd i2pd/tests/
+	cd i2pd/tests/
 	make
 
 After successful build i2pd could be installed with:
