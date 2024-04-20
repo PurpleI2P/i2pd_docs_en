@@ -217,6 +217,7 @@ reseed.proxy                           | Url for https/socks reseed proxy
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
+addressbook.enabled                    | Enable or disable AddressBook. (default: true)  
 addressbook.defaulturl                 | AddressBook subscription URL. Only used to initialize the AddressBook.
 addressbook.subscriptions              | AddressBook subscriptions URLs, separated by comma. Note that defaulturl is not added to subscriptions URLs
 addressbook.hostsfile                  | File to dump AddressesBook in hosts.txt format
