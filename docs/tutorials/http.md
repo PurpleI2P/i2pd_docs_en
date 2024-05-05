@@ -29,12 +29,12 @@ If you wish to run your own website in Invisible Internet, follow those steps:
     port = 8080
     keys = anon-website.dat
 
-3) Restart i2pd.
+3) Restart i2pd or send SIGHUP signal.
 
 4) Find b32 destination of your website.
 
-   Go to webconsole -> [I2P tunnels page](http://127.0.0.1:7070/?page=i2p_tunnels). Look for Sever tunnels and you will see address like \<long random string\>.b32.i2p next to anon-website.
+   Go to webconsole -> [I2P tunnels page](http://127.0.0.1:7070/?page=i2p_tunnels). Look for Server tunnels and you will see address like \<long random string\>.b32.i2p next to anon-website.
 
    Website is now available in Invisible Internet by visiting this address.
 
-5) (Optional) Register short and memorable .i2p domain on [inr.i2p](http://inr.i2p).
+5) (Optional) Register short and memorable .i2p domain on [reg.i2p](http://reg.i2p).
