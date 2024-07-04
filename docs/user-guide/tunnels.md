@@ -262,6 +262,7 @@ crypto.ratchet.inboundTags    | None for now
 explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
 i2p.streaming.initialAckDelay | Milliseconds to wait before sending Ack. (default: 200)
 i2p.streaming.answerPings     | Enable sending pongs. true by default
+i2p.streaming.maxOutboundSpeed| Max outbound speed of stream in bytes/sec. 1730000000 by default
 i2cp.leaseSetType             | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 i2cp.leaseSetEncType          | Comma separated encryption types to be used in LeaseSet type 3 or 5. (default: 0,4)
 i2cp.leaseSetPrivKey          | Decryption key for encrypted LeaseSet in base64. PSK or private DH
