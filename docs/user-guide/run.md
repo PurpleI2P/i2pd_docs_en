@@ -22,7 +22,7 @@ i2pd can be controlled with signals. The process ID by is written to the file `~
 i2pd supports the following signals:
 
 * INT - Graceful shutdown. i2pd will wait for up to 10 minutes and stop. Send a second INT signal to shutdown i2pd immediately.
-* HUP - Reload configuration files.
+* HUP - Reload tunnels configuration files.
 
 
 ### systemd unit
