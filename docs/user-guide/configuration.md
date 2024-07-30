@@ -176,6 +176,8 @@ i2cp.enabled                           | If I2CP is enabled. (default: true)
 i2cp.address                           | The address to listen on or an abstract address for Android LocalSocket
 i2cp.port                              | Port of I2CP server. Usually 7654. Ignored for Andorid
 i2cp.singlethread                      | If false every I2CP session runs in own thread. (default: true)
+i2cp.inboundlimit                      | Client inbound limit in KBps to return in BandwidthLimitsMessage. Router's bandwidth if 0. (default:0)
+i2cp.outboundlimit                     | Client outbound limit in KBps to return in BandwidthLimitsMessage. Router's bandwidth if 0. (default:0)
 
 ### I2PControl interface
 
