@@ -107,6 +107,10 @@ If you need UPnP support miniupnpc development library should be installed (don'
 
 	sudo yum install miniupnpc-devel
 
+ For static builds boost-static is needed:
+
+	sudo yum install boost-static
+
 Latest Fedora systems using [DNF](https://en.wikipedia.org/wiki/DNF_(software)) instead of YUM by default, you may prefer to use DNF, but YUM should be ok
 
 Centos 7 has CMake 2.8.11 in the official repositories that too old to build i2pd, CMake >=3.7 is required.
