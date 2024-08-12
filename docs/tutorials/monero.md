@@ -47,7 +47,7 @@ Open wallet inteface (the "RPC") allows anyone to connect their wallets to Moner
 
 If you already have a node with public RPC and now want to run i2p service, follow those steps:
 
-1) Make sure the node is already configured for public use and running. (For an example you setted up `monero.conf` such as `public-node=1` with `restricted-rpc=1`)
+1) Make sure the node is running and configured with a restricted rpc port by adding `rpc-restricted-bind-port=18089` to your monerod startup flags or config file.
 
 2) Configure i2pd to create server type tunnel and put in your `./tunnels.conf` file:
 
