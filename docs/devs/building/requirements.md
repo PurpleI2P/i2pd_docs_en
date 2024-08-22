@@ -4,8 +4,8 @@ Build requirements
 In general, for building i2pd you need several things:
 
 * compiler with c++11 support (for example: gcc >= 4.8, clang)
-* boost >= 1.49
-* openssl library
+* boost >= 1.62
+* openssl library >= 1.1.0
 * zlib library (openssl already depends on it)
 
 Optional tools:
