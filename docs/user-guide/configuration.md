@@ -126,7 +126,7 @@ httpproxy.inbound.lengthVariance       | Inbound tunnels length variance if keys
 httpproxy.outbound.length              | Outbound tunnels length if keys is set. (default: 3)
 httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. (default: 5)
 httpproxy.outbound.lengthVariance      | Outbound tunnels length variance if keys is set. (default: 0)
-httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://false.i2p)
+httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://exit.stormycloud.i2p)
 httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5
 
