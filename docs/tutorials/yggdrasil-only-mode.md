@@ -16,4 +16,5 @@ meshnets.yggdrasil=true
 If you use Yggdrasil subnet and want to bind your router to a particular address specify it with
 `meshnets.yggaddress=` your local yggdrasil address
 
-Start i2pd, it will also reseed from an yggdrasil reseed server. No clearnet communication is involved. 
+Start i2pd, it will also reseed from an yggdrasil reseed server. No clearnet communication is involved.   
+Important: Make sure that the system clock is syncronized.  
