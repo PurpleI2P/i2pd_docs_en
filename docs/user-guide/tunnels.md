@@ -262,13 +262,16 @@ crypto.ratchet.inboundTags    | None for now
 explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
 i2p.streaming.initialAckDelay | Milliseconds to wait before sending Ack. (default: 200)
 i2p.streaming.answerPings     | Enable sending pongs. true by default
-i2p.streaming.maxOutboundSpeed| Max outbound speed of stream in bytes/sec. 1730000000 by default
+i2p.streaming.maxOutboundSpeed| Max outbound speed of stream in bytes/sec. (default: 1730000000)
+i2p.streaming.maxInboundSpeed | Max inbound speed of stream in bytes/sec. (default: 1730000000)
+i2p.streaming.profile         | Bandwidth usage profile. 1 - bulk(high), 2- intrecative(low). (default: 1)
 i2cp.leaseSetType             | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 i2cp.leaseSetEncType          | Comma separated encryption types to be used in LeaseSet type 3 or 5. (default: 0,4)
 i2cp.leaseSetPrivKey          | Decryption key for encrypted LeaseSet in base64. PSK or private DH
 i2cp.leaseSetAuthType         | Authentication type for encrypted LeaseSet. 0 - no authentication(default), 1 - DH, 2 - PSK
 i2cp.leaseSetClient.dh.nnn    | Client name:client's public DH in base64, for authentication type 1, nnn is integer
 i2cp.leaseSetClient.psk.nnn   | Client name:client's PSK in base64, for authentication type 2, nnn is integer
+i2cp.dontPublishLeaseSet      | Don't publish LeaseSet if set to true. (default: false)
 
 Other examples
 --------------
