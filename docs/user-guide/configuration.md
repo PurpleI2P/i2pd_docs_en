@@ -127,8 +127,11 @@ httpproxy.outbound.length              | Outbound tunnels length if keys is set.
 httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is set. (default: 5)
 httpproxy.outbound.lengthVariance      | Outbound tunnels length variance if keys is set. (default: 0)
 httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://exit.stormycloud.i2p)
+httpproxy.addresshelper                | Enable or disable addresshelper. (default: true)
+httpproxy.senduseragent                | Pass through user's User-Agent if enabled. (deafult: false)
 httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5
+httpproxy.i2p.streaming.profile        | HTTP Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (default: 1)
 
 ### Socks proxy
 
@@ -150,6 +153,7 @@ socksproxy.outproxy                    | Address of outproxy(IP or local). Reque
 socksproxy.outproxyport                | Outproxy port. If 0 socksproxy.outproxy contains path to local socket
 socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 socksproxy.i2cp.leaseSetEncType        | Comma separated encryption types to be used in LeaseSet type 3 or 5
+socksproxy.i2p.streaming.profile       | SOCKS Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (deafult: 1)
 
 ### SAM interface
 
