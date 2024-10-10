@@ -91,7 +91,7 @@ Option                                 | Description
 ssu2.enabled                           | Enable SSU2 (default: true)
 ssu2.published                         | Enable incoming SSU2 connections. (default: true)
 ssu2.port                              | Port to listen for incoming SSU2 connections (default: auto - 'port' from general section)
-ssu2.proxy                             | Specify UDP socks5 proxy server for NTCP2. Should be socks://address:port  
+ssu2.proxy                             | Specify UDP socks5 proxy server for SSU2. Should be socks://address:port  
 ssu2.mtu4                              | MTU for local ipv4. (default: auto)
 ssu2.mtu6                              | MTU for local ipv6. (default: auto)
     
