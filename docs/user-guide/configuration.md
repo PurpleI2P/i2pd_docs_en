@@ -255,6 +255,18 @@ exploratory.inbound.quantity           | Exploratory inbound tunnels quantity. (
 exploratory.outbound.length            | Exploratory outbound tunnels length. (default: 2)
 exploratory.outbound.quantity          | Exploratory outbound tunnels quantity. (default: 3)
 
+### Shared local destination
+
+Option                                 | Description
+-------------------------------------- | --------------------------------------
+shareddest.inbound.length              | Shared local destination inbound tunnels length. (default: 3)
+shareddest.inbound.quantity            | Shared local destination inbound tunnels quantity. (default: 3)
+shareddest.outbound.length             | Shared local destination outbound tunnels length. (default: 3)
+shareddest.outbound.quantity           | Shared local destination outbound tunnels quantity. (default: 3)
+shareddest.i2cp.leaseSetType           | Shared local destination's LeaseSet type. (default: 3)
+shareddest.i2cp.leaseSetEncType        | Shared local destination's LeaseSet encryption type. (default: 0,4)
+shareddest.i2p.streaming.profile       | Shared local destination bandwidth usage profile. (default: 2)
+
 ### Time sync
 
 Option                                 | Description
