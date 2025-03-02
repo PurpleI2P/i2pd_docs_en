@@ -7,6 +7,7 @@ This doc is trying to cover:
 * [Fedora/Centos](#fedora-centos)
 * [Mac OS X](#mac-os-x)
 * [FreeBSD](#freebsd)
+* [Solaris](#solaris)
 
 Make sure you have all required dependencies for your system successfully installed.
 See [this](requirements.md) page for common requirements.
@@ -158,3 +159,14 @@ To use newer compiler you should set these variables(replace "47" with your actu
 
 	export CC=/usr/local/bin/gcc47
 	export CXX=/usr/local/bin/g++47
+
+Solaris
+-------
+
+For OpenIndiana install following packets:
+
+	pkg install developer/gcc-14
+ 	pkg install system/library/boost
+  	pkg install library/security/openssl-3
+   
+then use 'gmake'
