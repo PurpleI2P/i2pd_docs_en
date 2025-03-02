@@ -166,7 +166,6 @@ Solaris
 For OpenIndiana install following packets:
 
 	pkg install developer/gcc-14
- 	pkg install system/library/boost
-  	pkg install library/security/openssl-3
+ 	pkg install system/library/boost 	
    
 then use 'gmake'
