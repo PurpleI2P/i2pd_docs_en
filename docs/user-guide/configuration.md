@@ -188,8 +188,8 @@ i2cp.outboundlimit                     | Client outbound limit in KBps to return
 Option                                 | Description
 -------------------------------------- | --------------------------------------
 i2pcontrol.enabled                     | If I2P control is enabled. (default: false)
-i2pcontrol.address                     | The address to listen on (I2P control service)
-i2pcontrol.port                        | Port of I2P control service. Usually 7650. I2PControl is off if not specified
+i2pcontrol.address                     | The address to listen on (IP or path to local socket)
+i2pcontrol.port                        | Port of I2P control service. Usually 7650. If 0 i2pcontrol.address contains path to local socket
 i2pcontrol.password                    | I2P control authentication password. (default: itoopie)
 i2pcontrol.cert                        | I2P control HTTPS certificate file name. (default: i2pcontrol.crt.pem)
 i2pcontrol.key                         | I2P control HTTPS certificate key file name. (default: i2pcontrol.key.pem)
