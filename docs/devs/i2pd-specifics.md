@@ -15,5 +15,44 @@ new values for `SIGNATURE_TYPE`:
 `i2p.router.net.total.sent.bytes` returns total sent bytes since last restart  
 # BOB
 Unlike Java-I2P, i2pd keep supporting BOB with the following extensions:
-- newkeys signaturetype cryptotype  (DSA for signature  and ElGamal for crypto by default)
-- lookuplocal - looks for LeaseSet with specified address in router's netdb
+
+## Session Management
+
+- zap — Terminates the BOB service entirely, closing all active sessions and stopping the service from accepting new connections.
+- quit — Ends the current user session with BOB without shutting down the service itself.
+
+## Tunnel Control
+
+- start — Initiates the tunnel associated with the current nickname.
+- stop — Stops the tunnel associated with the current nickname.
+- status `<NICKNAME>` — Displays the status of the tunnel identified by the specified nickname.
+- list — Lists all configured tunnels.
+- clear — Removes the current nickname from the list of configured tunnels.
+
+## Nickname and Key Management
+
+- setnick `<NICKNAME>` — Creates a new nickname for a tunnel.
+- getnick `<TUNNELNAME>` — Sets the current nickname to the one associated with the specified tunnel name.
+- newkeys `[signaturetype]` — Generates a new key pair (public and private keys) for the current nickname.
+By default, this uses the DSA signature type and ElGamal encryption.
+To generate keys with a specific signature type (e.g., EdDSA), specify the desired type:
+For example, newkeys 7 generates an EdDSA key pair (supported only in i2pd).
+- getkeys — Retrieves the current key pair for the current nickname.
+- setkeys `<BASE64_KEYPAIR>` — Sets the key pair for the current nickname using the provided BASE64-encoded key pair.
+- getdest — Returns the destination for the current nickname.
+
+## Tunnel Configuration
+
+- outhost `<HOSTNAME|IP>` — Sets the outbound hostname or IP address for the tunnel.
+- outport `<PORT_NUMBER>` — Sets the outbound port number that the tunnel will contact.
+- inhost `<HOSTNAME|IP>` — Sets the inbound hostname or IP address for the tunnel.
+- inport `<PORT_NUMBER>` — Sets the inbound port number that the tunnel will listen on.
+- quiet `<True|False>` — Determines whether to send the incoming destination information.
+- option `<KEY>=<VALUE>` — Sets an option for the current tunnel. Note: Do not use spaces in the key or value.
+- settunneltype `<socks|httpproxy>` — Sets the tunnel type to either SOCKS or HTTP proxy.
+
+## Additional Commands
+
+- lookup `<I2P_HOSTNAME>` — Performs a lookup for the specified I2P hostname and returns its destination.
+- lookuplocal `<I2P_HOSTNAME>` — looks for LeaseSet with specified address in router's netdb
+- help `<COMMAND>` — Provides help information for the specified command. If no command is specified, lists all available commands.
