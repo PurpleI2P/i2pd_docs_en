@@ -50,7 +50,7 @@ log                                    | Logs destination: stdout, file, syslog 
 logfile                                | Path to logfile (default - autodetect)
 loglevel                               | Log messages above this level (debug, info, warn, error, none; default - warn)
 logclftime                             | Write full CLF-formatted date and time to log (default: false (write only time))
-datadir                                | Path to storage of i2pd data (RouterInfos, destinations keys, peer profiles, etc ...)
+datadir                                | Path to storage of i2pd data (configs, keys, netdb, peer profiles, etc ...). Can be passed as an agrument only.
 host                                   | Router external IP for incoming connections (default: auto if SSU2 is enabled)
 port                                   | Port to listen for incoming connections (default: auto (random))
 daemon                                 | Router will go to background after start (default: true)
