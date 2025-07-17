@@ -261,7 +261,7 @@ crypto.tagsToSend             | Number of ElGamal/AES tags to send. 40 by defaul
 crypto.ratchet.inboundTags    | None for now
 explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
 i2p.streaming.initialAckDelay | Milliseconds to wait before sending Ack. (default: 200)
-i2p.streaming.answerPings     | Enable sending pongs; int. 1 means true. ((int)(bool)true) by default
+i2p.streaming.answerPings     | Enable sending pongs. true by default
 i2p.streaming.maxOutboundSpeed| Max outbound speed of stream in bytes/sec. (default: 1730000000)
 i2p.streaming.maxInboundSpeed | Max inbound speed of stream in bytes/sec. (default: 1730000000)
 i2p.streaming.profile         | Bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (default: 1)
