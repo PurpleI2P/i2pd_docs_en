@@ -132,6 +132,7 @@ httpproxy.senduseragent                | Pass through user's User-Agent if enabl
 httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5
 httpproxy.i2p.streaming.profile        | HTTP Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (default: 1)
+httpproxy.i2p.streaming.maxWindowSize  | Max window size for streams (default: 512)
 
 ### Socks proxy
 
@@ -154,6 +155,7 @@ socksproxy.outproxyport                | Outproxy port. If 0 socksproxy.outproxy
 socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 socksproxy.i2cp.leaseSetEncType        | Comma separated encryption types to be used in LeaseSet type 3 or 5
 socksproxy.i2p.streaming.profile       | SOCKS Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (deafult: 1)
+socksproxy.i2p.streaming.maxWindowSize | Max window size for streams (default: 512)
 
 ### SAM interface
 
