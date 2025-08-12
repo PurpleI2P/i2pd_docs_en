@@ -268,6 +268,7 @@ i2p.streaming.maxInboundSpeed | Max inbound speed of stream in bytes/sec. (defau
 i2p.streaming.profile         | Bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (default: 1)
 i2p.streaming.maxConcurrentStreams  | Total limit for streams at the time. (default: 2048)
 i2p.streaming.maxWindowSize   | Max window size for streams (default: 512)
+i2p.streaming.dontSign        | Don't include signature when required. Enable only if other side doesn't verify signatures (default: false)
 i2cp.leaseSetType             | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 i2cp.leaseSetEncType          | Comma separated encryption types to be used in LeaseSet type 3 or 5. (default: 0,4)
 i2cp.leaseSetPrivKey          | Decryption key for encrypted LeaseSet in base64. PSK or private DH
