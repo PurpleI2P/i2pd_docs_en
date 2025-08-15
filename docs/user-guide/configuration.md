@@ -109,6 +109,7 @@ http.user                              | Username for basic auth (default: i2pd)
 http.pass                              | Password for basic auth (default: random, see logs)
 http.strictheaders                     | Enable strict host checking on WebUI. (default: true)
 http.hostname                          | Expected hostname for WebUI (default: localhost)
+http.theme                             | Set webconsole CSS theme. Built-in themes: `black`, `white` (default: `light`). To use a custom theme, place a CSS file (e.g., `hacker.css`) in `%DataDir%/webconsole/` and use `--http.theme=hacker`.
 
 ### HTTP proxy
 
