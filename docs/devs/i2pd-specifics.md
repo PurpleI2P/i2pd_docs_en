@@ -55,4 +55,5 @@ For example, newkeys 7 generates an EdDSA key pair (supported only in i2pd).
 
 - lookup `<I2P_HOSTNAME>` — Performs a lookup for the specified I2P hostname and returns its destination.
 - lookuplocal `<I2P_HOSTNAME>` — looks for LeaseSet with specified address in router's netdb
+- ping `<I2P_HOSTNAME>` - Pings remote destination. Returns "pong `<BASE32_ADDRESS>`: time=`<VALUE` ms" if success and "timeout" is not
 - help `<COMMAND>` — Provides help information for the specified command. If no command is specified, lists all available commands.
