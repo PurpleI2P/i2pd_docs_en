@@ -146,7 +146,7 @@ accesslist          | List of comma-separated of b32 address (without .b32.i2p) 
 gzip                | Turns internal compression off if set to false. (default: false)
 signaturetype       | Signature type for new keys. (default: 7)
 cryptotype          | Crypto type for new keys. Experimental. Should be always 0
-enableuniquelocal   | If true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. (default: true)
+enableuniquelocal   | If true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. (default: true for ipv4 and false for ipv6)
 address             | IP address of an interface tunnel is connected to *host* from. Usually not used
 keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
 
