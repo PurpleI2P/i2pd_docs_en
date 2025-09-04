@@ -5,7 +5,9 @@ Anonymous websites
 
 To browse anonymous websites inside Invisible Internet, configure your web browser to use HTTP proxy 127.0.0.1:4444 (available by default in i2pd).
 
-In Firefox: Preferences -> Advanced -> Network tab -> Connection Settings -> choose Manual proxy configuration, Enter HTTP proxy 127.0.0.1, Port 4444
+In Firefox: Settings -> General -> Network Settings -> Configure Proxy Access to the Internet -> choose Manual proxy configuration, enter HTTP Proxy 127.0.0.1, Port 4444:
+
+![img](media/http-1.png)
 
 In Chromium: run chromium executable with key
 
