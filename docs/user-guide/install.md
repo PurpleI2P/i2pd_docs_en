@@ -119,6 +119,15 @@ Alternatively, you can use [PPA repository](https://launchpad.net/~purplei2p/+ar
     sudo apt-get update
     sudo apt-get install i2pd
 
+### Void
+
+You can install i2pd from the /current [xpbs repository](https://github.com/void-linux/void-packages/tree/master/srcpkgs/i2pd)
+
+To install and set the daemon up, run this
+
+    sudo xbps-install -Sy i2pd
+    sudo ln -s /etc/sv/i2pd /var/service
+
 ## FreeBSD
 
 You can install i2pd from [ports](https://www.freshports.org/security/i2pd/).
