@@ -1,171 +1,231 @@
-Building on Unix systems
+Building on Unix-like systems
 =============================
 
-This doc is trying to cover:
+This doc covers:
 
-* [Debian/Ubuntu](#debian-ubuntu) (contains packaging instructions)
-* [Fedora/Centos](#fedora-centos)
-* [Mac OS X](#mac-os-x)
+* [Debian/Ubuntu](#debian-ubuntu) (includes packaging)
+* [Arch/Manjaro](#arch-manjaro)
+* [Fedora/RHEL/CentOS Stream](#fedora-rhel-centos-stream)
+* [macOS](#macos)
 * [FreeBSD](#freebsd)
-* [Solaris](#solaris)
+* [OpenBSD](#openbsd)
+* [Solaris/OpenIndiana](#solaris-openindiana)
 
-Make sure you have all required dependencies for your system successfully installed.
+Make sure you have all required dependencies installed for your system.
 See [this](requirements.md) page for common requirements.
 
-If so then we are ready to go!
-Let's clone the repository and start building the i2pd:
+## Clone and build (CMake)
 
-	git clone https://github.com/PurpleI2P/i2pd.git
+```bash
+git clone https://github.com/PurpleI2P/i2pd.git
+cd i2pd
+mkdir -p build && cd build
+cmake <cmake options> ..
+cmake --build . -j
+```
 
-Generic build process looks like this (with cmake):
+…or the quick-and-dirty way with plain make:
 
-	cd i2pd/build
-	cmake <cmake options> . # see "CMake Options" section below
-	make                    # you may add VERBOSE=1 to cmdline for debugging
+```bash
+cd i2pd/
+make
+```
 
-..or with quick-and-dirty way with just make:
+Run tests:
 
-	cd i2pd/
-	make
+```bash
+cd i2pd/tests/
+make
+```
 
-Then run the tests:
+Install after a successful build:
 
-	cd i2pd/tests/
-	make
+```bash
+sudo make install
+```
 
-After successful build i2pd could be installed with:
+## CMake Options
 
-	make install
+Pass options as `-D<key>=<value>` (see `man 1 cmake`):
 
-CMake Options
--------------
-
-Available CMake options(each option has a form of `-D<key>=<value>`, for more information see `man 1 cmake`):
-
-* `CMAKE_BUILD_TYPE` build profile (Debug/Release, default: no optimization or debug symbols)
-* `WITH_BINARY`      build i2pd itself (default: ON)
+* `CMAKE_BUILD_TYPE` build profile (Debug/Release, default: none)
+* `WITH_BINARY`      build i2pd (default: ON)
 * `WITH_LIBRARY`     build libi2pd (default: ON)
-* `WITH_STATIC`      build static versions of library and i2pd binary (default: OFF)
-* `WITH_UPNP`        build with UPnP support (requires libminiupnp, default: OFF)
-* `WITH_AESNI`       build with AES-NI support (default: ON)
-* `WITH_HARDENING`   enable hardening features (gcc only, default: OFF)
-* `WITH_MESHNET`     build for cjdns test network (makes impossible to use the application with the main network, default: OFF)
-* `WITH_ADDRSANITIZER`   build with Address Sanitizer (default: OFF)
-* `WITH_THREADSANITIZER` build with Thread Sanitizer (default: OFF)
+* `WITH_STATIC`      build static lib and binary (default: OFF)
+* `WITH_UPNP`        build with UPnP (requires miniupnpc, default: OFF)
+* `WITH_AESNI`       build with AES-NI (default: ON)
+* `WITH_HARDENING`   enable hardening (GCC/Clang, default: OFF)
+* `WITH_MESHNET`     build for cjdns test net (not for main net, default: OFF)
+* `WITH_ADDRSANITIZER`   enable ASan (default: OFF)
+* `WITH_THREADSANITIZER` enable TSan (default: OFF)
 
+List cached options:
 
-Also there is `-L` flag for CMake that could be used to list current cached options:
+```bash
+cmake -L
+```
 
-	cmake -L
+## Debian/Ubuntu
 
-Debian/Ubuntu
--------------
+Tools:
 
-You will need a compiler and other tools that could be installed with `build-essential`, `debhelper` and `cmake` packages:
+```bash
+sudo apt install build-essential debhelper cmake
+```
 
-	sudo apt-get install build-essential debhelper cmake
+Libraries:
 
-Also you will need a bunch of development libraries:
+```bash
+sudo apt install \
+  libboost-date-time-dev \
+  libboost-filesystem-dev \
+  libboost-program-options-dev \
+  libboost-system-dev \
+  libssl-dev \
+  zlib1g-dev
+```
 
-	sudo apt-get install \
-	    libboost-date-time-dev \
-	    libboost-filesystem-dev \
-	    libboost-program-options-dev \
-	    libboost-system-dev \
-	    libssl-dev \
-	    zlib1g-dev
+UPnP (optional):
 
-If you need UPnP support miniupnpc development library should be installed (don't forget to rerun CMake with needed option):
+```bash
+sudo apt install libminiupnpc-dev
+```
 
-	sudo apt-get install libminiupnpc-dev
+Build a `.deb`:
 
-You may also build deb-package with the following:
+```bash
+sudo apt install fakeroot devscripts dh-apparmor
+cd i2pd
+debuild --no-tgz-check -us -uc -b
+```
 
-	sudo apt-get install fakeroot devscripts dh-apparmor
-	cd i2pd
-	debuild --no-tgz-check -us -uc -b
-Arch/Manjaro
--------------
-You will need a compiler and other tools that could be installed with `base-devel` package:
-	
-	sudo pacman -S base-devel
+(UPnP dev package name: `libminiupnpc-dev`.)
 
-Also you will need a bunch of libraries
-	
-	sudo pacman -S boost zlib openssl
-Fedora/Centos
--------------
+## Arch/Manjaro
 
-You will need a compiler and other tools to perform a build:
+Tools:
 
-	sudo yum install make cmake gcc gcc-c++
+```bash
+sudo pacman -S --needed base-devel cmake
+```
 
-Also you will need a bunch of development libraries
+Libraries:
 
-	sudo yum install boost-devel openssl-devel
+```bash
+sudo pacman -S --needed boost openssl zlib
+```
 
-If you need UPnP support miniupnpc development library should be installed (don't forget to rerun CMake with needed option):
+## Fedora/RHEL/CentOS Stream
 
-	sudo yum install miniupnpc-devel
+Tools:
 
- For static builds boost-static is needed:
+```bash
+sudo dnf install make cmake gcc gcc-c++
+```
 
-	sudo yum install boost-static
+Libraries:
 
-Latest Fedora systems using [DNF](https://en.wikipedia.org/wiki/DNF_(software)) instead of YUM by default, you may prefer to use DNF, but YUM should be ok
+```bash
+sudo dnf install boost-devel openssl-devel zlib-devel
+```
 
-Centos 7 has CMake 2.8.11 in the official repositories that too old to build i2pd, CMake >=3.7 is required.
-But you can use cmake3 from the epel repository:
+UPnP (optional):
 
-	yum install epel-release -y
-	yum install make cmake3 gcc gcc-c++ miniupnpc-devel boost-devel openssl-devel -y
+```bash
+sudo dnf install miniupnpc-devel
+```
 
-...and then use 'cmake3' instead 'cmake'.
+Static builds (optional):
 
-Mac OS X
---------
+```bash
+sudo dnf install boost-static
+```
 
-Requires [homebrew](http://brew.sh)
+(UPnP/Boost static package names: `miniupnpc-devel`, `boost-static`. On some RHEL-like systems you may need to enable EPEL/CRB.)
 
-	brew install boost openssl@1.1
+## macOS
 
-To build:
+Requires Homebrew and Xcode Command Line Tools.
 
-	make HOMEBREW=1 -j8 # uses 8 threads
+Install deps:
 
-To install into the system root (`/`):
+```bash
+brew install boost openssl@3 cmake make
+```
 
-	sudo make install HOMEBREW=1
+Build:
 
-To install into the Homebrew root (`/usr/local/`):
+```bash
+make HOMEBREW=1 -j8
+```
 
-	sudo make install HOMEBREW=1 PREFIX=/usr/local
+Install to system root (`/`):
 
-FreeBSD
--------
+```bash
+sudo make install HOMEBREW=1
+```
 
-For 10.X  use clang. You would also need devel/boost-libs, security/openssl and devel/gmake ports.
-Type gmake, it invokes Makefile.bsd, make necessary changes there is required.
+Install to the Homebrew prefix (Intel `/usr/local`, Apple Silicon `/opt/homebrew`):
 
-Branch 9.X has gcc v4.2, that is too old (not supports -std=c++11)
+```bash
+sudo make install HOMEBREW=1 PREFIX="$(brew --prefix)"
+```
 
-Required ports:
+## FreeBSD
 
-* `devel/cmake`
-* `devel/boost-libs`
-* `lang/gcc47`(or later version)
+Use the base compiler (Clang). Install tools and libraries as root:
 
-To use newer compiler you should set these variables(replace "47" with your actual gcc version):
+```bash
+pkg install boost-libs cmake gmake
+```
 
-	export CC=/usr/local/bin/gcc47
-	export CXX=/usr/local/bin/g++47
+UPnP (optional):
 
-Solaris
--------
+```bash
+pkg install miniupnpc
+```
 
-For OpenIndiana install following packets:
+Build with GNU make if using the BSD Makefile path:
 
-	pkg install developer/gcc-14
- 	pkg install system/library/boost 	
-   
-then use 'gmake'
+```bash
+gmake
+```
+
+(Note: FreeBSD ships OpenSSL and zlib in the base system; you don’t need extra SSL packages.)
+
+## OpenBSD
+
+Use the base compiler (Clang). Install tools and libraries as root:
+
+```bash
+pkg_add boost cmake gmake
+```
+
+UPnP (optional):
+
+```bash
+pkg_add miniupnpc
+```
+
+Build with GNU make if using the BSD Makefile path:
+
+```bash
+gmake
+```
+
+(Note: OpenBSD ships LibreSSL and zlib in the base system; you don’t need extra SSL packages.)
+
+## Solaris/OpenIndiana
+
+Install required packages:
+
+```bash
+pkg install developer/gcc-14
+pkg install developer/build/cmake
+pkg install system/library/boost
+pkg install developer/build/gnu-make
+```
+
+Then use `gmake` if invoking Makefiles directly.
+
+(Modern OpenIndiana provides GCC 14; package FMRIs like `developer/gcc-14` and `system/library/boost` follow IPS naming.)
