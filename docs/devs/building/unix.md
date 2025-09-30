@@ -1,4 +1,5 @@
-# Building on Unix-like systems
+Building on Unix-like systems
+=============================
 
 This doc covers:
 
@@ -219,10 +220,10 @@ gmake
 Install required packages:
 
 ```bash
-sudo pkg install developer/gcc-14
-sudo pkg install developer/build/cmake
-sudo pkg install system/library/boost
-sudo pkg install developer/build/gnu-make
+pkg install developer/gcc-14
+pkg install developer/build/cmake
+pkg install system/library/boost
+pkg install developer/build/gnu-make
 ```
 
 Then use `gmake` if invoking Makefiles directly.
