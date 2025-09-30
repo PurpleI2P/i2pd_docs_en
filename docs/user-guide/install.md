@@ -132,6 +132,10 @@ To install and set the daemon up, run this
 
 You can install i2pd from [ports](https://www.freshports.org/security/i2pd/).
 
+## OpenBSD
+
+You can install i2pd from [ports](https://openports.pl/path/net/i2pd).
+
 ## MacOS X
 
 You can install i2pd from [brew](https://brew.sh/) package manager:
