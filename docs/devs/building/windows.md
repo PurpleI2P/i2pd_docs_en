@@ -99,7 +99,7 @@ Requirements for building:
 * [Visual Studio Community Edition](https://www.visualstudio.com/en-us/products/visual-studio-community-vs.aspx) (tested with VS2013 Update 4)
 * [Boost](http://www.boost.org/) (tested with 1.59)
 * Optionally [MiniUPnP](http://miniupnp.free.fr) (tested with 1.9), we need only few client headers
-* OpenSSL (tested with 1.0.1p and 1.0.2e), if building from sources (recommended), you'll need as well
+* OpenSSL (tested with 3.0.0), if building from sources (recommended), you'll need as well
 	* [Netwide assembler](http://www.nasm.us/)
 	* Strawberry Perl or ActiveState Perl, do NOT try msys2 perl, it won't work
 
@@ -129,7 +129,7 @@ Download OpenSSL, e.g. with git
 
 	git clone https://github.com/openssl/openssl.git
 	cd openssl
-	git checkout OpenSSL_1_0_1p
+	git checkout openssl-3.0.0
 
 Now open Visual Studio command prompt and change directory to that with OpenSSL
 

@@ -48,7 +48,7 @@ ED25519-SHA512                       | 7    | **Default**
 GOSTR3410-A-GOSTR3411-256            | 9    | Not compatible with Java router
 GOSTR3410-TC26-A-GOSTR3411-512       | 10   | Not compatible with Java router
 RED25519-SHA512                      | 11   | For keys blinding (encrypted LeaseSet)
-ML-DSA-44                            | 12   | Post-Quantum
+ML-DSA-44                            | 12   | Post quantum. Requires OpenSSL >= 3.5.0
 
 LeaseSet
 ------------
@@ -64,15 +64,18 @@ META        | 7    | Not implemented
 
 *0, 2, 4, 6 types are reserved for routers (RouterInfo types).*
 
-Available LeaseSet **encryption** types (parameter `i2cp.leaseSetEncType = <code>` in a tunnel config):
+Available LeaseSet **encryption** types (parameter `i2cp.leaseSetEncType = <comma-separated codes>` in a tunnel config):
 
 Type                                 | Code | Comment
 ------------------------------------ | ---- | -----------
-ELGAMAL                              | 0    | **Default** (only for support old routers)
+ELGAMAL                              | 0    | Legacy
 ECIES_P256_SHA256_AES256CBC          | 1    | Not compatible with Java router
 *ECIES_P384_SHA384_AES256CBC*        | 2    | Not implemented
 *ECIES_P521_SHA512_AES256CBC*        | 3    | Not implemented
 ECIES_X25519_AEAD                    | 4    | **Default**
+ECIES_MLKEM512_X25519_AEAD           | 5    | Post quantum. Requires OpenSSL >= 3.5.0
+ECIES_MLKEM768_X25519_AEAD           | 6    | **Default**. Post quantum. Requires OpenSSL >= 3.5.0
+ECIES_MLKEM1024_X25519_AEAD          | 7    | Post quantum. Requires OpenSSL >= 3.5.0
 
 Client tunnels
 --------------
@@ -146,7 +149,7 @@ accesslist          | List of comma-separated of b32 address (without .b32.i2p) 
 gzip                | Turns internal compression off if set to false. (default: false)
 signaturetype       | Signature type for new keys. (default: 7)
 cryptotype          | Crypto type for new keys. Experimental. Should be always 0
-enableuniquelocal   | If true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. (default: true)
+enableuniquelocal   | If true, connection to local address will look like 127.x.x.x where x.x.x is first 3 bytes of incoming connection peer's ident hash. (default: true for ipv4 and false for ipv6)
 address             | IP address of an interface tunnel is connected to *host* from. Usually not used
 keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
 
