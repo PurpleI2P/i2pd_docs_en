@@ -127,7 +127,7 @@ Mac OS X
 
 Requires [homebrew](http://brew.sh)
 
-	brew install boost openssl@1.1
+	brew install boost openssl@3 cmake make   
 
 To build:
 
