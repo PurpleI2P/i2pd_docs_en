@@ -175,6 +175,7 @@ Option              | Description
 --------------------|--------------------
 hostoverride        | Value to send in 'Host:' header, default: the same as *host* parameter
 ssl                 | Use SSL connection to upstream server. `hostoverride` parameter can be used to set SNI domain. default: false (since 2.44.0)
+i2pheaders          | Add X-I2P-* headers to HTTP requests. (default: true)
 
 Server/IRC tunnels
 -------------------
