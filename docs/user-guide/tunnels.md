@@ -273,6 +273,7 @@ i2p.streaming.profile         | Bandwidth usage profile. 1 - bulk(high), 2- inte
 i2p.streaming.maxConcurrentStreams  | Total limit for streams at the time. (default: 2048)
 i2p.streaming.maxConnsPerMinute  | Max number of incoming connections per minute per ratchet session (default: 0 - unlimited)
 i2p.streaming.maxWindowSize   | Max window size for streams (default: 512)
+i2p.streaming.maxResends      | Max number of retransmissions before failure.(default: 10)
 i2p.streaming.dontSign        | Don't include signature when required. Enable only if other side doesn't verify signatures (default: false)
 i2cp.leaseSetType             | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 i2cp.leaseSetEncType          | Comma separated encryption types to be used in LeaseSet type 3 or 5. (default: 0,4)
