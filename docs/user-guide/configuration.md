@@ -83,6 +83,7 @@ ntcp2.published                        | Enable incoming NTCP2 connections (defa
 ntcp2.port                             | Port to listen for incoming NTCP2 connections (default: auto - port from general section)
 ntcp2.addressv6                        | External IPv6 for incoming connections
 ntcp2.proxy                            | Specify proxy server for NTCP2. Should be http://address:port or socks://address:port
+ntcp2.version                          | Protocol version. 2 - standard crypto, 3 - ML-KEM-512, 4 - ML-KEM-768, 5 - ML-KEM-1024 (default: 2) 
 
 ### SSU2
 
