@@ -265,6 +265,7 @@ outbound.lengthVariance       | Random number of hops to add or subtract to an o
 crypto.tagsToSend             | Number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
 crypto.ratchet.inboundTags    | Max number of generated inbound tags for tagset (default: 800)
 explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
+trustedRouters                | List of comma-separated b64 addresses of routers to choose from for first hop (default: unset)
 i2p.streaming.initialAckDelay | Milliseconds to wait before sending Ack. (default: 200)
 i2p.streaming.answerPings     | Enable sending pongs. 1 or true, 0 or false (default: 1)
 i2p.streaming.maxOutboundSpeed| Max outbound speed of stream in bytes/sec. (default: 1730000000)
