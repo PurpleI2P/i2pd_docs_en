@@ -175,6 +175,7 @@ Option              | Description
 --------------------|--------------------
 hostoverride        | Value to send in 'Host:' header, default: the same as *host* parameter
 ssl                 | Use SSL connection to upstream server. `hostoverride` parameter can be used to set SNI domain. default: false (since 2.44.0)
+i2pheaders          | Add X-I2P-* headers to HTTP requests. (default: true)
 
 Server/IRC tunnels
 -------------------
@@ -264,13 +265,16 @@ outbound.lengthVariance       | Random number of hops to add or subtract to an o
 crypto.tagsToSend             | Number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
 crypto.ratchet.inboundTags    | Max number of generated inbound tags for tagset (default: 800)
 explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
+trustedRouters                | List of comma-separated b64 addresses of routers to choose from for first hop (default: unset)
 i2p.streaming.initialAckDelay | Milliseconds to wait before sending Ack. (default: 200)
 i2p.streaming.answerPings     | Enable sending pongs. 1 or true, 0 or false (default: 1)
 i2p.streaming.maxOutboundSpeed| Max outbound speed of stream in bytes/sec. (default: 1730000000)
 i2p.streaming.maxInboundSpeed | Max inbound speed of stream in bytes/sec. (default: 1730000000)
 i2p.streaming.profile         | Bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (default: 1)
 i2p.streaming.maxConcurrentStreams  | Total limit for streams at the time. (default: 2048)
+i2p.streaming.maxConnsPerMinute  | Max number of incoming connections per minute per ratchet session (default: 0 - unlimited)
 i2p.streaming.maxWindowSize   | Max window size for streams (default: 512)
+i2p.streaming.maxResends      | Max number of retransmissions before failure.(default: 10)
 i2p.streaming.dontSign        | Don't include signature when required. Enable only if other side doesn't verify signatures (default: false)
 i2cp.leaseSetType             | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 i2cp.leaseSetEncType          | Comma separated encryption types to be used in LeaseSet type 3 or 5. (default: 0,4)
