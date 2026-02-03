@@ -126,7 +126,7 @@ sudo dnf install make cmake gcc gcc-c++
 Libraries:
 
 ```bash
-sudo dnf install boost-devel openssl-devel zlib-devel
+sudo dnf install boost-devel openssl-devel zlib-devel atomic
 ```
 
 UPnP (optional):
@@ -150,7 +150,7 @@ Requires Homebrew and Xcode Command Line Tools.
 Install deps:
 
 ```bash
-brew install boost openssl@3 cmake make
+brew install boost openssl@3 cmake make   
 ```
 
 Build:
