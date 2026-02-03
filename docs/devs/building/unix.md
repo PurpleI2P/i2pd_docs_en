@@ -126,7 +126,7 @@ sudo dnf install make cmake gcc gcc-c++
 Libraries:
 
 ```bash
-sudo dnf install boost-devel openssl-devel zlib-devel
+sudo dnf install boost-devel openssl-devel zlib-devel atomic
 ```
 
 UPnP (optional):
