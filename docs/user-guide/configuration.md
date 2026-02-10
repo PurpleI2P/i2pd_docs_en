@@ -69,6 +69,7 @@ bandwidth                              | Bandwidth limit: integer (kilobytes per
 share                                  | Max % of bandwidth limit for transit. 0-100 (default: 100)
 family                                 | Name of a family, router belongs to
 netid                                  | Network ID, router belongs to. Main I2P is 2.
+stan                                   | For places with limited connectivity (default: false)
 
 #### Notes
 
@@ -112,6 +113,9 @@ http.user                              | Username for basic auth (default: i2pd)
 http.pass                              | Password for basic auth (default: random, see logs)
 http.strictheaders                     | Enable strict host checking on WebUI. (default: true)
 http.hostname                          | Expected hostname for WebUI (default: localhost)
+http.showTotalTCSR                     | Show additional value with total TCSR since router's start (default: false)
+http.webroot                           | Path to web console (default: /)
+http.lang                              | Web console language (default: english )
 http.theme                             | Set webconsole CSS theme. Built-in themes: `black`, `white` (default: `light`). To use a custom theme, place a CSS file (e.g., `hacker.css`) in `%DataDir%/webconsole/` and use `--http.theme=hacker`.
 
 ### HTTP proxy
@@ -137,6 +141,11 @@ httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5.
 httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5
 httpproxy.i2p.streaming.profile        | HTTP Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (default: 1)
 httpproxy.i2p.streaming.maxWindowSize  | Max window size for streams (default: 512)
+httpproxy.latency.min                  | HTTP proxy min latency for tunnels (default: 0)
+httpproxy.latency.max                  | HTTP proxy max latency for tunnels (default: 0)
+httpproxy.i2cp.leaseSetPrivKey         | LeaseSet private key (Decryption key for encrypted LeaseSet) in base64. PSK or private DH
+httpproxy.i2p.streaming.maxOutboundSpeed | Max outbound speed of HTTP proxy stream in bytes/sec (default: 1730000000)
+httpproxy.i2p.streaming.maxInboundSpeed  | Max inbound speed of HTTP proxy stream in bytes/sec (default: 1730000000)
 
 ### Socks proxy
 
@@ -160,6 +169,11 @@ socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5.
 socksproxy.i2cp.leaseSetEncType        | Comma separated encryption types to be used in LeaseSet type 3 or 5
 socksproxy.i2p.streaming.profile       | SOCKS Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (deafult: 1)
 socksproxy.i2p.streaming.maxWindowSize | Max window size for streams (default: 512)
+socksproxy.latency.min                 | SOCKS proxy min latency for tunnels (default: 0)
+socksproxy.latency.max                 | SOCKS proxy max latency for tunnels (default: 0)
+socksproxy.i2cp.leaseSetPrivKey        | LeaseSet private key (Decryption key for encrypted LeaseSet) in base64. PSK or private DH
+socksproxy.i2p.streaming.maxOutboundSpeed | Max outbound speed of SOCKS proxy stream in bytes/sec (default: 1730000000)
+socksproxy.i2p.streaming.maxInboundSpeed  | Max inbound speed of SOCKS proxy stream in bytes/sec (default: 1730000000)
 
 ### SAM interface
 
