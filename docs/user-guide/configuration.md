@@ -95,6 +95,8 @@ ssu2.port                              | Port to listen for incoming SSU2 connec
 ssu2.proxy                             | Specify UDP socks5 proxy server for SSU2. Should be socks://address:port  
 ssu2.mtu4                              | MTU for local ipv4. (default: auto)
 ssu2.mtu6                              | MTU for local ipv6. (default: auto)
+ssu2.firewalled4                       | Set ipv4 network status to Firewalled even if OK (default: false)
+ssu2.firewalled6                       | Set ipv6 network status to Firewalled even if OK (default: false)
     
 All options below still possible in cmdline, but better write it in config file:
 
@@ -166,6 +168,7 @@ Option                                 | Description
 sam.enabled                            | If SAM is enabled. (default: true)
 sam.address                            | The address to listen on (SAM bridge)
 sam.port                               | Port of SAM bridge. Usually 7656. SAM is off if not specified
+sam.portudp                            | PortUDP of SAM bridge. Usually 7655.
 sam.singlethread                       | If false every SAM session runs in own thread. (default: true)
 
 ### BOB interface
@@ -222,6 +225,8 @@ reseed.file                            | Path to local .su3 file or HTTPS URL to
 reseed.zipfile                         | Path to local .zip file to reseed from
 reseed.threshold                       | Minimum number of known routers before requesting reseed. (default: 25)
 reseed.proxy                           | Url for https/socks reseed proxy
+reseed.floodfill                       | Ignored. Always empty. Path to router info of floodfill to reseed from.
+reseed.followredirect                  | Follow redirects when reseeding from URLs (default: false)
 
 ### Addressbook options
 
@@ -278,12 +283,14 @@ Option                                 | Description
 nettime.enabled                        | Enable NTP sync. (default: false)
 nettime.ntpservers                     | Comma-separated list of NTP server. (default: pool.ntp.org)
 nettime.ntpsyncinterval                | NTP time sync interval in hours. (default: 72)
+nettime.frompeers                      | Sync clock from transport peers (default: true)
 
 ### Network information persist
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
 persist.profiles                       | Enable peer profile persisting to disk. (default: true)
+persist.addressbook                    | Save full addresses on disk (default: true)
 
 ### Meshnets transports
 
