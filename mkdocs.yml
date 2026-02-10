@@ -18,7 +18,9 @@ nav:
     - Anonymous websites: tutorials/http.md
     - Anonymous IRC chats: tutorials/irc.md
     - Decentralized instant messenger (XMPP aka Jabber): tutorials/xmpp.md
-    - Filesharing: tutorials/filesharing.md
+    - Filesharing: 
+        - Software: tutorials/Filesharing/Software.md
+        - qBittorrent: tutorials/Filesharing/qBittorrent.md
     - Using RetroShare with i2pd: tutorials/retroshare.md
     - Yggdrasil only router configuration: tutorials/yggdrasil-only-mode.md
 - Developer Section:
