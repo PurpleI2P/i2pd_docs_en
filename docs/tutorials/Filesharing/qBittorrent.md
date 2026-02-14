@@ -64,6 +64,10 @@ http://sigmatracker.i2p/a
 http://opentracker.skank.i2p/a
 
 http://omitracker.i2p/announce
+
+http://psa.i2p/a
+
+http://tracker.nyaa2p.i2p/announce
 ```
 
 ![qBittorrent 5.1.4 Interface & IP Settings.][qBitint]
