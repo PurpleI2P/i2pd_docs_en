@@ -1,8 +1,8 @@
 Family configuration
 ====================
 
-You might want to specify a family your router belongs to.
-There are two ways to do this: create a new family or join to an existing one.
+A family is a group of routers operated by the same entity or individual. This declaration helps maintain network diversity and security by ensuring that multiple routers from the same family are not used within a single tunnel. 
+You may want to specify the family your router belongs to. There are two ways to do this: create a new family or join an existing one.
 
 New family
 -----------
