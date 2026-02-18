@@ -23,6 +23,8 @@ nav:
         - qBittorrent: tutorials/Filesharing/qBittorrent.md
     - Using RetroShare with i2pd: tutorials/retroshare.md
     - Yggdrasil only router configuration: tutorials/yggdrasil-only-mode.md
+    - Encrypted LeaseSet2 Configuration: tutorials/blinded-addresse.md
+    - Glossary: tutorials/glossary.md
 - Developer Section:
     - Building from source:
         - Requirements: devs/building/requirements.md
