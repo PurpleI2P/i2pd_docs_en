@@ -20,7 +20,10 @@ To connect to IRC server at *irc.ilita.i2p:6667*, add this to ~/.i2pd/tunnels.co
     destinationport = 6667
     #keys = irc-client-key.dat
 
-Restart i2pd, then connect to irc://127.0.0.1:6669 with your IRC client.
+[Reload tunnels config](http://127.0.0.1:7070/?page=commands) or restart i2pd, then connect to irc://127.0.0.1:6669 with your IRC client.
+
+### Recommended for better anonymity:
+Disable all `CTCP` replies/responses and `DCC` (send/receive) in your IRC client settings.
 
 ## Running anonymous IRC server
 
