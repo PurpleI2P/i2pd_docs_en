@@ -50,7 +50,7 @@ GOSTR3410-TC26-A-GOSTR3411-512       | 10   | Not compatible with Java router
 RED25519-SHA512                      | 11   | For keys blinding (encrypted LeaseSet)
 ML-DSA-44                            | 12   | Post quantum. Requires OpenSSL >= 3.5.0
 
-Note: Blinded addresses / Encrypted LeaseSets (LS2) are only applicable for server tunnels (specifically the `server`, `http`, and `irc` types). The signature type must be RedDSA (`signatureType=11)`. The tunnel must include the parameter `i2cp.leaseSetType=5`. Once the tunnel is started, it will automatically publish itself as an Encrypted LeaseSet2.
+Note: Blinded addresses / Encrypted LeaseSets (LS2) are only applicable for server tunnels (specifically the `server`, `http`, and `irc` types). The signature type must be RedDSA (`signatureType=11`). The tunnel must include the parameter `i2cp.leaseSetType=5`. Once the tunnel is started, it will automatically publish itself as an Encrypted LeaseSet2.
 
 LeaseSet
 ------------
