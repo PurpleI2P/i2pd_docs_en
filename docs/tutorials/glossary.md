@@ -64,7 +64,7 @@ Information defining the unique identity of a router on the I2P network, includi
 `SAM`  
 SAM (Simple Anonymous Messaging) is a protocol allowing client applications in any language to communicate over I2P via a socket interface to the i2pd router.
 
-`SSU`  
+`SSU / SSU2`  
 SSU (Secure Semi-reliable UDP) is an I2P transport in i2pd providing encrypted, connection-oriented communications, plus IP detection and NAT traversal. Enabled by default.
 
 `Tunnel`  
@@ -76,5 +76,23 @@ The last router in a tunnel: either the Outbound Endpoint (where client tunnels 
 `Tunnel Gateway`  
 The first router in a tunnel. For inbound tunnels, this is listed in the LeaseSet in the NetDb. For outbound, it's the originating router.
 
-`Transit Tunnel`  
-A tunnel built by another user's router where your i2pd router acts as an intermediate hop, relaying their encrypted traffic anonymously to help the network.
+`Transit Tunnels`  
+They are the tunnels that your router participates in on behalf of other users. Transit is what makes I2P truly decentralized.
+
+`Family`  
+A family is a group of routers operated by the same entity or individual. [Read more](https://i2p.net/en/docs/overview/network-database/#family-options).
+
+`DHT (Distributed Hash Table) `  
+Used in some projects to connect peers to each other by storing information in the form of key-value pairs in a distributed manner.
+
+`Client Tunnels`   
+Tunnels that are outbound TCP tunnels that allow local applications to connect to remote services within the I2P network. They forward traffic from a specified local port to a remote I2P destination (typically a .b32.i2p address).
+
+`Router Caps`    
+Router Capabilities are a set of short flags published in your router's [RouterInfo](https://i2p.net/en/docs/overview/network-database/#routerinfo) entry within the network database (netDb).
+
+`Network Status`    
+It shows your router's current integration and reachability within the I2P network. **OK** - Your router is fully integrated. **Firewalled** - Your router can't receive direct inbound connections, It still works as a client but relies on introducers and outbound-only path. **Testing** - Temporary state during startup or reachability probes. [Rread more](https://i2p.medium.com/i2p-for-beginners-java-software-guide-685d7a7ed57b#ac59).
+
+`Exploratory tunnels`    
+Used by your own router for network discovery, netDb lookups, and tunnel building (not for user data).

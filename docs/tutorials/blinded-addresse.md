@@ -27,7 +27,7 @@ i2cp.leaseSetType = 5
 ```
 
 Save and reload tunnels:  
-Visit http://127.0.0.1:7070/?page=commands then reload tunnels config (or restart i2pd). i2pd will now publish an Encrypted LeaseSet2.
+Visit [Web Console](http://127.0.0.1:7070/?page=commands) then reload tunnels config (or restart i2pd). i2pd will now publish an Encrypted LeaseSet2.
 
 ### Adding Client Authentication
 
@@ -40,50 +40,50 @@ i2cp.leaseSetPrivKey = ...    # (client side only) your private key/base64 PSK
 
 Option 1: DH Authentication
 
-1. Generate [X25519](https://github.com/PurpleI2P/i2pd-tools/blob/master/x25519.cpp) keypair for each client (use `x25519` tool from [i2pd-tools](https://github.com/PurpleI2P/i2pd-tools/blob/master/x25519.cpp)):
+1. Generate [X25519](https://github.com/PurpleI2P/i2pd-tools/blob/master/x25519.cpp) keypair for each client (use `x25519` tool from [i2pd-tools](https://github.com/PurpleI2P/i2pd-tools/)):
 
-   ```
-   x25519
-   ```
+```bash
+x25519
+```
 
    E.g output:
-   ```
-   PublicKey:  Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0=
-   PrivateKey: 8HlgzxO-pJ3A1rtcc~7nnz774nyKXLLsVeuDGGlc63o=
-   ```
+```
+PublicKey:  Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0=
+PrivateKey: 8HlgzxO-pJ3A1rtcc~7nnz774nyKXLLsVeuDGGlc63o=
+```
 
 2. On server side:
 
-   ```
-   signatureType = 11
-   i2cp.leaseSetType = 5
-   i2cp.leaseSetAuthType = 1
-   i2cp.leaseSetClient.dh.210 = friend1:Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0=
-   # Add more clients: i2cp.leaseSetClient.dh.<number> = name:PublicKey
-   ```
+```
+signatureType = 11
+i2cp.leaseSetType = 5
+i2cp.leaseSetAuthType = 1
+i2cp.leaseSetClient.dh.210 = friend1:Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0=
+# Add more clients: i2cp.leaseSetClient.dh.<number> = name:PublicKey
+```
 
 3. On client side:
 
-   ```
-   i2cp.leaseSetPrivKey = 8HlgzxO-pJ3A1rtcc~7nnz774nyKXLLsVeuDGGlc63o=
-   ```
+```
+i2cp.leaseSetPrivKey = 8HlgzxO-pJ3A1rtcc~7nnz774nyKXLLsVeuDGGlc63o=
+```
 
 Option 2: PSK Authentication
 
 1. Generate a random 32 byte PSK (`openssl rand -base64 32` or any secure source).
 
-   E.g:
-   ```
-   i2cp.leaseSetPrivKey = dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFyZWQga2V5Cg==
-   ```
+    E.g:
+```
+i2cp.leaseSetPrivKey = dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFyZWQga2V5Cg==
+```
 
 2. On server:
 
-   ```
-   i2cp.leaseSetAuthType = 2
-   # No per-client entries needed - all clients use the same PSK
-   # you can add if you want - i2cp.leaseSetClient.psk.nnn
-   ```
+```
+i2cp.leaseSetAuthType = 2
+# No per-client entries needed - all clients use the same PSK
+# you can add if you want - i2cp.leaseSetClient.psk.nnn
+```
 
 3. On client:
 
