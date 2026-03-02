@@ -45,6 +45,8 @@ Option                                 | Description
 -------------------------------------- | --------------------------------------
 conf                                   | Config file (default: ~/.i2pd/i2pd.conf or /var/lib/i2pd/i2pd.conf). This parameter will be silently ignored if the specified config file does not exist.
 tunconf                                | Tunnels config file (default: ~/.i2pd/tunnels.conf or /var/lib/i2pd/tunnels.conf)
+tunnelsdir                             | Path to extra tunnels' configs folder. All *.conf files inside are automatically loaded (recommended for modular setups) default: or /var/lib/i2pd/tunnels.d or ~/.i2pd/tunnels.d
+certsdir                               | Path to certificates used for verifying .su3, families (default: )
 pidfile                                | Where to write pidfile (default: i2pd.pid, not used in Windows)
 log                                    | Logs destination: stdout, file, syslog (stdout if not set or invalid) (if daemon, stdout/unspecified are replaced by file in some cases)
 logfile                                | Path to logfile (default - autodetect)
@@ -60,6 +62,7 @@ ifname4                                | Network interface to bind to for IPv4
 ifname6                                | Network interface to bind to for IPv6
 address4                               | Local address to bind to for IPv4
 address6                               | Local address to bind to for clearnet IPv6
+reservedrange                          | Check remote RI for being in blacklist of reserved IP ranges (default: enabled)
 nat                                    | If true, assume we are behind NAT (default: true)
 ipv4                                   | Enable communication through IPv4 (default: true)
 ipv6                                   | Enable communication through clearnet IPv6 (default: false)

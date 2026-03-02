@@ -113,6 +113,11 @@ cryptotype          | Crypto type for new keys. Experimental. Should be always 0
 destinationport     | Connect to particular port at destination. 0 by default (targeting first tunnel on server side for destination)
 keepaliveinterval   | Send ping to the destination after this interval in seconds. (default: 0 - no pings)
 keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
+gzip                | Turns internal compression off if set to false. (default: false)
+connecttimeout      | Sets the connection timeout for client-side tunnels. (default: 0, in seconds)
+matchtunnels        | Enables matched-tunnel destination behavior (for sharing/aligning tunnels with the same destination). (default: false)
+destination         | The I2P destination /hostname.
+datagramversion     | Sets the I2P datagram protocol version (1-3). udpclient tunnels only (default: 3)
 
 So, given the example above, if you connected to 127.0.0.1:6668 on localhost, i2pd would tunnel that connection to irc.ilita.i2p.
 
@@ -148,6 +153,7 @@ host                | IP address of server (on this address i2pd will send data 
 port                | Port of server tunnel.
 inport              | (non-TCP non-UDP) I2P local destination port to listen to; an unsigned 16-bit integer. What port at local destination server tunnel listens to (default: same as *port*)
 accesslist          | List of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default
+whitelist           | Alternative to `accesslist` for allowing inbound connections.
 gzip                | Turns internal compression off if set to false. (default: false)
 signaturetype       | Signature type for new keys. (default: 7)
 cryptotype          | Crypto type for new keys. Experimental. Should be always 0
@@ -264,6 +270,8 @@ inbound.quantity              | Number of inbound tunnels. 5 by default, 16 by m
 outbound.quantity             | Number of outbound tunnels. 5 by default, 16 by max
 inbound.lengthVariance        | Random number of hops to add or subtract to an inbound tunnel between -3 and 3. 0 by default **(since 2.42.0)**
 outbound.lengthVariance       | Random number of hops to add or subtract to an outbound tunnel between -3 and 3. 0 by default **(since 2.42.0)**
+inbound.nickname              | Custom nickname for inbound tunnels to show in webconsole
+outbound.nickname             | Custom nickname for outbound tunnels to show in webconsole
 crypto.tagsToSend             | Number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
 crypto.ratchet.inboundTags    | Max number of generated inbound tags for tagset (default: 800)
 explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
