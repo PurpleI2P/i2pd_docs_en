@@ -117,7 +117,7 @@ gzip                | Turns internal compression off if set to false. (default: 
 connecttimeout      | Sets the connection timeout for client-side tunnels. (default: 0, in seconds)
 matchtunnels        | Enables matched-tunnel destination behavior (for sharing/aligning tunnels with the same destination). (default: false)
 destination         | The I2P destination /hostname.
-datagramversion     | Sets the I2P datagram protocol version (1-3). udpclient tunnels only (default: 3)
+datagramversion     | UDPClient tunnels only! Sets the I2P datagram protocol version (1-3). (default: 3)
 
 So, given the example above, if you connected to 127.0.0.1:6668 on localhost, i2pd would tunnel that connection to irc.ilita.i2p.
 
@@ -292,6 +292,8 @@ i2cp.leaseSetPrivKey          | Decryption key for encrypted LeaseSet in base64.
 i2cp.leaseSetAuthType         | Authentication type for encrypted LeaseSet. 0 - no authentication(default), 1 - DH, 2 - PSK
 i2cp.leaseSetClient.dh.nnn    | Client name:client's public DH in base64, for authentication type 1, nnn is integer
 i2cp.leaseSetClient.psk.nnn   | Client name:client's PSK in base64, for authentication type 2, nnn is integer
+latency.min                   | Minimum tunnel latency in milliseconds (0 = no minimum) (default:0)
+latency.max                   | Maximum tunnel latency in milliseconds (0 = no maximum) (default:0)
 i2cp.dontPublishLeaseSet      | Don't publish LeaseSet if set to true. (default: false)
 
 Other examples
