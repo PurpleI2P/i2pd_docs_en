@@ -101,6 +101,7 @@ ssu2.mtu4                              | MTU for local ipv4. (default: auto)
 ssu2.mtu6                              | MTU for local ipv6. (default: auto)
 ssu2.firewalled4                       | Set ipv4 network status to Firewalled even if OK (default: false)
 ssu2.firewalled6                       | Set ipv6 network status to Firewalled even if OK (default: false)
+ssu2.version                           | Protocol version. 2 - standard crypto, 3 - ML-KEM-512, 4 - ML-KEM-768 (default: 2)
     
 All options below still possible in cmdline, but better write it in config file:
 
