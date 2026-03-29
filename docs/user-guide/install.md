@@ -126,7 +126,7 @@ You can install i2pd from the /current [xpbs repository](https://github.com/void
 To install and set the daemon up, run this
 
     sudo xbps-install -Sy i2pd
-    sudo ln -s /etc/sv/i2pd /var/service
+    sudo ln -s /etc/sv/i2pd /var/service/
 
 ## FreeBSD
 
