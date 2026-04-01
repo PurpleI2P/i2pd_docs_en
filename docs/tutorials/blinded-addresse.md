@@ -5,12 +5,12 @@ Encrypted LeaseSet2 Configuration
 
 Encrypted LeaseSets are supported only for server tunnels (types: `server`, `http`, `irc`). Client tunnels cannot publish them.
 
-### To enable Encrypted LeaseSet2 in i2pd:
+### To enable Encrypted LeaseSet2:
 
 - Signature type must be Red25519 (`signatureType=11`)
 - Set the I2CP parameter `i2cp.leaseSetType=5` in the tunnel section.
 
-Once the tunnel starts (or is reloaded), i2pd automatically generates blinded keys daily, encrypts the LeaseSet, and publishes it as an Encrypted LeaseSet2.
+Once the tunnel starts, i2pd automatically generates blinded keys, encrypts the LeaseSet, and publishes it as an Encrypted LeaseSet2.
 
 ### Example (No Authentication)
 
@@ -26,8 +26,10 @@ signatureType = 11
 i2cp.leaseSetType = 5
 ```
 
-Save and reload tunnels:  
-Visit [Web Console](http://127.0.0.1:7070/?page=commands) then reload tunnels config (or restart i2pd). i2pd will now publish an Encrypted LeaseSet2.
+Save the file and reload tunnels config ([WebConsole ](http://127.0.0.1:7070/?page=commands)) or restart i2pd.
+
+Note: To access it, you need the b33 address.
+You can find it in the [Web Console](http://127.0.0.1:7070/?page=i2p_tunnels) inside your tunnel (e.g., MyEncryptedService) under Encrypted B33 address.
 
 ### Adding Client Authentication
 
