@@ -60,8 +60,8 @@ PrivateKey: 8HlgzxO-pJ3A1rtcc~7nnz774nyKXLLsVeuDGGlc63o=
 signatureType = 11
 i2cp.leaseSetType = 5
 i2cp.leaseSetAuthType = 1
-i2cp.leaseSetClient.dh.210 = friend1:Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0=
-# Add more clients: i2cp.leaseSetClient.dh.<number> = name:PublicKey
+i2cp.leaseSetClient.dh.1 = friend1:Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0=
+# Add more clients: i2cp.leaseSetClient.dh.<integer> = name:PublicKey
 ```
 
 3. On client side:
@@ -70,25 +70,29 @@ i2cp.leaseSetClient.dh.210 = friend1:Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0
 i2cp.leaseSetPrivKey = 8HlgzxO-pJ3A1rtcc~7nnz774nyKXLLsVeuDGGlc63o=
 ```
 
-Option 2: PSK Authentication
+Option 2: PSK Authentication (uses shared secret key)
 
-1. Generate a random 32 byte PSK (`openssl rand -base64 32` or any secure source).
+1. Generate a random 32 byte PSK in base64 (`openssl rand -base64 32` or any secure source).
 
     E.g:
 ```
-i2cp.leaseSetPrivKey = dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFyZWQga2V5Cg==
+$ openssl rand -base64 32
+dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFyZWQga2V5Cg==
 ```
 
 2. On server:
 
 ```
 i2cp.leaseSetAuthType = 2
-# No per-client entries needed - all clients use the same PSK
-# you can add if you want - i2cp.leaseSetClient.psk.nnn
+i2cp.leaseSetClient.psk.1 = friend1:dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFyZWQga2V5Cg==
+# The same PSK can be used by multiple clients if they share the key.
+# To add more clients: i2cp.leaseSetClient.psk.<integer> = name:<base64-encoded-32-byte-PSK>
 ```
 
 3. On client:
 
-   Same `i2cp.leaseSetPrivKey = ...` as above.
+```
+i2cp.leaseSetPrivKey = dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFyZWQga2V5Cg==
+```
 
 **Note**: Start with no authentication, verify your b33 works then add auth once basic setup is confirmed.
