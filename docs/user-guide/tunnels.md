@@ -326,6 +326,8 @@ i2cp.leaseSetClient.psk.nnn   | Client name:client's PSK in base64, for authenti
 latency.min                   | Minimum tunnel latency in milliseconds (0 = no minimum) (default:0)
 latency.max                   | Maximum tunnel latency in milliseconds (0 = no maximum) (default:0)
 i2cp.dontPublishLeaseSet      | Don't publish LeaseSet if set to true. (default: true)
+i2cp.closeIdleTime            | Idle timeout in milliseconds after which the client tunnel session is closed (default: 0 = disabled)
+i2cp.newDestOnResume          | Generate a new destination (keys) when resuming from idle (default: false). This option is ignored unless closeIdleTime > 0.
 
 Other examples
 --------------
