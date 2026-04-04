@@ -14,18 +14,24 @@ Tunnel types
 
 Section type is specified by the *type* parameter.
 
-Available tunnel types:
+**Client Tunnels**
 
 Type          | Description
 ------------- | --------------------------------------
 client        | Client tunnel to remote I2P destination (TCP)
+socks         | Custom Socks proxy service to use I2P with
+httpproxy     | Custom HTTP proxy service to use I2P with
+udpclient     | Forwards local UDP endpoint to remote I2P destination
+
+**Server Tunnels**
+
+Type          | Description
+------------- | --------------------------------------
 server        | Generic server tunnel to setup any TCP service in I2P network
 http          | HTTP server tunnel to setup a website in I2P
 irc           | IRC server tunnel to setup IRC server in I2P
-udpclient     | Forwards local UDP endpoint to remote I2P destination
 udpserver     | Forwards traffic from N I2P destinations to local UDP endpoint
-socks         | Custom Socks proxy service to use I2P with
-httpproxy     | Custom HTTP proxy service to use I2P with
+
 
 Signature types
 ------------
@@ -104,7 +110,7 @@ Client tunnels might share the same local destination, if the keys file contains
 
 Optional parameters:
 
-Option              | Description
+Parameter           | Description
 --------------------|--------------------
 address             | Local interface tunnel binds to, '127.0.0.1' for connections from local host only, '0.0.0.0' for connections from everywhere. (default: 127.0.0.1)
 port                | Port of client tunnel.
@@ -147,11 +153,11 @@ This tunnel type should be used for any protocol other than HTTP, even HTTP with
 
 Optional parameters:
 
-Option              | Description
+Parameter           | Description
 --------------------|--------------------
 host                | IP address of server (on this address i2pd will send data from I2P)
-port                | Port of server tunnel.
-inport              | (non-TCP non-UDP) I2P local destination port to listen to; an unsigned 16-bit integer. What port at local destination server tunnel listens to (default: same as *port*)
+port                | Specifies the actual local TCP/UDP service port that incoming I2P streams are forwarded to.
+inport              | (non-TCP/non-UDP) I2P local destination port that a server tunnel listens on within the I2P network. (default: same as *port*)
 accesslist          | List of comma-separated of b32 address (without .b32.i2p) allowed to connect. Everybody is allowed by default
 whitelist           | Alternative to `accesslist` for allowing inbound connections.
 gzip                | Turns internal compression off if set to false. (default: false)
@@ -179,7 +185,7 @@ keys = our-website.dat
 
 Optional parameters:
 
-Option              | Description
+Parameter           | Description
 --------------------|--------------------
 hostoverride        | Value to send in 'Host:' header, default: the same as *host* parameter
 ssl                 | Use SSL connection to upstream server. `hostoverride` parameter can be used to set SNI domain. default: false (since 2.44.0)
@@ -192,7 +198,7 @@ IRC tunnels are supposed to connect to an IRC server through WEBIRC. It replaces
 
 Optional parameters:
 
-Option              | Description
+Parameter           | Description
 --------------------|--------------------
 webircpassword      | Password to send with WEBIRC command
 
@@ -211,7 +217,7 @@ destination = something.b32.i2p
 port = 1194
 ```
 
-Option              | Description
+Parameter           | Description
 --------------------|--------------------
 destination         | The I2P destination of a udpserver tunnel, required parameter
 address             | IP address to bind local UDP endpoint to (default: `127.0.0.1`)
@@ -229,13 +235,36 @@ host = 127.0.0.1
 port = 1194
 ```
 
-Option              | Description
+Parameter           | Description
 --------------------|--------------------
 address             | IP address to use for local UDP endpoints (default: `127.0.0.1`)
 host                | IP address to forward traffic to, required parameter
 port                | UDP port to forward traffic on, required parameter
 gzip                | Turns internal compression off if set to false. (default: false)
 keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
+
+HTTP proxy
+-----------
+
+The HTTP proxy interface can be defined in ``tunnels.conf``.
+
+Here's an example of a HTTP proxy:
+
+```ini
+[alt-socks]
+type = httpproxy
+address = 127.0.0.1
+port = 14447
+keys = socks-keys.dat 
+```
+
+Parameter           | Description
+--------------------|--------------------
+address             | Local address HTTP proxy binds to (default: `127.0.0.1`)
+port                | TCP port HTTP proxy binds to.
+outproxy            | It will be used when requesting addresses outside the I2P network (e.g, http://outproxy.acetone.i2p:3128)
+senduseragent       | Pass real User-Agent (default: false)
+addresshelper       | Enable address helper (default: true)
 
 Socks proxy
 -----------
@@ -249,13 +278,15 @@ Here's an example of a Socks proxy:
 type = socks
 address = 127.0.0.1
 port = 14447
-keys = socks-keys.dat 
+keys = socks-keys.dat
 ```
 
-Option              | Description
+Parameter           | Description
 --------------------|--------------------
 address             | Local address Socks proxy binds to (default: `127.0.0.1`)
 port                | TCP port Socks proxy binds to
+outproxy            | It will be used when requesting addresses outside the I2P network. e.g, outproxy = PROXY_ADDRESS
+destinationport     | It set the upstream proxy port  (default: 0, used when `outproxy` is set). e.g, destinationport = PROXY_PORT
 
 I2CP parameters
 ---------------
@@ -294,7 +325,7 @@ i2cp.leaseSetClient.dh.nnn    | Client name:client's public DH in base64, for au
 i2cp.leaseSetClient.psk.nnn   | Client name:client's PSK in base64, for authentication type 2, nnn is integer
 latency.min                   | Minimum tunnel latency in milliseconds (0 = no minimum) (default:0)
 latency.max                   | Maximum tunnel latency in milliseconds (0 = no maximum) (default:0)
-i2cp.dontPublishLeaseSet      | Don't publish LeaseSet if set to true. (default: false)
+i2cp.dontPublishLeaseSet      | Don't publish LeaseSet if set to true. (default: true)
 
 Other examples
 --------------
