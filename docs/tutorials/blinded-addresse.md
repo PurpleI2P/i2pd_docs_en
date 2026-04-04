@@ -67,6 +67,7 @@ i2cp.leaseSetClient.dh.1 = friend1:Ihr8wZS8fuA5Q-Exwb-9tGHpyV6lZfFilYPCx8bNoG0=
 3. On client side:
 
 ```
+destination = <the b33 address>
 i2cp.leaseSetPrivKey = 8HlgzxO-pJ3A1rtcc~7nnz774nyKXLLsVeuDGGlc63o=
 ```
 
@@ -92,6 +93,7 @@ i2cp.leaseSetClient.psk.1 = friend1:dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFy
 3. On client:
 
 ```
+destination = <the b33 address>
 i2cp.leaseSetPrivKey = dGhpcyBpcyBhIHJhbmRvbSAzMi1ieXRlIHByZS1zaGFyZWQga2V5Cg==
 ```
 
