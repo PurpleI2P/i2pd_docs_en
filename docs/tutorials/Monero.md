@@ -36,4 +36,13 @@ This only works for systemd systems, but I feel as if your running another init 
 If you haven't downloaded the Monero wallet from https://www.getmonero.org/downloads/ then go download it, and come back here. Now that you have your Monero wallet up and running
 we are going to need to put it into Advanced mode, to do that we will go into settings, then click close wallet (OH WAIT BEFORE you do this, remember to have your keys for your wallet backed up,
 it should be an issue, but just in case (also you should have your keys backed up anyways)), now at the bottom of the window you should see a button that says, change wallet mode, click this and change
-to Advanced mode, then log back into your wallet, it should have saved your keys, but in case it didn't please use your keys to log back in
+to Advanced mode, then log back into your wallet, it should have saved your keys, but in case it didn't please use your keys to log back in.
+
+##
+## Now that your wallet is in Advanced mode, we can connect it to the I2P Monero node
+To do this, we have to go back into the setting of your wallet, once in settings go to the Node tab at the top, and click remote node (it might ask about stopping the local node, if it does then say you
+want to stop the download or the local node, this is unless you want a public node but I'm doing this guide for remote nodes, so, yeah), then add click add remote node, once you have click this you will need to add the IP of your i2pd node, if your node is running on the same computer as the wallet the IP will be 127.0.0.1, and if its on a another computer it will be that computers IP. For the port number
+it will be whatever you put in the tunnels.conf file under port, and for username and password, just leave blank. 
+
+### Now you should be able to connect to the node, you can click the connect button in the button left, or in settings click the remote node you added, now your wallet should sync with the block chain thats running on that node, and your good to go. 
+Thank you, and have a nice day. And now that you can make payments more anonymously, no ones going to know that you donated to i2pd. Hey just saying.
