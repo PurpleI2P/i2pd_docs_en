@@ -8,7 +8,7 @@ Building on HaikuOS system
 pkgman refresh
 pkgman install boost1.91_devel
 # if not installed 
-pkgman install automake
+pkgman install make
 pkgman install gcc
 pkgman install git 
 # ^^^ will be
