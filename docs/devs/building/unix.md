@@ -10,7 +10,6 @@ This doc covers:
 * [FreeBSD](#freebsd)
 * [OpenBSD](#openbsd)
 * [Solaris/OpenIndiana](#solaris-openindiana)
-* [HaikuOS](#HaikuOS)
 
 Make sure you have all required dependencies installed for your system.
 See [this](requirements.md) page for common requirements.
@@ -227,4 +226,3 @@ pkg install developer/build/gnu-make
 Then use `gmake` if invoking Makefiles directly.
 
 (Modern OpenIndiana provides GCC 14; package FMRIs like `developer/gcc-14` and `system/library/boost` follow IPS naming.)
-
