@@ -18,6 +18,7 @@ nav:
     - Anonymous websites: tutorials/http.md
     - Anonymous IRC chats: tutorials/irc.md
     - Decentralized instant messenger (XMPP aka Jabber): tutorials/xmpp.md
+    - Monero over I2P: tutorials/Monero.md
     - Filesharing: 
         - Software: tutorials/Filesharing/Software.md
         - qBittorrent: tutorials/Filesharing/qBittorrent.md
