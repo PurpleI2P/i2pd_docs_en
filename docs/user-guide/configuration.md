@@ -96,7 +96,7 @@ Option                                 | Description
 ssu2.enabled                           | Enable SSU2 (default: true)
 ssu2.published                         | Enable incoming SSU2 connections. (default: true)
 ssu2.port                              | Port to listen for incoming SSU2 connections (default: auto - 'port' from general section)
-ssu2.proxy                             | Specify UDP socks5 proxy server for SSU2. Should be socks://address:port  
+ssu2.proxy                             | Specify UDP socks5 proxy server for SSU2. Should be socks://address:port
 ssu2.mtu4                              | MTU for local ipv4. (default: auto)
 ssu2.mtu6                              | MTU for local ipv6. (default: auto)
 ssu2.firewalled4                       | Set ipv4 network status to Firewalled even if OK (default: false)
@@ -139,10 +139,10 @@ httpproxy.outbound.quantity            | Outbound tunnels quantity if keys is se
 httpproxy.outbound.lengthVariance      | Outbound tunnels length variance if keys is set. (default: 0)
 httpproxy.outproxy                     | HTTP proxy upstream out proxy url (like http://exit.stormycloud.i2p)
 httpproxy.addresshelper                | Enable or disable addresshelper. (default: true)
-httpproxy.senduseragent                | Pass through user's User-Agent if enabled. (deafult: false)
+httpproxy.senduseragent                | Pass through user's User-Agent if enabled. (default: false)
 httpproxy.i2cp.leaseSetType            | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 httpproxy.i2cp.leaseSetEncType         | Comma separated encryption types to be used in LeaseSet type 3 or 5
-httpproxy.i2p.streaming.profile        | HTTP Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (default: 1)
+httpproxy.i2p.streaming.profile        | HTTP Proxy bandwidth usage profile. 1 - bulk(high), 2 - interactive(low). (default: 1)
 httpproxy.i2p.streaming.maxWindowSize  | Max window size for streams (default: 512)
 httpproxy.latency.min                  | HTTP proxy min latency for tunnels (default: 0)
 httpproxy.latency.max                  | HTTP proxy max latency for tunnels (default: 0)
@@ -170,7 +170,7 @@ socksproxy.outproxy                    | Address of outproxy(IP or local). Reque
 socksproxy.outproxyport                | Outproxy port. If 0 socksproxy.outproxy contains path to local socket
 socksproxy.i2cp.leaseSetType           | Type of LeaseSet to be sent. 1, 3 or 5. (default: 3)
 socksproxy.i2cp.leaseSetEncType        | Comma separated encryption types to be used in LeaseSet type 3 or 5
-socksproxy.i2p.streaming.profile       | SOCKS Proxy bandwidth usage profile. 1 - bulk(high), 2- interactive(low). (deafult: 1)
+socksproxy.i2p.streaming.profile       | SOCKS Proxy bandwidth usage profile. 1 - bulk(high), 2 - interactive(low). (default: 1)
 socksproxy.i2p.streaming.maxWindowSize | Max window size for streams (default: 512)
 socksproxy.latency.min                 | SOCKS proxy min latency for tunnels (default: 0)
 socksproxy.latency.max                 | SOCKS proxy max latency for tunnels (default: 0)
@@ -249,7 +249,7 @@ reseed.followredirect                  | Follow redirects when reseeding from UR
 
 Option                                 | Description
 -------------------------------------- | --------------------------------------
-addressbook.enabled                    | Enable or disable AddressBook. (default: true)  
+addressbook.enabled                    | Enable or disable AddressBook. (default: true)
 addressbook.defaulturl                 | AddressBook subscription URL. Only used to initialize the AddressBook.
 addressbook.subscriptions              | AddressBook subscriptions URLs, separated by comma. Note that defaulturl is not added to subscriptions URLs
 addressbook.hostsfile                  | File to dump AddressesBook in hosts.txt format
