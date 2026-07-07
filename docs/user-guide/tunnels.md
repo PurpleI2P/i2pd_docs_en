@@ -222,7 +222,8 @@ destination         | The I2P destination of a udpserver tunnel, required parame
 address             | IP address to bind local UDP endpoint to (default: `127.0.0.1`)
 port                | Port to bind local UDP endpoint to, required parameter
 gzip                | Turns internal compression off if set to false. (default: false)
-keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel.
+keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel
+keepaliveinterval   | Send empty replyable datagram to server if no activity after this interval in seconds. (default: 0 - no keep alive)
 
 `udpserver` forwards traffic from N I2P destinations to 1 local UDP endpoint
 
