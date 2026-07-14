@@ -303,6 +303,8 @@ inbound.lengthVariance        | Random number of hops to add or subtract to an i
 outbound.lengthVariance       | Random number of hops to add or subtract to an outbound tunnel between -3 and 3. 0 by default **(since 2.42.0)**
 inbound.nickname              | Custom nickname for inbound tunnels to show in webconsole
 outbound.nickname             | Custom nickname for outbound tunnels to show in webconsole
+inbound.randomKey             | Base64 encoded 16 or 32 bytes key used for inbound tunnels peer ordering
+outbound.randomKey            | Base64 encoded 16 or 32 bytes key used for outbound tunnels peer ordering 
 crypto.tagsToSend             | Number of ElGamal/AES tags to send. 40 by default; too low value may cause problems with tunnel building
 crypto.ratchet.inboundTags    | Max number of generated inbound tags for tagset (default: 800)
 explicitPeers                 | List of comma-separated b64 addresses of peers to use (default: unset)
