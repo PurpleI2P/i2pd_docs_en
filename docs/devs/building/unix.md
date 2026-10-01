@@ -79,6 +79,7 @@ Libraries:
 sudo apt install \
   libboost-program-options-dev \
   libboost-json-dev \
+  libboost-url-dev \
   libssl-dev \
   zlib1g-dev
 ```
