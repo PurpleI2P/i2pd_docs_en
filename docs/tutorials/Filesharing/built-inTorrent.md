@@ -17,7 +17,7 @@ then add a `torrents` tunnel section to `tunnels.conf`:
 type = torrents
 torrentsdir = /path/to/torrents
 keys = torrents-keys.dat
-trackers = http://tracker2.postman.i2p/announce.php, http://atia.i2p/announce
+trackers = http://atia.i2p/announce,udp://opentracker.dg2.i2p:6969,udp://tracker.insulaocculta.i2p:6969,http://opentracker.skank.i2p/a
 dht = true
 signaturetype = 7
 rpcport = 7652
