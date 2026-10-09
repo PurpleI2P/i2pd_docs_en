@@ -20,6 +20,7 @@ nav:
     - Decentralized instant messenger (XMPP aka Jabber): tutorials/xmpp.md
     - Monero over I2P: tutorials/Monero.md
     - Filesharing: 
+        - I2PD Built-in Torrent Client: tutorials/Filesharing/built-inTorrent.md
         - Software: tutorials/Filesharing/Software.md
         - qBittorrent: tutorials/Filesharing/qBittorrent.md
     - Using RetroShare with i2pd: tutorials/retroshare.md
