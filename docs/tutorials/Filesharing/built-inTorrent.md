@@ -70,4 +70,11 @@ Requests must be `POST` with `Content-Type: application/json` (or `application/x
 | `session-get`     | Reports `rpc-version` 17 for client compatibility.
 | `session-stats` |  Aggregate byte/rate counters and torrent counts.
 
+## 3. The web endpoint
 
+Copy content/torrents/web to datapath/torrents/web
+The endpoint URL is:
+
+```
+http://<rpcaddress>:<rpcport>/[<rpcpath>/]web
+```
