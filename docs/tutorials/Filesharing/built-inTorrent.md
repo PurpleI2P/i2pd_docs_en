@@ -4,13 +4,7 @@
 
 ## 1. Configuration
 
-Enable `javascript` in i2pd.conf:
-```ini
-[http]    
-javascript = true
-```
-
-then add a `torrents` tunnel section to `tunnels.conf`:
+Add a `torrents` tunnel section to `tunnels.conf`:
 
 ```ini
 [torrents]
@@ -18,7 +12,7 @@ type = torrents
 torrentsdir = /path/to/torrents
 keys = torrents-keys.dat
 trackers = http://atia.i2p/announce,udp://opentracker.dg2.i2p:6969,udp://tracker.insulaocculta.i2p:6969,http://opentracker.skank.i2p/a
-dht = true
+dhtfile = torrents.dht
 signaturetype = 7
 rpcport = 7652
 rpcaddress = 127.0.0.1
