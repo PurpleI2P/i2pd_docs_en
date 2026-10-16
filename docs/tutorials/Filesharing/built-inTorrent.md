@@ -26,7 +26,8 @@ rpcaddress = 127.0.0.1
 | `keys`            | Destination key file. `transient` by default — set a persistent filename so your peer identity survives restarts.
 | `trackers`        | Comma-separated I2P tracker announce URLs.
 | `dht`             | Enable the built-in DHT. Default `true`.
-| `signaturetype`   | Defaults to Ed25519 (7).
+| `dhtfile`         | File to persist DHT routing table. <base32>.dht for non-transient destinations
+| `web`             | Enable web interface on RPC port. Default `true`.
 | `rpcport`         | no Port for the Transmission-compatible JSON-RPC server.
 | `rpcaddress`      | Bind address for the RPC server (default `127.0.0.1`).
 | `rpcpath`         | URL path prefix for the RPC endpoint.
