@@ -22,6 +22,7 @@ client        | Client tunnel to remote I2P destination (TCP)
 socks         | Custom Socks proxy service to use I2P with
 httpproxy     | Custom HTTP proxy service to use I2P with
 udpclient     | Forwards local UDP endpoint to remote I2P destination
+torrents      | BitTorrent over I2P tunnel with optional JSON-RPC and web UI
 
 **Server Tunnels**
 
@@ -31,6 +32,7 @@ server        | Generic server tunnel to setup any TCP service in I2P network
 http          | HTTP server tunnel to setup a website in I2P
 irc           | IRC server tunnel to setup IRC server in I2P
 udpserver     | Forwards traffic from N I2P destinations to local UDP endpoint
+torrents      | BitTorrent over I2P tunnel with optional JSON-RPC and web UI
 
 
 Signature types
@@ -287,6 +289,55 @@ address             | Local address Socks proxy binds to (default: `127.0.0.1`)
 port                | TCP port Socks proxy binds to
 outproxy            | It will be used when requesting addresses outside the I2P network. e.g, outproxy = PROXY_ADDRESS
 destinationport     | It set the upstream proxy port  (default: 0, used when `outproxy` is set). e.g, destinationport = PROXY_PORT
+
+
+Torrents tunnels
+----------------
+A torrents tunnel is a full-fledged I2P tunnel dedicated to BitTorrent traffic over I2P.
+Besides the common tunnel settings (keys, signature type, I2CP parameters, etc.), it carries
+torrent-specific parameters such as the torrents directory, trackers, DHT, and an optional JSON-RPC
+server. All tunnel-like settings for torrents live here; the RPC method reference is documented
+separately in [Torrents JSON-RPC](/tutorials/Filesharing/I2PD Built-in Torrent/torrents-rpc/).
+
+
+Here is an example of a torrents tunnel:
+
+```ini
+[torrents]
+type = torrents
+torrentsdir = ./torrents/path
+trackers = http://tracker.example.i2p/announce
+keys = torrents.dat
+signaturetype = 7
+dht = true
+dhtfile = dht.dat
+web = true
+rpcport = 0
+rpcpath =
+rpcaddress = 127.0.0.1
+rpcauth = false
+rpcuser =
+rpcpass =
+```
+
+Parameter           | Description
+--------------------|--------------------
+torrentsdir         | Directory where torrent files and downloaded data are stored. **Mandatory**.
+keys                | Keys for destination. When same for several tunnels, will be using same destination for every tunnel. When empty, transient keys are created on every restart. (default: "transient")
+trackers            | Comma-separated list of tracker announce URLs shared by all torrents in this tunnel. (default: "")
+signaturetype       | Signature type for new keys. (default: 7)
+dht                 | Enable DHT for peer discovery. (default: true)
+dhtfile             | DHT data file path. If empty and `keys` starts with `transient`, a non-persistent DHT is used. (default: "")
+web                 | Enable the built-in web interface serving files from `<data-dir>/torrents/web/`. (default: true)
+rpcport             | Port for the JSON-RPC server. 0 disables the RPC server. (default: 0)
+rpcpath             | URL path prefix for the RPC endpoint. The RPC is served at `/<rpcpath>/rpc` (or `/rpc` when empty). (default: "")
+rpcaddress          | Address the RPC server binds to. (default: "127.0.0.1")
+rpcauth             | Enable HTTP Basic Authentication for the RPC endpoint. (default: false)
+rpcuser             | Username for RPC Basic Auth. (default: "")
+rpcpass             | Password for RPC Basic Auth. (default: "")
+
+Example and tutorials are in [I2PD Built-in Torrent Client](/tutorials/Filesharing/I2PD Built-in Torrent/built-inTorrent/)
+
 
 I2CP parameters
 ---------------
