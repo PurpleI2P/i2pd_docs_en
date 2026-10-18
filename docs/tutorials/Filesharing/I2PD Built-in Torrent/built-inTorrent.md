@@ -9,7 +9,7 @@ tunnel type (`type = torrents`) and can be managed through a built-in web UI or 
 Transmission-compatible JSON-RPC API.
 
 All tunnel-like settings (keys, signature type, I2CP parameters, etc.) are documented in
-[Torrents tunnels](user-guide/tunnels/#torrents-tunnels). The full RPC method reference is in [Torrents JSON-RPC](/tutorials/Filesharing/I2PD Built-in Torrent/torrents-rpc/).
+[Torrents tunnels](/en/latest/user-guide/tunnels/#torrents-tunnels). The full RPC method reference is in [Torrents JSON-RPC](/en/latest/tutorials/Filesharing/I2PD Built-in Torrent/torrents-rpc/).
 
 ---
 
@@ -17,14 +17,14 @@ All tunnel-like settings (keys, signature type, I2CP parameters, etc.) are docum
 
 Add a `torrents` tunnel section to `tunnels.conf`. The only mandatory parameter is `torrentsdir`;
 
-the rest are optional and documented in [Torrents tunnels](user-guide/tunnels/#torrents-tunnels).
+the rest are optional and documented in [Torrents tunnels](/en/latest/user-guide/tunnels/#torrents-tunnels).
 
 ```ini
 [torrents]
 type = torrents
 torrentsdir = /path/to/torrents
 keys = torrents-keys.dat
-trackers = http://atia.i2p/announce
+trackers = http://atia.i2p/announce,udp://opentracker.dg2.i2p:6969,udp://tracker.insulaocculta.i2p:6969,http://opentracker.skank.i2p/a
 signaturetype = 7
 dht = true
 dhtfile = torrents.dht
@@ -110,5 +110,5 @@ Requests are `POST` with `Content-Type: application/json`. If `rpcauth` is enabl
 | Session stats | `curl -s -X POST .../rpc -d '{"method":"session-stats","arguments":{}}'` |
 | DHT stats | `curl -s -X POST .../rpc -d '{"method":"dht-stats","arguments":{}}'` |
 
-Full parameter and response reference: [Torrents JSON-RPC](/tutorials/Filesharing/I2PD Built-in Torrent/torrents-rpc/).
+Full parameter and response reference: [Torrents JSON-RPC](/en/latest/tutorials/Filesharing/I2PD Built-in Torrent/torrents-rpc/).
 

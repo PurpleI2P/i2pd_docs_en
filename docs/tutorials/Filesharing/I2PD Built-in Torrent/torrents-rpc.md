@@ -9,7 +9,8 @@ to i2pd's torrents tunnel.
 
 The RPC is attached to a **torrents tunnel**. When configured with an RPC port the server
 listens on `address:port` (default `127.0.0.1`, port as set in the tunnel config, e.g.
-`torrents-rpc-port=...`). Routes:
+`torrents-rpc-port=...`). 
+Routes:
 
 - `POST /<path>/rpc` and `POST /<path>/rpc/` — JSON-RPC calls (paths registered per tunnel,
   `<path>` is the tunnel RPC path, default empty).
@@ -19,6 +20,7 @@ listens on `address:port` (default `127.0.0.1`, port as set in the tunnel config
 The web UI computes its RPC URL relative to `/.../web/` → `/.../rpc`.
 
 Transport:
+
 - HTTP/1.1
 - `Content-Type: application/json` (or `application/x-www-form-urlencoded`) for POST.
 - CORS: `Access-Control-Allow-Origin: *`, plus `OPTIONS` preflight returning `204`.
@@ -89,6 +91,7 @@ basic authorization string for that path.
 Add a torrent from a base64-encoded `.torrent` file or a magnet link.
 
 Arguments:
+
 - `metainfo` (string): base64-encoded torrent file content. Must have a length that is a
   multiple of 4 (standard base64). Either this or `filename` is used; `metainfo` takes
   priority if both are present.
@@ -97,6 +100,7 @@ Arguments:
   the scheme.
 
 Response `arguments`:
+
 - `torrent-added` (object, on new torrent): `{ "id", "hashString", "name" }`
 - `torrent-duplicate` (object, if already present): same fields.
 
@@ -105,6 +109,7 @@ Errors: `"invalid or corrupt torrent file"` if the torrent cannot be parsed / ad
 ### 5.2 `torrent-remove`
 
 Arguments:
+
 - `ids` (int or int[]): torrent ids to remove. If absent/empty → remove **all**.
 - `delete-local-data` (bool, default false): also delete local files.
 
@@ -115,6 +120,7 @@ Response `arguments`: empty object.
 Retrieve torrent data.
 
 Arguments:
+
 - `fields` (array of strings, **required**): list of field names to include. `id` is
   always added by the server regardless of this list.
 - `ids` (int or int[], optional): subset of torrents. If absent, or if `ids` is not an
@@ -130,6 +136,7 @@ See [§6 Torrent fields](#torrent-fields).
 ### 5.4 `torrent-stop`
 
 Arguments:
+
 - `ids` (int or int[], optional): torrents to stop. If absent or empty → stop **all** torrents.
 
 Response `arguments`: empty object.
@@ -137,6 +144,7 @@ Response `arguments`: empty object.
 ### 5.5 `torrent-start`
 
 Arguments:
+
 - `ids` (int or int[], optional): torrents to start. If absent or empty → start **all** torrents.
 
 Response `arguments`: empty object.
@@ -146,6 +154,7 @@ Response `arguments`: empty object.
 Limited implementation (Transmission-compatible names, but only a subset is handled).
 
 Arguments (currently supported):
+
 - `trackerAdd` (array of strings): tracker announce URLs to add as **common** trackers
   (they apply to all torrents; `AddTracker(announce, true)`).
 
@@ -157,6 +166,7 @@ Response `arguments`: empty object.
 ### 5.7 `torrent-reannounce`
 
 Arguments:
+
 - `ids` (int or int[], optional): torrents to reannounce. If absent or empty → reannounce **all** torrents.
 
 Response `arguments`: empty object. Triggers an immediate tracker announce for the given torrents (or all torrents when `ids` is omitted).

@@ -306,7 +306,7 @@ Here is an example of a torrents tunnel:
 [torrents]
 type = torrents
 torrentsdir = ./torrents/path
-trackers = http://tracker.example.i2p/announce
+trackers = http://tracker.example.i2p/announce,udp://http://tracker.example.i2p/a
 keys = torrents.dat
 signaturetype = 7
 dht = true
