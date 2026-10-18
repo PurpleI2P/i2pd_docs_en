@@ -80,7 +80,7 @@ http://<rpcaddress>:<rpcport>/[<rpcpath>/]web/
 - Progress bars, rates, ETA, peer list, tracker stats
 - Delete local data toggle on remove
 
-Besides the built-in panel, [TrguiNG](https://github.com/transmission/transmission) is recommended
+Besides the built-in panel, [TrguiNG](https://github.com/openscopeproject/TrguiNG) is recommended
 as a more feature-complete Transmission-compatible GUI that works with the same RPC endpoint.
 
 ---
