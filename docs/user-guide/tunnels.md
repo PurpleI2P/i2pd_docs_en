@@ -297,7 +297,7 @@ A torrents tunnel is a full-fledged I2P tunnel dedicated to BitTorrent traffic o
 Besides the common tunnel settings (keys, signature type, I2CP parameters, etc.), it carries
 torrent-specific parameters such as the torrents directory, trackers, DHT, and an optional JSON-RPC
 server. All tunnel-like settings for torrents live here; the RPC method reference is documented
-separately in [Torrents JSON-RPC](/tutorials/Filesharing/I2PD Built-in Torrent/torrents-rpc/).
+separately in [Torrents JSON-RPC](/en/latest/tutorials/Filesharing/I2PD Built-in Torrent/torrents-rpc/).
 
 
 Here is an example of a torrents tunnel:
@@ -336,7 +336,7 @@ rpcauth             | Enable HTTP Basic Authentication for the RPC endpoint. (de
 rpcuser             | Username for RPC Basic Auth. (default: "")
 rpcpass             | Password for RPC Basic Auth. (default: "")
 
-Example and tutorials are in [I2PD Built-in Torrent Client](/tutorials/Filesharing/I2PD Built-in Torrent/built-inTorrent/)
+Example and tutorials are in [I2PD Built-in Torrent Client](/en/latest/tutorials/Filesharing/I2PD Built-in Torrent/built-inTorrent/)
 
 
 I2CP parameters
