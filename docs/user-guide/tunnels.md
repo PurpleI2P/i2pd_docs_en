@@ -253,11 +253,11 @@ The HTTP proxy interface can be defined in ``tunnels.conf``.
 Here's an example of a HTTP proxy:
 
 ```ini
-[alt-socks]
+[http-proxy]
 type = httpproxy
 address = 127.0.0.1
-port = 14447
-keys = socks-keys.dat 
+port = 4444
+keys = http-proxy-keys.dat
 ```
 
 Parameter           | Description
