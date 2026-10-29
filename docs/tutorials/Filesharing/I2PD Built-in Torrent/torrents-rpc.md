@@ -44,8 +44,7 @@ Request (JSON object):
 ```
 
 - `method` (string, required): one of the methods listed [in §5](#methods).
-- `arguments` (object, required in practice): method-specific arguments. A missing/invalid
-  body yields a `Parse error`.
+- `arguments` (object, required in practice): method-specific arguments. A missing/invalid body yields a `Parse error`.
 - `tag` (int64, optional): echoed back unchanged in the response.
 
 Response (JSON object):
@@ -95,9 +94,9 @@ Arguments:
 - `metainfo` (string): base64-encoded torrent file content. Must have a length that is a
   multiple of 4 (standard base64). Either this or `filename` is used; `metainfo` takes
   priority if both are present.
-- `filename` (string): magnet (or other) URL. i2pd's `AddMagnet` is used. The web UI
-  restricts this to `magnet:` links client-side; the server does not strictly validate
-  the scheme.
+- `filename` (string): magnet link **or** a 40-character hex info hash. If it is a valid
+  hex-encoded info hash, `AddInfoHash(infoHash)` is used; otherwise `AddMagnet(filename)` is
+  called. The web UI restricts this to `magnet:` links client-side; the server accepts both.
 
 Response `arguments`:
 
@@ -268,7 +267,10 @@ Stats object:
 
 ### 5.10 `dht-stats`
 
-Arguments: none.
+Arguments: none, or an optional `fields` array.
+
+- If `fields` contains `"torrentHashes"`, the response includes a `torrentHashes` array with
+  hex-encoded info hashes of all torrents currently known to DHT.
 
 Response `arguments`:
 
@@ -280,6 +282,7 @@ Response `arguments`:
 | `numTorrents` | int | |
 | `numHeardFrom` | int | |
 | `numFailedPeers` | int | |
+| `torrentHashes` | string[] | (only if `"torrentHashes"` was requested in `fields`) |
 
 When DHT is not supported only `supported: false` is returned.
 
@@ -468,6 +471,10 @@ Use 1000 as the base for sizes and speeds, 1024 for memory.
 - Invalid JSON → `result: "Parse error"`.
 - Missing/wrong `Authorization` on an authenticated path → HTTP `401 Unauthorized`.
 - `torrent-add` failures → `result: "invalid or corrupt torrent file"`, HTTP 200.
+- `torrent-add` `filename` accepts either a magnet link or a 40-char hex info hash; invalid
+  hex that is not a magnet falls back to `AddMagnet` and may fail.
+- `dht-stats` with `fields: ["torrentHashes"]` returns `torrentHashes` array; without it,
+  no `torrentHashes` key is present.
 - `torrent-remove` with no ids removes **all** torrents.
 - `torrent-get` with a non-array/non-integer `ids` value falls back to **all** torrents.
 - `torrent-stop`/`torrent-start`/`torrent-reannounce` with no `ids` act on **all** torrents.
@@ -505,4 +512,14 @@ curl -s -X POST http://127.0.0.1:PORT/PATH/rpc \
   -H 'Content-Type: application/json' \
   -H 'Authorization: Basic dXNlcjpwYXNz' \
   -d '{"method":"torrent-get","arguments":{"fields":["id","name","status"]},"tag":4}'
+
+# Add by info hash (40-char hex) instead of magnet link:
+curl -s -X POST http://127.0.0.1:PORT/PATH/rpc \
+  -H 'Content-Type: application/json' \
+  -d '{"method":"torrent-add","arguments":{"filename":"abcdef1234567890abcdef1234567890abcdef12"},"tag":5}'
+
+# Request DHT torrent hashes:
+curl -s -X POST http://127.0.0.1:PORT/PATH/rpc \
+  -H 'Content-Type: application/json' \
+  -d '{"method":"dht-stats","arguments":{"fields":["torrentHashes"]},"tag":6}'
 ```
