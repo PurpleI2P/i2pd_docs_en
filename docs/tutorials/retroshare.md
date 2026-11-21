@@ -8,11 +8,12 @@ Quoting [Wikipedia](https://en.wikipedia.org/wiki/RetroShare):
 
 In order to make RetroShare work with i2pd, you need to create a new server tunnel in [tunnels.conf](../user-guide/tunnels.md) like this: 
 
-    [retroshare]  
-    type=server  
-    host=127.0.0.1  
-    port=10123            # pick random port of your choice 
-    keys=retroshare.dat  
+    [retroshare]
+    type=server
+    host=127.0.0.1
+    # pick random port of your choice
+    port=10123
+    keys=retroshare.dat
 
 Make sure that Socks proxy is enabled, it listens at ``127.0.0.1:4447`` by default. If not, look at [i2pd.conf documentation](../user-guide/configuration.md).
 
