@@ -61,14 +61,22 @@ You can download them by running
 
 ### Gentoo
 
-i2pd [has a working ebuild in the main gentoo repository](https://packages.gentoo.org/packages/net-vpn/i2pd). As of May 2018, the ebuild 
-is still listed as "unstable", and thus will request an exception in your package.keywords if you are using gentoo under the "stable" branch.
-To install i2pd, enter the command:
-    
+i2pd [has an ebuild in the main Gentoo repository](https://packages.gentoo.org/packages/net-vpn/i2pd). To install it, run:
+
     emerge --ask net-vpn/i2pd
 
-If you use `gcc` to compile packages and would like to enable cmake's hardening features, use the `i2p-hardening` flag (recommended).
-If you intend to use the websocket server, enable the `websocket` flag.
+Only an older release is marked stable, and only on `amd64`. The newest releases, and all other
+architectures, are in testing (`~arch`). To install the latest version on a stable system, add
+this line to `/etc/portage/package.accept_keywords` (or to a file inside it, if it is a directory):
+
+    net-vpn/i2pd ~amd64
+
+Replace `~amd64` with the keyword for your architecture (for example `~arm64` or `~x86`).
+
+USE flags:
+
+* `upnp` (enabled by default): UPnP port mapping support
+* `torrents` (enabled by default, i2pd 3.0.0 and later): build the built-in torrent client
 
 ### Debian
 
