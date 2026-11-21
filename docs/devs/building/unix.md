@@ -144,7 +144,11 @@ sudo dnf install boost-static
 
 ## macOS
 
-Requires Homebrew and Xcode Command Line Tools.
+Requires Homebrew and Xcode Command Line Tools. The full Xcode app is not needed; you can install just the Command Line Tools with:
+
+```bash
+xcode-select --install
+```
 
 Install deps:
 
@@ -155,7 +159,7 @@ brew install boost openssl@3 cmake make
 Build:
 
 ```bash
-make HOMEBREW=1 -j8
+make HOMEBREW=1 -j$(sysctl -n hw.ncpu)
 ```
 
 Install to system root (`/`):
