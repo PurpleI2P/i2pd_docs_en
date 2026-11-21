@@ -20,11 +20,19 @@ Open your tunnels.conf file, add this to the bottom of it:
 ```
 [monero]
 type = client
-destination = (You will need to put the b32 address for whatever node you want to use, you can find nodes on monero.fail, or use the stormycloud one, which is the one I personally use)
-port = 18089 (or whatever port you node is using)
-adress = 0.0.0.0 (you may also use 127.0.0.1, but I have my i2p node running on another computer, so I will use 0.0.0.0)
-keys = monero.dat (you may change the name of this file, but always keep the .dat)
+destination = <b32 address of the node>
+port = 18089
+address = 0.0.0.0
+keys = monero.dat
 ```
+
+- `destination`: the b32 address of the node you want to use. You can find nodes on monero.fail, or use the StormyCloud one, which is the one I personally use.
+- `port`: the local port your wallet will connect to. 18089 is a common choice.
+- `address`: use 127.0.0.1 if your wallet runs on the same computer as i2pd. I have my i2p node running on another computer, so I use 0.0.0.0, which accepts connections from other machines.
+- `keys`: you may change the name of this file, but always keep the .dat.
+
+Do not put notes or comments on the same line as a value in `tunnels.conf`. Anything after the `=` is read as part of the value.
+
 ### Then reboot your node with (This only works for linux not windows, so if your on windows you just need to restart your node, should be easy)
 ```
 sudo systemctl restart i2pd
